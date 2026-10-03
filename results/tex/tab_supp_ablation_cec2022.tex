@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Ablation of SEHHO-COBL on CEC2022 at 15{,}000 evaluations.}
+\label{tab:supp_ablation_cec2022}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccccc}
+\toprule
+ & \multicolumn{5}{c}{CEC2022, $D=10$, 15{,}000 FEs} & \multicolumn{5}{c}{CEC2022, $D=20$, 15{,}000 FEs} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+Variant & Rank & W/L & $p_{\text{Holm}}$ & $\delta$ & Mag. & Rank & W/L & $p_{\text{Holm}}$ & $\delta$ & Mag. \\
+\midrule
+\textbf{Full method} & \textbf{6.25} & -- & -- & -- & -- & \textbf{6.25} & -- & -- & -- & -- \\
+\midrule
+AlwaysPbest+NoLevy & 4.75 & 6/4 & 1.000 & $-0.102$ & negligible & 4.25 & 8/4 & 1.000 & $+0.072$ & negligible \\
+AlwaysPbest+FixedP & 5.25 & 6/4 & 1.000 & $+0.035$ & negligible & 5.00 & 6/6 & 1.000 & $+0.186$ & small \\
+FixedP & 6.46 & 4/6 & 1.000 & $-0.058$ & negligible & 5.75 & 5/7 & 1.000 & $+0.073$ & negligible \\
+DeterministicPhase & 6.00 & 6/5 & 1.000 & $-0.011$ & negligible & 5.83 & 8/4 & 1.000 & $+0.158$ & small \\
+NoCOBL & 7.21 & 4/6 & 1.000 & $-0.016$ & negligible & 6.33 & 6/6 & 1.000 & $+0.040$ & negligible \\
+NoLevy & 4.83 & 7/3 & 1.000 & $-0.081$ & negligible & 6.33 & 7/5 & 1.000 & $+0.006$ & negligible \\
+AlwaysPbest & 5.67 & 7/3 & 1.000 & $+0.019$ & negligible & 6.50 & 6/6 & 1.000 & $+0.214$ & small \\
+NoArchive & 6.92 & 4/6 & 1.000 & $+0.005$ & negligible & 7.33 & 6/6 & 1.000 & $+0.253$ & small \\
+AlwaysBest & 8.08 & 4/6 & 1.000 & $+0.006$ & negligible & 7.42 & 5/7 & 1.000 & $+0.043$ & negligible \\
+NoEscapeEnergy & 6.75 & 3/7 & 1.000 & $-0.011$ & negligible & 7.50 & 4/8 & 0.771 & $+0.052$ & negligible \\
+NoSHADE & 9.83 & 2/9 & 0.354 & $+0.374$ & medium & 9.50 & 2/10 & 0.704 & $+0.654$ & large \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+Friedman average rank over all variants (lower is better); the bold row is the reference (the full method), not the best variant. $\delta$ is Cliff's delta of arm A against arm B (A the changed, new or first-named arm), computed per function over the 30 runs of each arm and averaged over the functions; negative values favour A. Here A is the variant in the row and B the full method, so a positive $\delta$ means the change hurts and a negative one that it helps. W/L counts functions on which the variant has the lower / higher mean error. $p_{\text{Holm}}$ is a two-sided Wilcoxon signed-rank test of the variant against the full method across matched per-function mean errors, Holm-corrected over all variants of the block; $^{*}$ marks $p<0.05$. Magnitudes follow \citet{romano2006appropriate}. Rows are ordered by the rightmost block. On CEC2022 at 15{,}000 evaluations the variants are not separated from the full method: no Holm-corrected test is below 0.05. At $D=20$ the point estimates of the gate variants AlwaysPbest, AlwaysPbest+NoLevy, AlwaysPbest+FixedP, NoEscapeEnergy, DeterministicPhase, AlwaysBest are positive, i.e.\ favour keeping the gate. CEC2022 is built from CEC2017 data and CEC2014 and CEC2017 recipes (Table~\ref{tab:supp_lineage}).
+\end{flushleft}
+\end{table}

@@ -1,0 +1,33 @@
+cec2022_func,kind,dim,other_suite,other_func,detail
+1,shift vector,all,CEC2017,3,first row identical; 1 of 1 rows identical
+2,shift vector,all,CEC2017,4,first row identical; 1 of 1 rows identical
+3,shift vector,all,CEC2017,6,first row identical; 1 of 1 rows identical
+4,shift vector,all,CEC2017,8,first row identical; 1 of 1 rows identical
+5,shift vector,all,CEC2017,9,first row identical; 1 of 1 rows identical
+6,shift vector,all,CEC2017,18,first row identical; 1 of 1 rows identical
+6,rotation matrix,10,CEC2014,18,identical file contents
+6,shuffle,10,CEC2014,18,identical file contents
+6,rotation matrix,20,CEC2014,18,identical file contents
+6,shuffle,20,CEC2014,18,identical file contents
+7,shift vector,all,CEC2017,20,first row identical; 1 of 1 rows identical
+7,rotation matrix,10,CEC2017,20,identical file contents
+7,shuffle,10,CEC2017,20,identical file contents
+7,rotation matrix,20,CEC2017,20,identical file contents
+7,shuffle,20,CEC2017,20,identical file contents
+8,shift vector,all,CEC2017,22,first row identical; 10 of 10 rows identical
+8,rotation matrix,10,CEC2014,22,identical file contents
+8,shuffle,10,CEC2014,22,identical file contents
+8,rotation matrix,20,CEC2014,22,identical file contents
+8,shuffle,20,CEC2014,22,identical file contents
+9,shift vector,all,CEC2017,23,first row identical; 10 of 10 rows identical
+9,rotation matrix,10,CEC2014,23,identical file contents
+9,rotation matrix,20,CEC2014,23,identical file contents
+10,shift vector,all,CEC2017,24,first row identical; 10 of 10 rows identical
+10,rotation matrix,10,CEC2014,24,identical file contents
+10,rotation matrix,20,CEC2014,24,identical file contents
+11,shift vector,all,CEC2017,26,first row identical; 10 of 10 rows identical
+11,rotation matrix,10,CEC2017,26,identical file contents
+11,rotation matrix,20,CEC2017,26,identical file contents
+12,shift vector,all,CEC2017,27,first row identical; 10 of 10 rows identical
+12,rotation matrix,10,CEC2017,27,identical file contents
+12,rotation matrix,20,CEC2017,27,identical file contents

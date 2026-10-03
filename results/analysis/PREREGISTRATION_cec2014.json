@@ -1,0 +1,69 @@
+{
+  "title": "Pre-registration of the CEC2014 confirmatory evaluation",
+  "written_at": "2026-09-15T08:30:15.171651+00:00",
+  "written_before_any_cec2014_run": true,
+  "why": "An adversarial review established that CEC2017 cannot serve as a held-out suite for this paper: it was used to diagnose which components to change (the gate ablation and the population sweep), even though the final constants were selected on CEC2022. CEC2014 has been consulted for nothing. This file fixes the configuration and the analysis before the suite is run, so that the CEC2014 result is confirmatory rather than another exploratory pass.",
+  "frozen_configuration": {
+    "phase_mode": "always_pbest",
+    "pop_mode": "lpsr",
+    "N_init_factor": 6.0,
+    "schedule_basis": "budget",
+    "use_cobl": false,
+    "levy_mode": "off",
+    "p_schedule": "fixed"
+  },
+  "frozen_configuration_sha256": "55df54371a522689c1d9ab9956ca725a55bfb5815c8b6f57912a5eafc6b2c25e",
+  "frozen_configuration_provenance": {
+    "population_rule": "results/analysis/selected_config.json (chosen on CEC2022, stage E7)",
+    "composition": "results/analysis/composition_decision.json (chosen on CEC2022, stages E8/E11)",
+    "nothing_may_change": "No element of the configuration may be altered on the basis of any CEC2014 result. If the replication fails, the paper reports the failure and keeps the configuration."
+  },
+  "design": {
+    "suite": "CEC2014 Part A, official C sources, 30 functions",
+    "dimensions": [
+      30,
+      50
+    ],
+    "dimension_choice_rationale": "Fixed in advance. D=30 and D=50 match two of the three CEC2017 dimensions so the replication is comparable; D=100 is omitted for compute, not for any result-dependent reason, and this omission is declared here rather than after seeing the numbers.",
+    "budgets": {
+      "competition": "10,000 x D",
+      "tight": 15000
+    },
+    "algorithms": [
+      "GF-Method (R-SHADE)",
+      "SEHHO-COBL",
+      "jSO",
+      "LSHADE",
+      "SHADE",
+      "DE",
+      "HHO"
+    ],
+    "runs_per_cell": 30,
+    "total_cells": 840
+  },
+  "primary_endpoint": {
+    "comparison": "R-SHADE against SEHHO-COBL, at the competition budget, at D=30 and D=50",
+    "statistic": "Cliff's delta computed per function over the 30 runs, averaged over the 30 functions; 95% percentile bootstrap interval, 20,000 resamples, seed 20260915. Negative delta favours R-SHADE.",
+    "test": "two-sided Wilcoxon signed-rank on the 30 per-function deltas, Holm-corrected across the two blocks",
+    "success_criterion_declared_in_advance": "The repair replicates if the 95% interval for the mean delta excludes zero in R-SHADE's favour in BOTH blocks. One block only = partial replication. Neither = failure to replicate, and the paper says so."
+  },
+  "secondary_endpoints": [
+    {
+      "comparison": "R-SHADE against jSO, L-SHADE, SHADE, DE, HHO at the competition budget",
+      "prediction_declared_in_advance": "R-SHADE is expected to remain behind jSO and L-SHADE and to be indistinguishable from SHADE, reproducing the CEC2017 ordering."
+    },
+    {
+      "comparison": "R-SHADE against L-SHADE and jSO at the tight budget of 15,000 evaluations",
+      "prediction_declared_in_advance": "R-SHADE is expected to win decisively, reproducing the inversion attributed to L-SHADE's N_init = 18D."
+    },
+    {
+      "comparison": "R-SHADE against SEHHO-COBL at the tight budget",
+      "prediction_declared_in_advance": "Expected to be close at D=30 and to favour SEHHO-COBL at D=50, reproducing the regression the paper already reports as a limitation."
+    }
+  ],
+  "analysis_committed": {
+    "script": "scripts/analyze_cec2014.py",
+    "multiplicity": "Holm within each declared family; the primary and secondary families are corrected separately.",
+    "no_additional_comparisons": "Any comparison not listed above, if reported at all, will be labelled exploratory."
+  }
+}

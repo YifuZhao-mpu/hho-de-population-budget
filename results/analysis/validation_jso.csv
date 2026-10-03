@@ -1,0 +1,2 @@
+algorithm,reference,dim,budget,runs_ours,runs_reference,reference_digest_ok,n_functions,both_zero,n_comparable,median_ratio,gmean_ratio,within2,within3,n_rank_sum_different,rank_sum_different,note
+jSO,"jSO, Brest et al.'s published CEC2017 results (D30.rez)",30,300000,30,51,True,29,4,25,0.9999981544019879,1.009628815006345,0.96,1.0,,,"reference file holds summary statistics only (best, worst, median, mean, std), so no per-run test is possible"

@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering
+\caption{Output-level validation of the SHADE-family ports.}
+\label{tab:supp_validation}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllcccccl}
+\toprule
+Port & Reference & Block & Runs & Comparable & Median & Geometric-mean & Within & Rank-sum differences \\
+ & & & ours / ref. & functions & ratio & ratio & $2\times$ / $3\times$ & (Holm), ours $\downarrow$ lower / $\uparrow$ higher \\
+\midrule
+jSO & published jSO results (Brest et al.) & CEC2017, $D=30$ & 30 / 51 & 25 of 29 & 1.000 & 1.010 & 96\% / 100\% & -- (summary statistics only) \\
+L-SHADE & CEC2014 entry, \texttt{lshade.cc} 1.0.0 & CEC2014, $D=30$ & 30 / 51 & 24 of 30 & 1.000 & 1.696 (0.997)$^{b}$ & 92\% / 96\% & F10$\downarrow$ F18$\uparrow$ F30$\uparrow$ \\
+L-SHADE & CEC2014 entry, \texttt{lshade.cc} 1.0.0 & CEC2014, $D=50$ & 30 / 51 & 26 of 30 & 1.001 & 0.995 & 96\% / 100\% & F6$\downarrow$ F10$\downarrow$ F18$\uparrow$ \\
+SHADE & SHADE 1.1 (other version)$^{a}$ & CEC2014, $D=30$ & 30 / 51 & 25 of 30 & 1.003 & 0.991 & 92\% / 100\% & F6$\downarrow$ F10$\downarrow$ F25$\uparrow$ F28$\downarrow$ \\
+SHADE & SHADE 1.1 (other version)$^{a}$ & CEC2014, $D=50$ & 30 / 51 & 27 of 30 & 0.995 & 0.901 (0.938)$^{b}$ & 89\% / 96\% & F6$\downarrow$ F9$\uparrow$ F19$\uparrow$ F24$\downarrow$ F25$\uparrow$ \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+Each port, run at the competition protocol ($10{,}000\times D$ evaluations), against its authors' results. Ratios are our mean error divided by the published mean error, over the functions on which both exceed $10^{-8}$ (``comparable''); functions both sides solve are not counted. Rank-sum: two-sided Mann--Whitney test per function on the runs, errors rounded to $10^{-8}$, Holm-corrected over the functions of a block; it needs per-run reference data, which exist for L-SHADE and SHADE but not for jSO. Sources, not redistributed here (no licence is stated): jSO, \texttt{D30.rez} in Brest et al.'s source archive (CEC2017 repository, sha256 \texttt{03e31fe6}\ldots); L-SHADE, the per-run files of Tanabe and Fukunaga's CEC2014 competition entry (CEC2014 repository, \texttt{CEC-2014-Results-PartA.zip}, folder \texttt{L-SHADE}; sha256 of the 30 files of a dimension, concatenated, \texttt{8d4e25ca}\ldots\ and \texttt{4281c427}\ldots); SHADE, the SHADE 1.1 runs of Tanabe's data release for the L-SHADE paper (\texttt{Tanabe-CEC14-results.zip}, Internet Archive copy, folder \texttt{SHADE11}; \texttt{9de73ba8}\ldots\ and \texttt{ab071caa}\ldots). The published L-SHADE runs come from \texttt{lshade.cc} 1.0.0, which archives the trial vector and re-accumulates a memory slot set to the terminal CR value; our port archives the replaced parent and keeps the terminal value absorbing, as the L-SHADE paper's Algorithm~1 specifies. $^{a}$We found no published SHADE 1.0 results on CEC2014; SHADE 1.1 differs from the SHADE 1.0 implemented here ($H=D$ against 100, $|\mathcal{A}|=2N$ against $N$, $p=0.1$ against $p_i\sim U[2/N,0.2]$, a Lehmer $M_{CR}$ with a terminal value against an arithmetic one), so its row is a plausibility check, not a validation of the port. $^{b}$In parentheses, the geometric mean without the functions whose ratio lies outside $3\times$ (L-SHADE, $D=30$: F6; SHADE, $D=50$: F10). Statistics from \texttt{scripts/validate\_jso.py} and \texttt{scripts/validate\_lshade\_shade.py} (option \texttt{-{}-summary-csv}).
+\end{flushleft}
+\end{table}

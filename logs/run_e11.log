@@ -1,0 +1,6 @@
+
+=== E11: 48 cells x 30 runs = 1440 runs ===
+   25/48 cells     3.0 min elapsed  ETA    2.8 min
+   48/48 cells    15.9 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E11_stripped_cec2022.csv  (1440 runs)
+=== E11 done in 15.9 min ===

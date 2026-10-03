@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering
+\caption{Classical reference designs for the five design problems.}
+\label{tab:supp_classical_refs}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lp{5.2cm}rrrp{6.2cm}}
+\toprule
+Problem & Method & Objective & $v$ & Evaluations & Design vector / detail \\
+\midrule
+P1  & thickness grid + SLSQP on $(x_3, x_4)$ & 6059.7143 & 0 & 23{,}297 & $99\times99$ thickness grid; 320 pairs solved by SLSQP, 9481 skipped by the analytic lower bound or because no feasible $(x_3, x_4)$ exists ($r_{\min}$ = 40.3196); $\mathbf{x}$ = (0.8125, 0.4375, 42.0984456, 176.6365958) \\
+P2  & full enumeration of $49^4$ tooth combinations & 2.700857E-12 & 0 & 5{,}764{,}801 & 4 of 5,764,801 combinations attain the minimum; $\mathbf{x}$ = (43, 16, 19, 49) \\
+P3 RC01 & equality elimination, closed form (rc01\_analytic.py) & 189.3116 & 0 & 0 & closed form; $\mathbf{x}$ = (0, 16.66666667, 0, 0, 2000000, 600, 100, 600, 700) \\
+P3 RC01 & SciPy trust-constr, multi-start (E5c) & 189.3204 & 0 & 15{,}000 & 15/30 runs feasible; evaluations per run \\
+P4 RC06 & SciPy SLSQP, multi-start (E5c) & 1.863830 & 2.13E-12 & 15{,}000 & 30/30 runs feasible; evaluations per run \\
+P5 RC14 & 27 integer unit assignments $\times$ 3-start SLSQP & 53{,}638.94 & 1.49E-13 & 49{,}006 & best assignments: N=(1, 1, 1): 53638.94; N=(2, 1, 1): 58468.23; N=(2, 2, 1): 58505.45; N=(1, 2, 1): 59185.12; best with two units in stage 1: 58468.23; $\mathbf{x}$ = (1, 1, 1, 963.1194232, 1444.679135, 1309.824047, 20, 16, 234.993792, 123.2829598) \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+Classical references computed with the problem code of the experiments (\texttt{scripts/classical\_references.py}; RC01 and RC06 rows from stage E5c). Evaluations: one per distinct decision vector, so a finite-difference gradient costs about $D+1$; for E5c rows, per run. $v$ is the total violation of the design. P1's thicknesses are on the 0.0625-in grid and P2's tooth counts and RC14's unit counts are integers, as in the experiments. The RC14 entry also lists the best designs with two units in the first stage, where the SHADE-family runs end.
+\end{flushleft}
+\end{table}

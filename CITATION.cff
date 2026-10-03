@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper and this repository."
+title: "Reproducibility package: The population should match the budget: what dismantling a Harris Hawks differential evolution hybrid shows"
+type: software
+license: MIT
+repository-code: "https://github.com/YifuZhao-mpu/hho-de-population-budget"
+version: "v1.0"
+authors:
+  - family-names: Li
+    given-names: Yanxiao
+  - family-names: Wei
+    given-names: Junhao
+  - family-names: Zhao
+    given-names: Yifu
+  - family-names: Li
+    given-names: Zikun
+  - family-names: Lu
+    given-names: Baili
+  - family-names: Im
+    given-names: Sio-Kei
+  - family-names: Yang
+    given-names: Xu
+  - family-names: Chan
+    given-names: Ka-Hou
+  - family-names: Wang
+    given-names: Yapeng
+    orcid: "https://orcid.org/0000-0002-1085-5091"

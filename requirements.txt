@@ -1,0 +1,32 @@
+# Exact environment in which the package's results were verified (REV-28).
+#
+# Python 3.13.12 (Anaconda build, CPython, Linux x86-64).  With these versions
+# scripts/test_reproduction.py re-runs stored cells bit for bit (worst relative
+# difference 5.7e-15) and every analysis script reproduces its stored output.
+#
+# The CEC benchmark libraries (cec_native/libcec14.so, libcec17.so, libcec22.so)
+# are built by cec_native/build.sh with
+#     g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, flags -O3 -fPIC -shared -lm,
+# on Ubuntu 22.04.5 LTS (x86-64); the compiler string is recorded in each
+# library's .comment section (readelf -p .comment cec_native/libcec17.so).
+#
+# Install:  python3 -m pip install -r requirements.txt
+#
+# Direct dependencies (the only third-party modules imported by sehho/ and scripts/):
+numpy==2.4.4
+scipy==1.17.1
+pandas==3.0.2
+matplotlib==3.10.8
+# Their runtime dependencies, as installed in the verified environment:
+python-dateutil==2.9.0.post0
+pytz==2023.4
+tzdata==2026.1
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.62.1
+kiwisolver==1.5.0
+packaging==24.2
+pillow==12.2.0
+pyparsing==3.3.2
+# Optional, used only by scripts/validate_benchmarks.py as an independent CEC2017
+# cross-check (it skips that section if absent): cec2017-py (Duncan Tilley, MIT).

@@ -1,0 +1,21 @@
+{
+  "verdict": "replicates under the original rule",
+  "exploratory": true,
+  "preregistration_configuration_sha256": "e58df8380ba77ecdbc1e91ca5151509b8194a8963a710b920f4fe84df849479b",
+  "primary_blocks": [
+    {
+      "dim": 30,
+      "mean_delta": -0.6204444444444444,
+      "ci_lo": -0.7807425925925925,
+      "ci_hi": -0.4334796296296299,
+      "p_holm": 7.493602257234e-05
+    },
+    {
+      "dim": 50,
+      "mean_delta": -0.6355185185185185,
+      "ci_lo": -0.8097787037037038,
+      "ci_hi": -0.42899907407407417,
+      "p_holm": 0.0001221911499567551
+    }
+  ]
+}

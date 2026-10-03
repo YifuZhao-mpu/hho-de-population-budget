@@ -1,0 +1,46 @@
+\begin{table}[htbp]
+\centering
+\caption{A budget-indexed guide to the initial population: $\delta$($6D$ vs $18D$) against evaluations per variable.}
+\label{tab:guide}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{rrllccll}
+\toprule
+$B/D$ & $D$ & Problems & Engine & $\delta$($6D$ vs $18D$) [95\% CI] & Favoured & Status & Source \\
+\midrule
+$<300$ & -- & -- & -- & not measured & -- & untested & -- \\
+300 & 50 & CEC2014 & L-SHADE & $-0.909$ $[-0.962,\,-0.846]$ & 6D & exploratory & Table~\ref{tab:popisolation} \\
+300 & 50 & CEC2017 & L-SHADE & $-0.966$ $[-0.989,\,-0.938]$ & 6D & measured & Table~\ref{tab:popisolation} \\
+300 & 50 & CEC2014 & SEHHO-COBL-R & $-0.932$ $[-0.975,\,-0.871]$ & 6D & exploratory & Table~\ref{tab:popisolation} \\
+300 & 50 & CEC2017 & SEHHO-COBL-R & $-0.974$ $[-0.996,\,-0.941]$ & 6D & measured & Table~\ref{tab:popisolation} \\
+395 & 38 & P4 RC06 & L-SHADE & $-0.942$ $[-0.991,\,-0.862]$ & 6D & registered, exploratory & Table~\ref{tab:e16} \\
+500 & 30 & CEC2014 & L-SHADE & $-0.888$ $[-0.946,\,-0.812]$ & 6D & exploratory & Table~\ref{tab:popisolation} \\
+500 & 30 & CEC2017 & L-SHADE & $-0.946$ $[-0.973,\,-0.913]$ & 6D & measured & Table~\ref{tab:popisolation} \\
+500 & 30 & CEC2014 & SEHHO-COBL-R & $-0.935$ $[-0.968,\,-0.897]$ & 6D & exploratory & Table~\ref{tab:popisolation} \\
+500 & 30 & CEC2017 & SEHHO-COBL-R & $-0.928$ $[-0.973,\,-0.873]$ & 6D & measured & Table~\ref{tab:popisolation} \\
+750 & 20 & CEC2022 & gate-free engine & $-0.851$ $[-0.954,\,-0.732]$ & 6D & in-sample & Table~\ref{S-tab:poprule} \\
+1{,}500 & 10 & P5 RC14 & L-SHADE & $-0.422$ $[-0.673,\,-0.144]$ & 6D & registered, exploratory & Table~\ref{tab:e16} \\
+1{,}500 & 10 & CEC2022 & gate-free engine & $-0.567$ $[-0.799,\,-0.325]$ & 6D & in-sample & Table~\ref{S-tab:poprule} \\
+1{,}667 & 9 & P3 RC01 & L-SHADE & $-0.756$ $[-0.927,\,-0.547]$ & 6D & registered, exploratory & Table~\ref{tab:e16} \\
+1{,}700--3{,}750 & -- & -- & -- & not measured & -- & interpolated & -- \\
+3{,}750 & 4 & P1 pressure vessel & L-SHADE & $+0.549$ $[+0.322,\,+0.753]$ & 18D & registered, exploratory & Table~\ref{tab:e16} \\
+3{,}750 & 4 & P2 gear train & L-SHADE & $+0.336$ $[+0.080,\,+0.579]$ & 18D & registered, exploratory & Table~\ref{tab:e16} \\
+10{,}000 & 30 & CEC2014 & L-SHADE & $+0.269$ $[+0.082,\,+0.446]$ & 18D & exploratory & Table~\ref{tab:popisolation} \\
+10{,}000 & 50 & CEC2014 & L-SHADE & $+0.206$ $[-0.017,\,+0.416]$ & neither & exploratory & Table~\ref{tab:popisolation} \\
+10{,}000 & 30 & CEC2017 & L-SHADE & $+0.465$ $[+0.341,\,+0.586]$ & 18D & measured & Table~\ref{tab:popisolation} \\
+10{,}000 & 50 & CEC2017 & L-SHADE & $+0.517$ $[+0.362,\,+0.659]$ & 18D & measured & Table~\ref{tab:popisolation} \\
+10{,}000 & 30 & CEC2014 & SEHHO-COBL-R & $+0.197$ $[+0.020,\,+0.370]$ & 18D & exploratory & Table~\ref{tab:popisolation} \\
+10{,}000 & 50 & CEC2014 & SEHHO-COBL-R & $-0.053$ $[-0.234,\,+0.124]$ & neither & exploratory & Table~\ref{tab:popisolation} \\
+10{,}000 & 30 & CEC2017 & SEHHO-COBL-R & $+0.259$ $[+0.161,\,+0.354]$ & 18D & measured & Table~\ref{tab:popisolation} \\
+10{,}000 & 50 & CEC2017 & SEHHO-COBL-R & $+0.250$ $[+0.070,\,+0.426]$ & 18D & measured & Table~\ref{tab:popisolation} \\
+10{,}000 & 30 & CEC2017 & SEHHO-COBL, $N{=}120$ vs $N{=}30$ & $-0.595$ $[-0.724,\,-0.450]$ & $N{=}120$ & measured & Table~\ref{tab:popsize} \\
+20{,}000 & 10 & CEC2022 & gate-free engine & $-0.010$ $[-0.131,\,+0.098]$ & neither & in-sample & Table~\ref{S-tab:poprule} \\
+50{,}000 & 20 & CEC2022 & gate-free engine & $+0.094$ $[-0.063,\,+0.262]$ & neither & in-sample & Table~\ref{S-tab:poprule} \\
+$10^2$ & -- & CEC2014 & \multicolumn{3}{l}{tuned $N_{\text{init}}=5.19D$, restart L-SHADE \citep{tanabe2015tuning}} & literature & -- \\
+$10^4$ & -- & CEC2014 & \multicolumn{3}{l}{tuned $N_{\text{init}}=13.63D$, no restarts, i.e.\ L-SHADE (same study)} & literature & -- \\
+$10^5$ & -- & CEC2014 & \multicolumn{3}{l}{tuned $N_{\text{init}}=16.39D$, restart L-SHADE (same study)} & literature & -- \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+$\delta$ is Cliff's delta of arm A against arm B, A being the changed, new or first-named arm; negative values favour A. Here A is $N_{\text{init}}=6D$ and B $18D$ (for the SEHHO-COBL row, $N=120$ against $N=30$), so a negative value favours the smaller initial population. $B/D$ is the evaluation budget per variable. Intervals are 95\% percentile bootstrap intervals, over functions for the suites and over runs for the design problems. Status: \emph{measured}, CEC2017, the diagnostic suite; \emph{exploratory}, CEC2014 blocks run after the confirmatory analysis; \emph{in-sample}, CEC2022, the suite the rule was selected on (the gate-free engine before the composition step; LPSR-18D against LPSR-6D, sign reversed from the analysis behind Table~\ref{S-tab:poprule}); \emph{registered, exploratory}, the control on the five design problems (Table~\ref{tab:e16}), registered before it ran and exploratory by its registration; \emph{interpolated}, a band between measurements, for which no recommendation is made; \emph{literature}, the initial population rates that \citet{tanabe2015tuning} obtained by tuning restart L-SHADE jointly with its other parameters on CEC2014 F1--F16 at $D=2$, 10 and 20 (their Table~I), not results of this study. The rows come from different problems, dimensions and engines, and $B/D$ is confounded with $D$ and with the problem class; this is not a controlled sweep. From 300 to 1{,}700 evaluations per variable every measured row favours $6D$ ($\delta$ from $-0.97$ to $-0.42$, $D$ from 9 to 50); at $10^4$ per variable L-SHADE's $18D$ is better in 3 of 4 blocks ($\delta$ from $+0.21$ to $+0.52$). Design-problem qualifiers: RC06 compares violations only; on RC14 both arms end about 9\% above the best-known value; on RC01 the feasibility difference is not significant. At 300 per variable even $6D$ may be too large for the repaired configuration: SEHHO-COBL with its fixed $N=30$ beats it at $D=50$ with 15{,}000 evaluations ($+0.50$ on CEC2017, $+0.37$ on CEC2014, SEHHO-COBL-R against SEHHO-COBL; the two differ in five respects). SEHHO-COBL-R fixes $N_{\text{init}}=6D$ at every budget and does not follow this guide.
+\end{flushleft}
+\end{table}

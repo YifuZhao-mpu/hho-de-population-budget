@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{Input data that CEC2022 shares with CEC2017 and CEC2014.}
+\label{tab:supp_lineage}
+\begin{tabular}{llll}
+\toprule
+CEC2022 & shift vector & rotation matrices ($D=10,20$) & shuffle ($D=10,20$) \\
+\midrule
+F1 & CEC2017 F3 & -- & -- \\
+F2 & CEC2017 F4 & -- & -- \\
+F3 & CEC2017 F6 & -- & -- \\
+F4 & CEC2017 F8 & -- & -- \\
+F5 & CEC2017 F9 & -- & -- \\
+F6 & CEC2017 F18 & CEC2014 F18 & CEC2014 F18 \\
+F7 & CEC2017 F20 & CEC2017 F20 & CEC2017 F20 \\
+F8 & CEC2017 F22 & CEC2014 F22 & CEC2014 F22 \\
+F9 & CEC2017 F23 & CEC2014 F23 & -- \\
+F10 & CEC2017 F24 & CEC2014 F24 & -- \\
+F11 & CEC2017 F26 & CEC2017 F26 & -- \\
+F12 & CEC2017 F27 & CEC2017 F27 & -- \\
+\bottomrule
+\end{tabular}
+\begin{flushleft}\footnotesize
+Input data of CEC2022 that are identical to CEC2017 or CEC2014 input data (\texttt{scripts/check\_cec\_data.py}): a shift vector matches when all 100 entries of its first row are equal; matrices and shuffles when every number in the file is equal. All twelve CEC2022 shift vectors are CEC2017 shift vectors. Whether two functions share a recipe (the same basic functions in the same order and proportions) is a property of the C sources and is not tested here. CEC2014 and CEC2017 share basic functions in their code but no shift vector or rotation matrix at $D=30$ and 50.
+\end{flushleft}
+\end{table}

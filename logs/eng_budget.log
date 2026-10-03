@@ -1,0 +1,27 @@
+   24/24 cells   196.0 min elapsed  ETA    0.0 min
+   wrote results/E5b_engineering_budget.csv  (720 runs)
+                 problem  max_fes       algo  feas_rate       best  mean_viol
+  P3_heat_exchanger_RC01    15000     LSHADE   0.000000 203.314513  89.036902
+  P3_heat_exchanger_RC01    15000 SEHHO-COBL  36.666667 202.215290   2.244070
+  P3_heat_exchanger_RC01    15000        jSO   0.000000 295.992618   0.122606
+  P3_heat_exchanger_RC01    50000     LSHADE  16.666667 206.965962   8.001263
+  P3_heat_exchanger_RC01    50000 SEHHO-COBL  53.333333 268.927294   0.349103
+  P3_heat_exchanger_RC01    50000        jSO  56.666667 296.066256   0.002811
+  P3_heat_exchanger_RC01   200000     LSHADE  60.000000 253.875877   0.189201
+  P3_heat_exchanger_RC01   200000 SEHHO-COBL  60.000000 252.958313   0.027932
+  P3_heat_exchanger_RC01   200000        jSO  56.666667 220.637828   0.061977
+  P3_heat_exchanger_RC01  1000000     LSHADE  60.000000 231.470022   0.022589
+  P3_heat_exchanger_RC01  1000000 SEHHO-COBL  80.000000 212.617685   0.004248
+  P3_heat_exchanger_RC01  1000000        jSO  40.000000 300.000854   0.020525
+P4_blending_pooling_RC06    15000     LSHADE   0.000000   1.230752  27.595142
+P4_blending_pooling_RC06    15000 SEHHO-COBL   0.000000   1.481384  17.693022
+P4_blending_pooling_RC06    15000        jSO   0.000000   1.830652  18.701352
+P4_blending_pooling_RC06    50000     LSHADE   0.000000   1.279599   3.417591
+P4_blending_pooling_RC06    50000 SEHHO-COBL   0.000000   1.382983   9.765092
+P4_blending_pooling_RC06    50000        jSO   0.000000   1.866330   3.282288
+P4_blending_pooling_RC06   200000     LSHADE   0.000000   1.361616   2.001693
+P4_blending_pooling_RC06   200000 SEHHO-COBL   0.000000   1.192597   3.034031
+P4_blending_pooling_RC06   200000        jSO   0.000000   1.966252   2.193726
+P4_blending_pooling_RC06  1000000     LSHADE   0.000000   1.883800   0.847806
+P4_blending_pooling_RC06  1000000 SEHHO-COBL   0.000000   1.257082   2.064428
+P4_blending_pooling_RC06  1000000        jSO   0.000000   1.781463   1.150993

@@ -1,0 +1,127 @@
+change,interval,margin,decision,earns,helps,negligible_everywhere
++Gate,pct,0.05,KEEP (earns its place),True,False,False
++Gate,pct,0.1,KEEP (earns its place),True,False,False
++Gate,pct,0.147,KEEP (earns its place),True,False,False
++Gate,bca,0.05,KEEP (earns its place),True,False,False
++Gate,bca,0.1,KEEP (earns its place),True,False,False
++Gate,bca,0.147,KEEP (earns its place),True,False,False
++Gate,t,0.05,KEEP (earns its place),True,False,False
++Gate,t,0.1,KEEP (earns its place),True,False,False
++Gate,t,0.147,KEEP (earns its place),True,False,False
++Gate,pct_adj,0.05,KEEP (earns its place),True,False,False
++Gate,pct_adj,0.1,KEEP (earns its place),True,False,False
++Gate,pct_adj,0.147,KEEP (earns its place),True,False,False
++Gate,bca_adj,0.05,KEEP (earns its place),True,False,False
++Gate,bca_adj,0.1,KEEP (earns its place),True,False,False
++Gate,bca_adj,0.147,KEEP (earns its place),True,False,False
++Gate,t_adj,0.05,KEEP (by default),False,False,False
++Gate,t_adj,0.1,KEEP (by default),False,False,False
++Gate,t_adj,0.147,KEEP (by default),False,False,False
+-COBL,pct,0.05,DROP (removal helps somewhere),False,True,False
+-COBL,pct,0.1,DROP (removal helps somewhere),False,True,False
+-COBL,pct,0.147,DROP (removal helps somewhere),False,True,False
+-COBL,bca,0.05,DROP (removal helps somewhere),False,True,False
+-COBL,bca,0.1,DROP (removal helps somewhere),False,True,False
+-COBL,bca,0.147,DROP (removal helps somewhere),False,True,False
+-COBL,t,0.05,DROP (removal helps somewhere),False,True,False
+-COBL,t,0.1,DROP (removal helps somewhere),False,True,False
+-COBL,t,0.147,DROP (removal helps somewhere),False,True,False
+-COBL,pct_adj,0.05,KEEP (by default),False,False,False
+-COBL,pct_adj,0.1,KEEP (by default),False,False,False
+-COBL,pct_adj,0.147,KEEP (by default),False,False,False
+-COBL,bca_adj,0.05,DROP (removal helps somewhere),False,True,False
+-COBL,bca_adj,0.1,DROP (removal helps somewhere),False,True,False
+-COBL,bca_adj,0.147,DROP (removal helps somewhere),False,True,False
+-COBL,t_adj,0.05,KEEP (by default),False,False,False
+-COBL,t_adj,0.1,KEEP (by default),False,False,False
+-COBL,t_adj,0.147,KEEP (by default),False,False,False
+-Levy,pct,0.05,DROP (removal helps somewhere),False,True,False
+-Levy,pct,0.1,DROP (removal helps somewhere),False,True,False
+-Levy,pct,0.147,DROP (removal helps somewhere),False,True,False
+-Levy,bca,0.05,DROP (removal helps somewhere),False,True,False
+-Levy,bca,0.1,DROP (removal helps somewhere),False,True,False
+-Levy,bca,0.147,DROP (removal helps somewhere),False,True,False
+-Levy,t,0.05,DROP (removal helps somewhere),False,True,False
+-Levy,t,0.1,DROP (removal helps somewhere),False,True,False
+-Levy,t,0.147,DROP (removal helps somewhere),False,True,False
+-Levy,pct_adj,0.05,DROP (removal helps somewhere),False,True,False
+-Levy,pct_adj,0.1,DROP (removal helps somewhere),False,True,False
+-Levy,pct_adj,0.147,DROP (removal helps somewhere),False,True,False
+-Levy,bca_adj,0.05,DROP (removal helps somewhere),False,True,False
+-Levy,bca_adj,0.1,DROP (removal helps somewhere),False,True,False
+-Levy,bca_adj,0.147,DROP (removal helps somewhere),False,True,False
+-Levy,t_adj,0.05,KEEP (by default),False,False,False
+-Levy,t_adj,0.1,KEEP (by default),False,False,False
+-Levy,t_adj,0.147,KEEP (by default),False,False,False
+-Archive,pct,0.05,KEEP (earns its place),True,False,False
+-Archive,pct,0.1,KEEP (earns its place),True,False,False
+-Archive,pct,0.147,KEEP (earns its place),True,False,False
+-Archive,bca,0.05,KEEP (earns its place),True,False,False
+-Archive,bca,0.1,KEEP (earns its place),True,False,False
+-Archive,bca,0.147,KEEP (earns its place),True,False,False
+-Archive,t,0.05,KEEP (earns its place),True,False,False
+-Archive,t,0.1,KEEP (earns its place),True,False,False
+-Archive,t,0.147,KEEP (earns its place),True,False,False
+-Archive,pct_adj,0.05,KEEP (earns its place),True,False,False
+-Archive,pct_adj,0.1,KEEP (earns its place),True,False,False
+-Archive,pct_adj,0.147,KEEP (earns its place),True,False,False
+-Archive,bca_adj,0.05,KEEP (earns its place),True,False,False
+-Archive,bca_adj,0.1,KEEP (earns its place),True,False,False
+-Archive,bca_adj,0.147,KEEP (earns its place),True,False,False
+-Archive,t_adj,0.05,KEEP (by default),False,False,False
+-Archive,t_adj,0.1,KEEP (by default),False,False,False
+-Archive,t_adj,0.147,KEEP (by default),False,False,False
+-SHADE,pct,0.05,KEEP (earns its place),True,False,False
+-SHADE,pct,0.1,KEEP (earns its place),True,False,False
+-SHADE,pct,0.147,KEEP (earns its place),True,False,False
+-SHADE,bca,0.05,KEEP (earns its place),True,False,False
+-SHADE,bca,0.1,KEEP (earns its place),True,False,False
+-SHADE,bca,0.147,KEEP (earns its place),True,False,False
+-SHADE,t,0.05,KEEP (by default),False,False,False
+-SHADE,t,0.1,KEEP (by default),False,False,False
+-SHADE,t,0.147,KEEP (by default),False,False,False
+-SHADE,pct_adj,0.05,KEEP (by default),False,False,False
+-SHADE,pct_adj,0.1,KEEP (by default),False,False,False
+-SHADE,pct_adj,0.147,KEEP (by default),False,False,False
+-SHADE,bca_adj,0.05,KEEP (earns its place),True,False,False
+-SHADE,bca_adj,0.1,KEEP (earns its place),True,False,False
+-SHADE,bca_adj,0.147,KEEP (earns its place),True,False,False
+-SHADE,t_adj,0.05,KEEP (by default),False,False,False
+-SHADE,t_adj,0.1,KEEP (by default),False,False,False
+-SHADE,t_adj,0.147,KEEP (by default),False,False,False
+-pAnneal,pct,0.05,KEEP (by default),False,False,False
+-pAnneal,pct,0.1,KEEP (by default),False,False,False
+-pAnneal,pct,0.147,DROP (negligible everywhere),False,False,True
+-pAnneal,bca,0.05,KEEP (by default),False,False,False
+-pAnneal,bca,0.1,KEEP (by default),False,False,False
+-pAnneal,bca,0.147,DROP (negligible everywhere),False,False,True
+-pAnneal,t,0.05,KEEP (by default),False,False,False
+-pAnneal,t,0.1,KEEP (by default),False,False,False
+-pAnneal,t,0.147,DROP (negligible everywhere),False,False,True
+-pAnneal,pct_adj,0.05,KEEP (by default),False,False,False
+-pAnneal,pct_adj,0.1,KEEP (by default),False,False,False
+-pAnneal,pct_adj,0.147,DROP (negligible everywhere),False,False,True
+-pAnneal,bca_adj,0.05,KEEP (by default),False,False,False
+-pAnneal,bca_adj,0.1,KEEP (by default),False,False,False
+-pAnneal,bca_adj,0.147,DROP (negligible everywhere),False,False,True
+-pAnneal,t_adj,0.05,KEEP (by default),False,False,False
+-pAnneal,t_adj,0.1,KEEP (by default),False,False,False
+-pAnneal,t_adj,0.147,KEEP (by default),False,False,False
+Stripped,pct,0.05,DROP (removal helps somewhere),False,True,False
+Stripped,pct,0.1,DROP (removal helps somewhere),False,True,False
+Stripped,pct,0.147,DROP (removal helps somewhere),False,True,False
+Stripped,bca,0.05,DROP (removal helps somewhere),False,True,False
+Stripped,bca,0.1,DROP (removal helps somewhere),False,True,False
+Stripped,bca,0.147,DROP (removal helps somewhere),False,True,False
+Stripped,t,0.05,DROP (removal helps somewhere),False,True,False
+Stripped,t,0.1,DROP (removal helps somewhere),False,True,False
+Stripped,t,0.147,DROP (removal helps somewhere),False,True,False
+Stripped,pct_adj,0.05,DROP (removal helps somewhere),False,True,False
+Stripped,pct_adj,0.1,DROP (removal helps somewhere),False,True,False
+Stripped,pct_adj,0.147,DROP (removal helps somewhere),False,True,False
+Stripped,bca_adj,0.05,DROP (removal helps somewhere),False,True,False
+Stripped,bca_adj,0.1,DROP (removal helps somewhere),False,True,False
+Stripped,bca_adj,0.147,DROP (removal helps somewhere),False,True,False
+Stripped,t_adj,0.05,KEEP (by default),False,False,False
+Stripped,t_adj,0.1,KEEP (by default),False,False,False
+Stripped,t_adj,0.147,KEEP (by default),False,False,False

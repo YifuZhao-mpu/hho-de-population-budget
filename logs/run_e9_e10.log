@@ -1,0 +1,15 @@
+
+=== E9: 135 cells x 30 runs = 4050 runs ===
+   25/135 cells     5.0 min elapsed  ETA   22.0 min
+   50/135 cells     8.5 min elapsed  ETA   14.5 min
+   75/135 cells    22.2 min elapsed  ETA   17.7 min
+   100/135 cells    32.4 min elapsed  ETA   11.3 min
+   125/135 cells    59.7 min elapsed  ETA    4.8 min
+   135/135 cells    95.1 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E9_newmethod_vs_baselines.csv  (4050 runs)
+=== E9 done in 95.1 min ===
+
+=== E10: 5 cells x 30 runs = 150 runs ===
+   5/5 cells     1.7 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E10_newmethod_engineering.csv  (150 runs)
+=== E10 done in 1.7 min ===

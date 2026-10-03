@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering
+\caption{The one-constant population control on the five design problems: L-SHADE with $N_{\text{init}}=6D$ against $18D$.}
+\label{tab:e16}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrccccccl}
+\toprule
+ & & & Feasible & Success & Mean feasible & Median feasible & & & \\
+Problem & $D$ & $B/D$ & $6D$ / $18D$ & $6D$ / $18D$ & $6D$ / $18D$ & $6D$ / $18D$ & $\delta$($6D$ vs $18D$) [95\% CI] & $p_{\text{Holm}}$ & Verdict \\
+\midrule
+RC06 & 38 & 395 & 0 / 0 & 0 / 0 & -- / -- & -- / -- & $-0.942$ $[-0.991,\,-0.862]$ & $<$0.001 & 6D better \\
+RC14 & 10 & 1{,}500 & 30 / 30 & 0 / 0 & 58{,}506.6 / 58{,}508.9 & 58{,}506.0 / 58{,}507.0 & $-0.422$ $[-0.673,\,-0.144]$ & 0.010 & 6D better \\
+RC01 & 9 & 1{,}667 & 4 / 0 & 0 / 0 & 360.45 / -- & 290.39 / -- & $-0.756$ $[-0.927,\,-0.547]$ & $<$0.001 & 6D better \\
+P2 gear train & 4 & 3{,}750 & 30 / 30 & 8 / 16 & 1.09E-10 / 4.83E-11 & 2.31E-11 / 2.70E-12 & $+0.336$ $[+0.080,\,+0.579]$ & 0.016 & 18D better \\
+P1 pressure vessel & 4 & 3{,}750 & 30 / 30 & 9 / 22 & 6{,}197.8 / 6{,}067.9 & 6{,}090.5 / 6{,}059.7 & $+0.549$ $[+0.322,\,+0.753]$ & $<$0.001 & 18D better \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+Stock L-SHADE (published settings, $H=6$, archive $2.6N$, $p=0.11$, LPSR to $N_{\min}=4$) with only $N_{\text{init}}$ changed, $\mathrm{round}(6D)$ against $\mathrm{round}(18D)$; 15{,}000 evaluations, 30 runs per arm, Deb's rule with $\varepsilon=10^{-4}$. Registered before any of its runs (Supplementary Section~\ref{S-sec:S2_prereg}) and exploratory by its own registration. Counts are out of 30 runs. Success: feasible and $(f-f^{*})/|f^{*}|\le10^{-4}$, with $f^{*}$ the reference value of Table~\ref{tab:engineering} (counts under the suite's absolute rule, $f-f^{*}\le10^{-8}$, are in Table~\ref{S-tab:supp_e16}); success rate and the mean among feasible runs are not in the registration and are descriptive. $\delta$ is Cliff's delta of arm A against arm B, A being the changed, new or first-named arm; negative values favour A. Here A is $6D$; $\delta$ is computed over the runs on the Deb-rule fitness the runs minimise (the objective for a feasible run{,} the constant $F_{\text{ref}}$ plus the violation otherwise){,} with a 95\% percentile bootstrap interval over runs (20{{,}}000 resamples); $p_{\text{Holm}}$ is a two-sided Mann--Whitney test{,} Holm-corrected over the five problems. Verdicts follow the registered rule. On RC06 no run of either arm is feasible{,} so $\delta$ compares violations only. On RC14 both arms end at about 58{,}506, about 9\% above the reference 53{,}638.94. On RC01 the feasibility difference (4/30 against 0/30) is not significant (Fisher's exact test, $p=0.11$).
+\end{flushleft}
+\end{table}

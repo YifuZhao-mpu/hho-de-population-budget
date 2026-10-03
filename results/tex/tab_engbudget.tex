@@ -1,0 +1,47 @@
+\begin{table}[htbp]
+\centering
+\caption{RC01 and RC06: more evaluations, and methods designed for explicit constraints.}
+\label{tab:engbudget}
+\label{tab:solverbaseline}
+\small
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{lcccc}
+\toprule
+\multicolumn{5}{l}{\emph{Panel A. Feasibility rate (best feasible objective) against the evaluation budget}} \\
+\midrule
+Algorithm & $15$k & $50$k & $200$k & $10^{6}$ \\
+\midrule
+\multicolumn{5}{l}{\textit{RC01 heat-exchanger network ($D{=}9$, 8 equalities)}} \\
+\quad jSO & 0\% & 57\% (2.96E+02) & 57\% (2.21E+02) & 40\% (3.47E+02) \\
+\quad L-SHADE & 0\% & 17\% (2.22E+02) & 60\% (2.54E+02) & 60\% (2.31E+02) \\
+\quad SEHHO-COBL & 37\% (2.15E+02) & 57\% (2.60E+02) & 63\% (2.42E+02) & 80\% (2.31E+02) \\
+\multicolumn{5}{l}{\textit{RC06 blending--pooling--separation ($D{=}38$, 32 equalities)}} \\
+\quad jSO & 0\% & 0\% & 0\% & 0\% \\
+\quad L-SHADE & 0\% & 0\% & 0\% & 0\% \\
+\quad SEHHO-COBL & 0\% & 0\% & 0\% & 0\% \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.8em}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+\multicolumn{5}{l}{\emph{Panel B. Methods designed for explicit constraints, at 15{,}000 evaluations}} \\
+\midrule
+Method & Feasible & Best feasible & Excess over ref. & Evaluations \\
+\midrule
+\multicolumn{5}{l}{\textit{RC01 heat-exchanger network ($D{=}9$, 8 equalities)}} \\
+\quad best of the seven metaheuristics (SEHHO-COBL) & 40\% & 2.11E+02 & +11.52\% & 15{,}000 \\
+\quad SciPy \texttt{SLSQP} & 0\% & -- & -- & 15{,}000 \\
+\quad SciPy \texttt{trust-constr} & 50\% & 1.89E+02 & +0.0046\% & 15{,}000 \\
+\quad \textbf{equality elimination} (closed form) & 100\% & 1.89E+02 & +0.0000\% & 0 \\
+\multicolumn{5}{l}{\textit{RC06 blending--pooling--separation ($D{=}38$, 32 equalities)}} \\
+\quad best of the seven metaheuristics & 0\% & -- & -- & 15{,}000 \\
+\quad SciPy \texttt{SLSQP} & 100\% & 1.86E+00 & -- & 15{,}000 \\
+\quad SciPy \texttt{trust-constr} & 0\% & -- & -- & 15{,}000 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+\textbf{Panel A}: feasibility rate over 30 runs at each budget, with the best feasible objective in parentheses where any run succeeded; the 15k column is an independent replication of Table~\ref{tab:engineering} with a different seed stream (37\% against 40\% for SEHHO-COBL on RC01, 30 runs each). \textbf{Panel B}: every row uses the same feasibility rule and equality tolerance $\varepsilon=10^{-4}$; ``Feasible'' is the percentage of 30 runs whose returned design satisfies every constraint. The two SciPy solvers are driven from random multi-starts inside the same 15{,}000-evaluation budget, with one evaluation charged per distinct decision vector (so a finite-difference gradient costs about $D+1$) and the equalities passed to the solver explicitly. ``Excess over ref.'' is measured against the closed-form feasible RC01 design of Equation~(\ref{eq:rc01star_main}), $f(\mathbf{x}^{*})=189.3116$; that design is feasible under the declared rule, so every entry in this column is a \emph{lower bound} on the true excess, not a gap against a certified optimum. Neither solver is uniformly better: SLSQP fails on RC01 and trust-constr on RC06. RC06 has no known closed-form reference; its best SLSQP design equals the best-known value the suite lists (1.8638). Equality tolerance and feasibility threshold as in Table~\ref{tab:engineering}; the static feasibility rule scopes every statement about the metaheuristics here.
+\end{flushleft}
+\end{table}

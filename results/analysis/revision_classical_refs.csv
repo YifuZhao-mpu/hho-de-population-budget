@@ -1,0 +1,7 @@
+problem,method,objective,feasible,total_violation,evaluations,x,detail
+P1_pressure_vessel,"thickness grid + SLSQP on (x3, x4)",6059.714335099119,True,0.0,23297,0.8125 0.4375 42.0984456 176.6365958,"99x99 thickness grid; 320 pairs solved by SLSQP, 9481 skipped by the analytic lower bound or because no feasible (x3, x4) exists (r_min = 40.3196)"
+P2_gear_train,full enumeration of 49^4 tooth combinations,2.7008571488865134e-12,True,0.0,5764801,43 16 19 49,"4 of 5,764,801 combinations attain the minimum"
+P3_heat_exchanger_RC01,"equality elimination, closed form (rc01_analytic.py)",189.3116296866205,True,0.0,0,0 16.66666667 0 0 2000000 600 100 600 700,"closed form, x* = (0, 50/3, 0, 0, 2e6, 600, 100, 600, 700)"
+P3_heat_exchanger_RC01,"SciPy trust-constr, multi-start (E5c)",189.3204162174692,True,0.0,15000,,15/30 runs feasible; evaluations per run
+P4_blending_pooling_RC06,"SciPy SLSQP, multi-start (E5c)",1.8638303983341429,True,2.128752726936016e-12,15000,,30/30 runs feasible; evaluations per run
+P5_batch_plant_RC14,27 integer unit assignments x 3-start SLSQP,53638.94272195384,True,1.4921397450962104e-13,49006,1 1 1 963.1194232 1444.679135 1309.824047 20 16 234.993792 123.2829598,"best assignments: N=(1, 1, 1): 53638.94; N=(2, 1, 1): 58468.23; N=(2, 2, 1): 58505.45; N=(1, 2, 1): 59185.12; best with two units in stage 1: 58468.23"

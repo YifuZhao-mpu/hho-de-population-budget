@@ -1,0 +1,19 @@
+
+=== E4b: 319 cells x 30 runs = 9570 runs ===
+   25/319 cells     8.5 min elapsed  ETA   99.6 min
+   50/319 cells    16.5 min elapsed  ETA   88.6 min
+   75/319 cells    19.7 min elapsed  ETA   64.1 min
+   100/319 cells    25.9 min elapsed  ETA   56.7 min
+   125/319 cells    32.3 min elapsed  ETA   50.1 min
+   150/319 cells    36.5 min elapsed  ETA   41.2 min
+   175/319 cells    43.7 min elapsed  ETA   36.0 min
+   200/319 cells    49.5 min elapsed  ETA   29.5 min
+   225/319 cells    54.2 min elapsed  ETA   22.6 min
+   250/319 cells    59.7 min elapsed  ETA   16.5 min
+   275/319 cells    64.4 min elapsed  ETA   10.3 min
+   300/319 cells    68.7 min elapsed  ETA    4.3 min
+   319/319 cells    73.8 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E4b_ablation_cec2017_30D.csv  (9570 runs)
+=== E4b done in 73.8 min ===
+
+=== E3: 522 cells x 30 runs = 15660 runs ===

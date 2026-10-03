@@ -1,0 +1,8 @@
+E15: 120 cells x 30 runs = 3600 runs, cfg={'phase_mode': 'always_pbest', 'pop_mode': 'lpsr', 'N_init_factor': 6.0, 'schedule_basis': 'budget', 'p_schedule': 'fixed'}
+   25/120 cells     7.2 min elapsed  ETA   27.5 min
+   50/120 cells     8.6 min elapsed  ETA   12.1 min
+   75/120 cells    18.0 min elapsed  ETA   10.8 min
+   100/120 cells    21.4 min elapsed  ETA    4.3 min
+   120/120 cells    69.8 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E15_original_rule_cec2014.csv  (3600 runs)
+wrote <repo>/scripts/../results/E15_original_rule_cec2014.csv

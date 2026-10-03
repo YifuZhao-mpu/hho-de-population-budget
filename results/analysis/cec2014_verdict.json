@@ -1,0 +1,32 @@
+{
+  "primary": [
+    {
+      "block": "D=30, 300,000 FEs",
+      "dim": 30,
+      "max_fes": 300000,
+      "mean_delta": -0.6178148148148147,
+      "ci_lo": -0.7731481481481484,
+      "ci_hi": -0.43811018518518524,
+      "p": 3.0749168019612695e-05,
+      "favours_method": true,
+      "wins": 26,
+      "losses": 2,
+      "p_holm": 6.149833603922539e-05
+    },
+    {
+      "block": "D=50, 500,000 FEs",
+      "dim": 50,
+      "max_fes": 500000,
+      "mean_delta": -0.6207407407407408,
+      "ci_lo": -0.7921481481481479,
+      "ci_hi": -0.41502777777777866,
+      "p": 9.477706787308419e-05,
+      "favours_method": true,
+      "wins": 27,
+      "losses": 3,
+      "p_holm": 9.477706787308419e-05
+    }
+  ],
+  "verdict": "REPLICATED",
+  "preregistration_sha256": "55df54371a522689c1d9ab9956ca725a55bfb5815c8b6f57912a5eafc6b2c25e"
+}

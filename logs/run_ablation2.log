@@ -1,0 +1,52 @@
+
+=== E4c: 348 cells x 30 runs = 10440 runs ===
+   25/348 cells     0.5 min elapsed  ETA    6.1 min
+   50/348 cells     0.9 min elapsed  ETA    5.4 min
+   75/348 cells     1.0 min elapsed  ETA    3.8 min
+   100/348 cells     1.4 min elapsed  ETA    3.5 min
+   125/348 cells     1.8 min elapsed  ETA    3.2 min
+   150/348 cells     2.0 min elapsed  ETA    2.6 min
+   175/348 cells     2.4 min elapsed  ETA    2.4 min
+   200/348 cells     2.7 min elapsed  ETA    2.0 min
+   225/348 cells     3.0 min elapsed  ETA    1.6 min
+   250/348 cells     3.3 min elapsed  ETA    1.3 min
+   275/348 cells     3.5 min elapsed  ETA    0.9 min
+   300/348 cells     3.8 min elapsed  ETA    0.6 min
+   325/348 cells     4.1 min elapsed  ETA    0.3 min
+   348/348 cells     4.4 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E4c_ablation_cec2017_30D_15k.csv  (10440 runs)
+=== E4c done in 4.4 min ===
+
+=== E4b: 348 cells x 30 runs = 10440 runs ===
+   25/348 cells     8.8 min elapsed  ETA  114.2 min
+   50/348 cells    17.3 min elapsed  ETA  103.3 min
+   75/348 cells    20.4 min elapsed  ETA   74.3 min
+   100/348 cells    27.2 min elapsed  ETA   67.5 min
+   125/348 cells    34.2 min elapsed  ETA   61.1 min
+   150/348 cells    38.3 min elapsed  ETA   50.6 min
+   175/348 cells    45.7 min elapsed  ETA   45.2 min
+   200/348 cells    52.3 min elapsed  ETA   38.7 min
+   225/348 cells    56.8 min elapsed  ETA   31.0 min
+   250/348 cells    62.8 min elapsed  ETA   24.6 min
+   275/348 cells    67.7 min elapsed  ETA   18.0 min
+   300/348 cells    73.5 min elapsed  ETA   11.8 min
+   325/348 cells    78.9 min elapsed  ETA    5.6 min
+   348/348 cells    84.6 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E4b_ablation_cec2017_30D.csv  (10440 runs)
+=== E4b done in 84.6 min ===
+
+=== E4: 288 cells x 30 runs = 8640 runs ===
+   25/288 cells     0.5 min elapsed  ETA    4.7 min
+   50/288 cells     0.9 min elapsed  ETA    4.2 min
+   75/288 cells     1.0 min elapsed  ETA    2.8 min
+   100/288 cells     1.4 min elapsed  ETA    2.6 min
+   125/288 cells     1.7 min elapsed  ETA    2.2 min
+   150/288 cells     1.9 min elapsed  ETA    1.8 min
+   175/288 cells     2.3 min elapsed  ETA    1.5 min
+   200/288 cells     2.5 min elapsed  ETA    1.1 min
+   225/288 cells     2.8 min elapsed  ETA    0.8 min
+   250/288 cells     3.1 min elapsed  ETA    0.5 min
+   275/288 cells     3.2 min elapsed  ETA    0.2 min
+   288/288 cells     3.3 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E4_ablation_cec2022.csv  (8640 runs)
+=== E4 done in 3.4 min ===

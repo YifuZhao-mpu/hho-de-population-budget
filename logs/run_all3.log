@@ -1,0 +1,45 @@
+
+=== E3: 522 cells x 30 runs = 15660 runs ===
+   25/522 cells     1.8 min elapsed  ETA   36.0 min
+   50/522 cells     3.6 min elapsed  ETA   33.9 min
+   75/522 cells     6.3 min elapsed  ETA   37.8 min
+   100/522 cells     8.7 min elapsed  ETA   36.7 min
+   125/522 cells    11.0 min elapsed  ETA   35.0 min
+   150/522 cells    14.0 min elapsed  ETA   34.6 min
+   175/522 cells    17.2 min elapsed  ETA   34.1 min
+   200/522 cells    20.0 min elapsed  ETA   32.3 min
+   225/522 cells    23.6 min elapsed  ETA   31.1 min
+   250/522 cells    27.8 min elapsed  ETA   30.3 min
+   275/522 cells    32.8 min elapsed  ETA   29.5 min
+   300/522 cells    38.7 min elapsed  ETA   28.6 min
+   325/522 cells    45.9 min elapsed  ETA   27.8 min
+   350/522 cells    54.5 min elapsed  ETA   26.8 min
+   375/522 cells    66.0 min elapsed  ETA   25.9 min
+   400/522 cells    76.7 min elapsed  ETA   23.4 min
+   425/522 cells    87.5 min elapsed  ETA   20.0 min
+   450/522 cells   105.8 min elapsed  ETA   16.9 min
+   475/522 cells   135.6 min elapsed  ETA   13.4 min
+   500/522 cells   166.3 min elapsed  ETA    7.3 min
+   522/522 cells   206.5 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E3_cec2017.csv  (15660 runs)
+=== E3 done in 206.5 min ===
+
+=== E6: 145 cells x 30 runs = 4350 runs ===
+   25/145 cells     8.0 min elapsed  ETA   38.3 min
+   50/145 cells    14.3 min elapsed  ETA   27.2 min
+   75/145 cells    18.8 min elapsed  ETA   17.5 min
+   100/145 cells    22.2 min elapsed  ETA   10.0 min
+   125/145 cells    27.0 min elapsed  ETA    4.3 min
+   145/145 cells    31.7 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E6_popsize_cec2017_30D.csv  (4350 runs)
+=== E6 done in 31.7 min ===
+
+=== E2: 144 cells x 30 runs = 4320 runs ===
+   25/144 cells     1.1 min elapsed  ETA    5.5 min
+   50/144 cells     3.0 min elapsed  ETA    5.6 min
+   75/144 cells     5.2 min elapsed  ETA    4.8 min
+   100/144 cells    11.1 min elapsed  ETA    4.9 min
+   125/144 cells    17.6 min elapsed  ETA    2.7 min
+   144/144 cells    26.5 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E2_cec2022_competition.csv  (4320 runs)
+=== E2 done in 26.5 min ===

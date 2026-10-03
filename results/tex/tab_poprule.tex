@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\caption{Choosing the population rule on CEC2022, the selection suite.}
+\label{tab:poprule}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llccccc}
+\toprule
+Label & Population rule & $D{=}10$, 15{,}000 FEs & $D{=}10$, 200{,}000 FEs & $D{=}20$, 15{,}000 FEs & $D{=}20$, 1{,}000{,}000 FEs & mean \\
+ & & $B/D=1{,}500$ & $B/D=20{,}000$ & $B/D=750$ & $B/D=50{,}000$ & \\
+\midrule
+\textbf{LPSR-6D} & \textbf{LPSR from $N_{\text{init}}=6D$} & \textbf{1.96 (1)} & \textbf{4.00 (5)} & \textbf{1.42 (1)} & \textbf{3.29 (3)} & \textbf{2.67} \\
+LPSR-12D & LPSR from $N_{\text{init}}=12D$ & 2.58 (2) & 3.58 (3) & 3.42 (3) & 3.17 (2) & 3.19 \\
+LPSR-18D & LPSR from $N_{\text{init}}=18D$ (L-SHADE's rule) & 3.50 (3) & 2.92 (1) & 3.83 (4) & 2.83 (1) & 3.27 \\
+N30 & fixed $N=30$ (SEHHO-COBL) & 3.79 (4) & 5.38 (7) & 2.83 (2) & 5.58 (7) & 4.40 \\
+N4D & fixed $N=4D$ & 4.25 (5) & 4.79 (6) & 3.92 (5) & 4.71 (6) & 4.42 \\
+N120 & fixed $N=120$ & 5.92 (6) & 3.42 (2) & 6.33 (7) & 4.38 (5) & 5.01 \\
+N120b & fixed $N=120$, budget-based schedule (control) & 6.00 (7) & 3.92 (4) & 6.25 (6) & 4.04 (4) & 5.05 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+Friedman average rank within each block (lower is better; position of 7 in parentheses), over the 12 CEC2022 functions with 30 runs per cell; bold marks the rule with the best mean rank, which is the one selected. All candidates are gate-free and differ only in how the population is sized. This is the only constant fitted in the study, and it is fitted on CEC2022, the selection suite. LPSR-6D ranked first in both tight blocks and 5th and 3rd of 7 at the large budgets, where LPSR-18D ranked first: averaging ranks over blocks does not prevent a rule from winning through the tight budgets, and the selected $N_{\text{init}}=6D$ is fixed at every budget, so it does not size the population to the budget. N120b is a control: the N120 rule with the schedule basis changed to match what LPSR requires. The near-identical mean ranks ($5.01$ and $5.05$) and the per-block differences, which lie inside the negligible band $|\delta|<0.147$ in three of the four blocks (Cliff's $\delta$ of N120b against N120, negative favouring N120b, 95\% bootstrap interval; the exception is $D{=}10$ with 15{,}000 evaluations, $-0.092$ $[-0.201,\,+0.006]$), show that the basis change contributes little and the LPSR result is mainly about population size.
+\end{flushleft}
+\end{table}

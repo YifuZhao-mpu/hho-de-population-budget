@@ -1,0 +1,21 @@
+
+=== E12: 406 cells x 30 runs = 12180 runs ===
+   25/406 cells     0.4 min elapsed  ETA    6.3 min
+   50/406 cells     0.5 min elapsed  ETA    3.5 min
+   75/406 cells     0.6 min elapsed  ETA    2.5 min
+   100/406 cells     0.6 min elapsed  ETA    2.0 min
+   125/406 cells     0.7 min elapsed  ETA    1.6 min
+   150/406 cells     0.8 min elapsed  ETA    1.3 min
+   175/406 cells     1.0 min elapsed  ETA    1.3 min
+   200/406 cells     1.2 min elapsed  ETA    1.3 min
+   225/406 cells     1.5 min elapsed  ETA    1.2 min
+   250/406 cells     1.6 min elapsed  ETA    1.0 min
+   275/406 cells     1.8 min elapsed  ETA    0.8 min
+   300/406 cells     1.8 min elapsed  ETA    0.7 min
+   325/406 cells     1.9 min elapsed  ETA    0.5 min
+   350/406 cells     2.0 min elapsed  ETA    0.3 min
+   375/406 cells     2.3 min elapsed  ETA    0.2 min
+   400/406 cells     2.5 min elapsed  ETA    0.0 min
+   406/406 cells     2.7 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E12_cec2017_tight.csv  (12180 runs)
+=== E12 done in 2.7 min ===

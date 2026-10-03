@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Ablation of SEHHO-COBL at two evaluation budgets on CEC2017 at $D=30$: phase-gate replacements, the fixed-$p$ variant and single-module removals, ordered by rank at 300{,}000 evaluations.}
+\label{tab:ablation}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccccc}
+\toprule
+ & \multicolumn{5}{c}{CEC2017 $D{=}30$, 15{,}000 FEs} & \multicolumn{5}{c}{CEC2017 $D{=}30$, 300{,}000 FEs} \\
+\cmidrule(lr){2-6} \cmidrule(lr){7-11}
+Variant & Rank & W/L & $p_{\text{Holm}}$ & $\delta$ & Mag. & Rank & W/L & $p_{\text{Holm}}$ & $\delta$ & Mag. \\
+\midrule
+\textbf{Full method} & \textbf{6.21} & -- & -- & -- & -- & \textbf{6.93} & -- & -- & -- & -- \\
+\midrule
+AlwaysPbest & 5.21 & 18/11 & 1.000 & $-0.034$ & negligible & 3.69 & 24/4 & 0.005$^{*}$ & $-0.166$ & small \\
+DeterministicPhase & 4.07 & 21/8 & 0.883 & $-0.079$ & negligible & 4.03 & 23/5 & 0.061 & $-0.152$ & small \\
+AlwaysPbest+FixedP & 6.34 & 15/14 & 1.000 & $+0.030$ & negligible & 4.14 & 23/5 & 0.117 & $-0.130$ & negligible \\
+AlwaysPbest+NoLevy & 4.38 & 21/8 & 0.326 & $-0.071$ & negligible & 4.45 & 20/8 & 0.139 & $-0.152$ & small \\
+NoArchive & 6.38 & 13/16 & 1.000 & $+0.071$ & negligible & 6.00 & 16/12 & 1.000 & $+0.002$ & negligible \\
+FixedP & 5.76 & 18/11 & 1.000 & $+0.009$ & negligible & 6.38 & 15/13 & 1.000 & $-0.023$ & negligible \\
+NoLevy & 5.38 & 15/14 & 1.000 & $-0.018$ & negligible & 6.76 & 15/13 & 1.000 & $+0.000$ & negligible \\
+NoCOBL & 6.90 & 10/19 & 1.000 & $+0.038$ & negligible & 7.55 & 14/14 & 1.000 & $+0.009$ & negligible \\
+NoEscapeEnergy & 7.55 & 11/18 & 1.000 & $+0.111$ & negligible & 7.86 & 9/19 & 0.600 & $+0.122$ & negligible \\
+AlwaysBest & 8.90 & 7/22 & 0.790 & $+0.182$ & small & 9.03 & 6/22 & 0.034$^{*}$ & $+0.186$ & small \\
+NoSHADE & 10.93 & 2/27 & 0.000$^{*}$ & $+0.582$ & large & 11.17 & 2/27 & 0.000$^{*}$ & $+0.684$ & large \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+Friedman average rank over all variants (lower is better); the bold row is the reference (the full method), not the best variant. $\delta$ is Cliff's delta of arm A against arm B (A the changed, new or first-named arm), computed per function over the 30 runs of each arm and averaged over the functions; negative values favour A. Here A is the variant in the row and B the full method, so a positive $\delta$ means the change hurts and a negative one that it helps. W/L counts functions on which the variant has the lower / higher mean error. $p_{\text{Holm}}$ is a two-sided Wilcoxon signed-rank test of the variant against the full method across matched per-function mean errors, Holm-corrected over all variants of the block; $^{*}$ marks $p<0.05$. Magnitudes follow \citet{romano2006appropriate}. Rows are ordered by the rightmost block.
+\end{flushleft}
+\end{table}

@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\caption{The full CEC2014 comparison: ranks, $\delta$ and pairwise tests against SEHHO-COBL-R.}
+\label{tab:cec2014}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccccccccccc}
+\toprule
+ & \multicolumn{4}{c}{$D=30$, 300{,}000 FEs} & \multicolumn{4}{c}{$D=50$, 500{,}000 FEs} & \multicolumn{4}{c}{$D=30$, 15{,}000 FEs} & \multicolumn{4}{c}{$D=50$, 15{,}000 FEs} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9} \cmidrule(lr){10-13} \cmidrule(lr){14-17}
+Algorithm & Rank & $\bar\delta$ [95\% CI] & $p^{\text{SR}}_{\text{Holm}}$ & $p^{\text{F}}_{\text{Holm}}$ & Rank & $\bar\delta$ [95\% CI] & $p^{\text{SR}}_{\text{Holm}}$ & $p^{\text{F}}_{\text{Holm}}$ & Rank & $\bar\delta$ [95\% CI] & $p^{\text{SR}}_{\text{Holm}}$ & $p^{\text{F}}_{\text{Holm}}$ & Rank & $\bar\delta$ [95\% CI] & $p^{\text{SR}}_{\text{Holm}}$ & $p^{\text{F}}_{\text{Holm}}$ \\
+\midrule
+SEHHO-COBL-R & \textbf{3.72} & -- & -- & -- & \textbf{3.62} & -- & -- & -- & \textbf{1.87} & -- & -- & -- & \textbf{2.43} & -- & -- & -- \\
+jSO & 2.35 & $+0.450$ $[+0.216,\,+0.669]$ & 0.012$^{*}$ & 0.043$^{*}$ & 2.30 & $+0.425$ $[+0.206,\,+0.630]$ & 0.007$^{*}$ & 0.055 & 3.53 & $-0.540$ $[-0.731,\,-0.326]$ & $<$0.001$^{*}$ & 0.006$^{*}$ & 3.67 & $-0.485$ $[-0.709,\,-0.242]$ & 0.002$^{*}$ & 0.054 \\
+L-SHADE & 2.38 & $+0.518$ $[+0.348,\,+0.679]$ & $<$0.001$^{*}$ & 0.043$^{*}$ & 2.50 & $+0.419$ $[+0.231,\,+0.598]$ & 0.002$^{*}$ & 0.091 & 4.03 & $-0.843$ $[-0.925,\,-0.732]$ & $<$0.001$^{*}$ & $<$0.001$^{*}$ & 4.47 & $-0.846$ $[-0.926,\,-0.747]$ & $<$0.001$^{*}$ & 0.001$^{*}$ \\
+SHADE & 3.38 & $+0.064$ $[-0.104,\,+0.230]$ & 0.406 & 0.550 & 3.57 & $-0.040$ $[-0.253,\,+0.175]$ & 0.820 & 0.929 & 4.53 & $-0.887$ $[-0.956,\,-0.800]$ & $<$0.001$^{*}$ & $<$0.001$^{*}$ & 4.13 & $-0.632$ $[-0.794,\,-0.459]$ & $<$0.001$^{*}$ & 0.007$^{*}$ \\
+DE & 5.23 & $-0.487$ $[-0.700,\,-0.258]$ & 0.001$^{*}$ & 0.026$^{*}$ & 5.42 & $-0.573$ $[-0.783,\,-0.342]$ & $<$0.001$^{*}$ & 0.008$^{*}$ & 6.30 & $-0.996$ $[-1.000,\,-0.990]$ & $<$0.001$^{*}$ & $<$0.001$^{*}$ & 6.33 & $-0.976$ $[-0.997,\,-0.938]$ & $<$0.001$^{*}$ & $<$0.001$^{*}$ \\
+SEHHO-COBL & 5.57 & $-0.618$ $[-0.773,\,-0.438]$ & $<$0.001$^{*}$ & 0.005$^{*}$ & 5.37 & $-0.621$ $[-0.792,\,-0.415]$ & $<$0.001$^{*}$ & 0.009$^{*}$ & 2.50 & $+0.138$ $[-0.080,\,+0.351]$ & 0.213 & 0.256 & 2.10 & $+0.373$ $[+0.150,\,+0.582]$ & 0.008$^{*}$ & 0.550 \\
+HHO & 5.37 & $-0.466$ $[-0.752,\,-0.147]$ & 0.012$^{*}$ & 0.015$^{*}$ & 5.23 & $-0.448$ $[-0.735,\,-0.118]$ & 0.033$^{*}$ & 0.015$^{*}$ & 5.23 & $-0.517$ $[-0.781,\,-0.217]$ & 0.010$^{*}$ & $<$0.001$^{*}$ & 4.87 & $-0.480$ $[-0.756,\,-0.174]$ & 0.014$^{*}$ & $<$0.001$^{*}$ \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+CEC2014, 30 functions, 30 runs per cell: the confirmatory suite, on whose results no design decision was taken (the selection suite reuses data of four of its functions; Table~\ref{tab:supp_lineage}), evaluated under an internal pre-registration timestamped 2026-09-15 08:30 UTC (see Table~\ref{M-tab:cec2014primary}). ``Rank'' is the Friedman average rank (lower is better); bold marks the reference row, SEHHO-COBL-R, not the best algorithm. $\delta$ is Cliff's delta of arm A against arm B (A the changed, new or first-named arm), computed per function over the 30 runs of each arm and averaged over the functions; negative values favour A. Here A is SEHHO-COBL-R and B the competitor in the row; the interval is a 95\% percentile bootstrap interval over the functions, from the registered analysis (\texttt{analyze\_cec2014.py}); for SEHHO-COBL at the competition budget it is the registered primary-endpoint interval. $p^{\text{SR}}_{\text{Holm}}$: two-sided signed-rank test of the per-function deltas, Holm-corrected over the six competitors of a block. $p^{\text{F}}_{\text{Holm}}$: the Friedman post-hoc test against SEHHO-COBL-R that the pre-registration named for these secondary comparisons, Holm-corrected in the same family; it depends on which other algorithms are in the set and on CEC2014 absorbs HHO's zero-shift artefact (HHO reaches the error of the origin on F23--F30, which the all-zero shift of the third component makes reachable). $^{*}$ marks $p<0.05$.
+\end{flushleft}
+\end{table}

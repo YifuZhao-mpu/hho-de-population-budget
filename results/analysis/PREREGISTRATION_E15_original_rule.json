@@ -1,0 +1,59 @@
+{
+ "title": "Pre-registration of stage E15: sensitivity of the CEC2014 replication to the composition-rule amendment",
+ "written_at": "2026-10-02T11:05:38.490906+00:00",
+ "written_before_any_E15_run": true,
+ "status": "exploratory sensitivity analysis, registered before it is run but after the confirmatory CEC2014 analysis (E13) and after the amendment it examines",
+ "why": "The composition decision for the repaired method (E8/E11, CEC2022) was made with a rule amended after its first output had been seen. The rule as coded before E8 ran (2026-09-14T07:48Z) returned KEEP for COBL, Levy, archive and SHADE memory and DROP only for the p annealing (output 2026-09-14T09:01:22Z); the amended rule (2026-09-14T09:02Z) also drops COBL and Levy, and that stripped configuration was frozen and evaluated in E13. E15 asks whether the pre-registered E13 conclusion (the repair replicates against SEHHO-COBL) depends on the amendment.",
+ "configuration": {
+  "phase_mode": "always_pbest",
+  "pop_mode": "lpsr",
+  "N_init_factor": 6.0,
+  "schedule_basis": "budget",
+  "p_schedule": "fixed"
+ },
+ "configuration_sha256": "e58df8380ba77ecdbc1e91ca5151509b8194a8963a710b920f4fe84df849479b",
+ "configuration_description": "gate-free (phase_mode=always_pbest), LPSR from N_init=6D (budget-based schedule), COBL initialisation kept, Levy perturbation kept (levy_mode default 'phase', which under always_pbest fires on every individual's Levy draw), external archive and SHADE memory kept, p annealing removed (p fixed)",
+ "algorithm_label_in_data": "GF:OriginalRule",
+ "design": {
+  "suite": "CEC2014 Part A, official C sources, functions 1-30",
+  "dimensions": [
+   30,
+   50
+  ],
+  "budgets": {
+   "competition": "10,000 x D",
+   "tight": 15000
+  },
+  "runs_per_cell": 30,
+  "cells": 120,
+  "runs": 3600,
+  "tags": [
+   "E15_original_rule_cec2014_competition",
+   "E15_original_rule_cec2014_tight"
+  ],
+  "comparators": "SEHHO-COBL and GF-Method (R-SHADE) runs of E13 in the identical cells (not re-run)"
+ },
+ "sensitivity_primary": {
+  "comparison": "GF:OriginalRule against SEHHO-COBL at the competition budget, D=30 and D=50",
+  "statistic": "Cliff's delta per function over the 30 runs, averaged over the 30 functions; 95% percentile bootstrap, 20,000 resamples, seed 20260915; negative favours GF:OriginalRule",
+  "test": "two-sided Wilcoxon signed-rank on the 30 per-function deltas, Holm-corrected across the two blocks",
+  "criterion": "Same as the E13 success criterion: replicates if the 95% interval excludes zero in GF:OriginalRule's favour in BOTH blocks; one block = partial; neither = does not replicate."
+ },
+ "secondary": {
+  "comparison": "GF:OriginalRule against GF-Method (R-SHADE) in all four blocks (D=30/50 x competition/tight)",
+  "statistic": "as above, negative favours GF:OriginalRule; Holm across the four blocks",
+  "classification": "negligible if the whole 95% interval lies inside |delta|<0.147; 'R-SHADE better' if the interval lies above 0; 'original-rule configuration better' if it lies below 0; otherwise inconclusive"
+ },
+ "descriptive": "GF:OriginalRule against SEHHO-COBL at the tight budget; R-SHADE against SEHHO-COBL reproduced from E13 for side-by-side reporting",
+ "commitments": [
+  "E15 is reported in the paper whatever it shows, labelled exploratory.",
+  "Nothing in E15 may change the frozen configuration, the E13 primary result, or any design decision.",
+  "No comparison beyond those listed here will be reported from E15 except as explicitly labelled additional exploration."
+ ],
+ "scripts": {
+  "runner": "scripts/run_e15_original_rule.py",
+  "runner_sha256": "a2391a6c03f9eb02ec6900c92f8c06fe5d2e427d7920bbce479737b7085e895c",
+  "analysis": "scripts/analyze_e15.py",
+  "analysis_sha256": "f79780df39d637bc7474b7eb8ca1f6ad3a732f64031d14ab43e1f4f557a5afef"
+ }
+}

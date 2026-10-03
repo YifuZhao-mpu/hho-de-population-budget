@@ -1,0 +1,45 @@
+
+=== E8: 336 cells x 30 runs = 10080 runs ===
+   25/336 cells     0.7 min elapsed  ETA    9.2 min
+   50/336 cells     4.9 min elapsed  ETA   28.3 min
+   75/336 cells     6.1 min elapsed  ETA   21.3 min
+   100/336 cells    11.1 min elapsed  ETA   26.2 min
+   125/336 cells    22.0 min elapsed  ETA   37.1 min
+   150/336 cells    26.5 min elapsed  ETA   32.8 min
+   175/336 cells    30.8 min elapsed  ETA   28.3 min
+   200/336 cells    34.9 min elapsed  ETA   23.7 min
+   225/336 cells    40.7 min elapsed  ETA   20.1 min
+   250/336 cells    42.6 min elapsed  ETA   14.6 min
+   275/336 cells    49.9 min elapsed  ETA   11.1 min
+   300/336 cells    55.6 min elapsed  ETA    6.7 min
+   325/336 cells    69.9 min elapsed  ETA    2.4 min
+   336/336 cells    74.3 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E8_composition_cec2022.csv  (10080 runs)
+=== E8 done in 74.3 min ===
+
+=== E9: 135 cells x 30 runs = 4050 runs ===
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "<python-lib>/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "<repo>/scripts/../sehho/runner.py", line 90, in run_cell
+    best = _dispatch(cell.algo, budget, rng, algo_cfg)
+  File "<repo>/scripts/../sehho/runner.py", line 68, in _dispatch
+    raise ValueError(f"unknown algorithm {algo!r}")
+ValueError: unknown algorithm 'GF-Method'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<repo>/scripts/run_experiments.py", line 280, in <module>
+    run_all(cells, out_csv=os.path.join(RESULTS, name))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/scripts/../sehho/runner.py", line 116, in run_all
+    for res in pool.imap_unordered(run_cell, cells, chunksize=1):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<python-lib>/multiprocessing/pool.py", line 873, in next
+    raise value
+ValueError: unknown algorithm 'GF-Method'

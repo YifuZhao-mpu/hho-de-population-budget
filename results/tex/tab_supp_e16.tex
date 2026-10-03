@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\caption{Stage E16 per problem: feasibility, best and median designs, and success counts at four thresholds.}
+\label{tab:supp_e16}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrrrr}
+\toprule
+ & & & & & & \multicolumn{4}{c}{runs within a relative $\tau$ of $f^{*}$} & suite rule \\
+\cmidrule(lr){7-10} \cmidrule(lr){11-11}
+Problem & Arm & Feasible & Best feasible & Median feasible & Median $v$ & $\tau=10^{-6}$ & $10^{-4}$ & $10^{-3}$ & $10^{-2}$ & $f-f^{*}\le10^{-8}$ \\
+\midrule
+RC06 & $6D$ & 0/30 & -- & -- & 9.49E+00 & 0 & 0 & 0 & 0 & 0 \\
+ & $18D$ & 0/30 & -- & -- & 2.88E+01 & 0 & 0 & 0 & 0 & 0 \\
+\midrule
+RC14 & $6D$ & 30/30 & 58{,}505.4 & 58{,}506.0 & 9.99E-09 & 0 & 0 & 0 & 0 & 0 \\
+ & $18D$ & 30/30 & 58{,}505.6 & 58{,}507.0 & 0.00E+00 & 0 & 0 & 0 & 0 & 0 \\
+\midrule
+RC01 & $6D$ & 4/30 & 229.89 & 290.39 & 1.24E-02 & 0 & 0 & 0 & 0 & 0 \\
+ & $18D$ & 0/30 & -- & -- & 1.53E+00 & 0 & 0 & 0 & 0 & 0 \\
+\midrule
+P2 gear train & $6D$ & 30/30 & 2.70E-12 & 2.31E-11 & 0.00E+00 & 8 & 8 & 8 & 8 & 30 \\
+ & $18D$ & 30/30 & 2.70E-12 & 2.70E-12 & 0.00E+00 & 16 & 16 & 16 & 16 & 30 \\
+\midrule
+P1 pressure vessel & $6D$ & 30/30 & 6{,}059.7 & 6{,}090.5 & 1.00E-08 & 9 & 9 & 9 & 18 & 9 \\
+ & $18D$ & 30/30 & 6{,}059.7 & 6{,}059.7 & 1.00E-08 & 22 & 22 & 22 & 30 & 22 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+Per-problem detail of stage E16 (Table~\ref{M-tab:e16}). $v$ is the total constraint violation of the returned design (zero or at most $10^{-8}$ for a feasible design). The success threshold of Table~\ref{M-tab:e16} is $\tau=10^{-4}$; the other columns show how the counts depend on it. The last column applies the success rule of the CEC2020 suite \citep{kumar2020rwco}, a feasible design with $f-f^{*}\le10^{-8}$ (absolute): on P2, where $f^{*}=2.7\times10^{-12}$, it accepts every design with $f\le10^{-8}$; on RC14, where $f^{*}\approx5.4\times10^{4}$, it requires agreement to $2\times10^{-13}$ relative. $f^{*}$ as in Table~\ref{M-tab:engineering}.
+\end{flushleft}
+\end{table}

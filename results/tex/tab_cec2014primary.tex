@@ -1,0 +1,39 @@
+\begin{table}[htbp]
+\centering
+\caption{Pre-registered evaluation on CEC2014.}
+\label{tab:cec2014primary}
+\begin{tabular}{lcccc}
+\toprule
+\multicolumn{5}{l}{\emph{Panel A. Primary endpoint: SEHHO-COBL-R vs SEHHO-COBL, competition budget}} \\
+\midrule
+ & \multicolumn{2}{c}{$D=30$, 300{,}000 FEs} & \multicolumn{2}{c}{$D=50$, 500{,}000 FEs} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Analysis & $\bar\delta$ [95\% CI] & W/L & $\bar\delta$ [95\% CI] & W/L \\
+\midrule
+registered (30 functions) & \begin{tabular}[c]{@{}c@{}}\textbf{\boldmath $-0.618$}\\[-2pt]{\scriptsize $[-0.773,\,-0.438]$}\end{tabular} & 26/2 & \begin{tabular}[c]{@{}c@{}}\textbf{\boldmath $-0.621$}\\[-2pt]{\scriptsize $[-0.792,\,-0.415]$}\end{tabular} & 27/3 \\
+post hoc: without F18, F22--F24 (26) & \begin{tabular}[c]{@{}c@{}}$-0.597$\\[-2pt]{\scriptsize $[-0.775,\,-0.396]$}\end{tabular} & 22/2 & \begin{tabular}[c]{@{}c@{}}$-0.566$\\[-2pt]{\scriptsize $[-0.759,\,-0.336]$}\end{tabular} & 23/3 \\
+CEC2017, the same contrast (29) & \begin{tabular}[c]{@{}c@{}}$-0.764$\\[-2pt]{\scriptsize $[-0.879,\,-0.632]$}\end{tabular} & -- & \begin{tabular}[c]{@{}c@{}}$-0.718$\\[-2pt]{\scriptsize $[-0.870,\,-0.534]$}\end{tabular} & -- \\
+gap, CEC2017 minus CEC2014 & \begin{tabular}[c]{@{}c@{}}$-0.146$\\[-2pt]{\scriptsize $[-0.357,\,+0.055]$}\end{tabular} & -- & \begin{tabular}[c]{@{}c@{}}$-0.097$\\[-2pt]{\scriptsize $[-0.354,\,+0.157]$}\end{tabular} & -- \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.8em}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+\multicolumn{9}{l}{\emph{Panel B. SEHHO-COBL-R against the SHADE-family baselines and SEHHO-COBL, both budgets}} \\
+\midrule
+ & \multicolumn{2}{c}{$D=30$, 300{,}000 FEs} & \multicolumn{2}{c}{$D=50$, 500{,}000 FEs} & \multicolumn{2}{c}{$D=30$, 15{,}000 FEs} & \multicolumn{2}{c}{$D=50$, 15{,}000 FEs} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9}
+Competitor & $\bar\delta$ [95\% CI] & $p_{\text{Holm}}$ & $\bar\delta$ [95\% CI] & $p_{\text{Holm}}$ & $\bar\delta$ [95\% CI] & $p_{\text{Holm}}$ & $\bar\delta$ [95\% CI] & $p_{\text{Holm}}$ \\
+\midrule
+jSO & \begin{tabular}[c]{@{}c@{}}$+0.450$\\[-2pt]{\scriptsize $[+0.216,\,+0.669]$}\end{tabular} & 0.012$^{*}$ & \begin{tabular}[c]{@{}c@{}}$+0.425$\\[-2pt]{\scriptsize $[+0.206,\,+0.630]$}\end{tabular} & 0.007$^{*}$ & \begin{tabular}[c]{@{}c@{}}$-0.540$\\[-2pt]{\scriptsize $[-0.731,\,-0.326]$}\end{tabular} & $<$0.001$^{*}$ & \begin{tabular}[c]{@{}c@{}}$-0.485$\\[-2pt]{\scriptsize $[-0.709,\,-0.242]$}\end{tabular} & 0.002$^{*}$ \\
+L-SHADE & \begin{tabular}[c]{@{}c@{}}$+0.518$\\[-2pt]{\scriptsize $[+0.348,\,+0.679]$}\end{tabular} & $<$0.001$^{*}$ & \begin{tabular}[c]{@{}c@{}}$+0.419$\\[-2pt]{\scriptsize $[+0.231,\,+0.598]$}\end{tabular} & 0.002$^{*}$ & \begin{tabular}[c]{@{}c@{}}$-0.843$\\[-2pt]{\scriptsize $[-0.925,\,-0.732]$}\end{tabular} & $<$0.001$^{*}$ & \begin{tabular}[c]{@{}c@{}}$-0.846$\\[-2pt]{\scriptsize $[-0.926,\,-0.747]$}\end{tabular} & $<$0.001$^{*}$ \\
+SHADE & \begin{tabular}[c]{@{}c@{}}$+0.064$\\[-2pt]{\scriptsize $[-0.104,\,+0.230]$}\end{tabular} & 0.406 & \begin{tabular}[c]{@{}c@{}}$-0.040$\\[-2pt]{\scriptsize $[-0.253,\,+0.175]$}\end{tabular} & 0.820 & \begin{tabular}[c]{@{}c@{}}$-0.887$\\[-2pt]{\scriptsize $[-0.956,\,-0.800]$}\end{tabular} & $<$0.001$^{*}$ & \begin{tabular}[c]{@{}c@{}}$-0.632$\\[-2pt]{\scriptsize $[-0.794,\,-0.459]$}\end{tabular} & $<$0.001$^{*}$ \\
+SEHHO-COBL & \begin{tabular}[c]{@{}c@{}}$-0.618$\\[-2pt]{\scriptsize $[-0.773,\,-0.438]$}\end{tabular} & $<$0.001$^{*}$ & \begin{tabular}[c]{@{}c@{}}$-0.621$\\[-2pt]{\scriptsize $[-0.792,\,-0.415]$}\end{tabular} & $<$0.001$^{*}$ & \begin{tabular}[c]{@{}c@{}}$+0.138$\\[-2pt]{\scriptsize $[-0.080,\,+0.351]$}\end{tabular} & 0.213 & \begin{tabular}[c]{@{}c@{}}$+0.373$\\[-2pt]{\scriptsize $[+0.150,\,+0.582]$}\end{tabular} & 0.008$^{*}$ \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+CEC2014, 30 functions, 30 runs per cell. No component was chosen, no constant fitted and no diagnosis performed on these functions before these runs. The configuration, the comparisons, the test statistic and the success criterion were fixed in an internal pre-registration written before the first CEC2014 run (not an external registry entry; Supplementary Section~\ref{S-sec:S2_prereg}). $\delta$ is Cliff's delta of arm A against arm B (A the changed, new or first-named arm), computed per function over the 30 runs of each arm and averaged over the functions; negative values favour A. Here A is SEHHO-COBL-R. Each cell gives $\bar\delta$ and, below it, a 95\% percentile bootstrap interval over the functions (20{,}000 resamples); W/L counts functions with negative / positive $\delta$. \textbf{Panel A}: the registered success criterion was that the interval exclude zero in favour of SEHHO-COBL-R in both blocks (bold); it does, and it does so also for BCa intervals ($[-0.755,\,-0.402]$ and $[-0.773,\,-0.378]$), Student-$t$ intervals ($[-0.796,\,-0.439]$, $[-0.822,\,-0.419]$) and two-block Bonferroni (97.5\%) intervals ($[-0.791,\,-0.408]$, $[-0.813,\,-0.382]$). The second row is a post hoc sensitivity analysis: it removes the four functions whose recipes CEC2022 F6, F8, F9 and F10 follow (CEC2022 is the suite the configuration was selected on), and is reported beside the registered result whatever it shows; its intervals exclude zero under every interval type and the Bonferroni adjustment as well (BCa $[-0.758,\,-0.362]$ and $[-0.738,\,-0.297]$). The third row is the same contrast on CEC2017, the suite on which the changes were diagnosed; the gap (CEC2017 minus CEC2014, the two suites resampled independently) includes zero in both blocks, so the gap cannot be distinguished from differences between the suites. \textbf{Panel B}: $p_{\text{Holm}}$ is a two-sided signed-rank test of the per-function deltas, Holm-corrected over the six competitors of a block; DE and HHO, and the Friedman post-hoc tests the pre-registration named for these secondary comparisons, are in Table~\ref{S-tab:cec2014}. $^{*}$ marks $p_{\text{Holm}}<0.05$. For SEHHO-COBL at the competition budget the interval is the registered one of Panel A.
+\end{flushleft}
+\end{table}

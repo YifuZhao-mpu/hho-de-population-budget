@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering
+\caption{Largest singular values of the CEC transformation matrices.}
+\label{tab:supp_singular}
+\begin{tabular}{llrrrrr}
+\toprule
+Suite & $D$ & Matrices & largest $=2$ & orthogonal & other & max over the rest \\
+\midrule
+CEC2014 & 30 & 102 & 100 & 2 & 0 & 1.0000 \\
+CEC2014 & 50 & 102 & 100 & 2 & 0 & 1.0000 \\
+CEC2017 & 30 & 120 & 105 & 15 & 0 & 1.0000 \\
+CEC2017 & 50 & 120 & 106 & 14 & 0 & 1.0000 \\
+CEC2017 & 100 & 120 & 104 & 16 & 0 & 1.0000 \\
+CEC2022 & 10 & 48 & 1 & 7 & 40 & 1.9783 \\
+CEC2022 & 20 & 48 & 41 & 7 & 0 & 1.0000 \\
+\bottomrule
+\end{tabular}
+\begin{flushleft}\footnotesize
+Every $D\times D$ block of the transformation-matrix files at the dimensions used in the paper, read as \texttt{validate\_benchmarks.py} reads them (\texttt{scripts/check\_cec\_data.py}); a composition function's file contributes every block it contains. ``Orthogonal'': all singular values equal to 1. Over each suite the largest singular value is exactly 2, and every entry is finite; the matrices with largest singular value 2 number 200 of 204 (CEC2014), 315 of 360 (CEC2017), 42 of 96 (CEC2022).
+\end{flushleft}
+\end{table}

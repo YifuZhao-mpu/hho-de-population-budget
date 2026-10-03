@@ -1,0 +1,65 @@
+\begin{table}[htbp]
+\centering
+\caption{Seven algorithms on five constrained design problems under Deb's feasibility rule, with a classical reference for each problem.}
+\label{tab:engineering}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrr}
+\toprule
+Problem & Algorithm & Feasible & Success & Best feasible & Mean feasible & Std & Mean violation & Evaluations \\
+\midrule
+\multicolumn{9}{l}{\textit{P1 Pressure vessel ($D{=}4$)}} \\
+ & SEHHO-COBL-R & 100\% & 37\% & 6.06E+03 & 6.22E+03 & 2.30E+02 & 1.00E-08 & 15{,}000 \\
+ & jSO & 100\% & 100\% & 6.06E+03 & \textbf{6.06E+03} & 1.85E-12 & 1.00E-08 & 15{,}000 \\
+ & L-SHADE & 100\% & 70\% & 6.06E+03 & 6.09E+03 & 7.81E+01 & 1.00E-08 & 15{,}000 \\
+ & SHADE & 100\% & 0\% & 6.06E+03 & 6.10E+03 & 7.63E+01 & 0.00E+00 & 15{,}000 \\
+ & DE & 100\% & 100\% & 6.06E+03 & \textbf{6.06E+03} & 1.77E-03 & 6.88E-10 & 15{,}000 \\
+ & SEHHO-COBL & 100\% & 33\% & 6.06E+03 & 6.26E+03 & 2.52E+02 & 1.00E-08 & 15{,}000 \\
+ & HHO & 100\% & 0\% & 6.11E+03 & 6.91E+03 & 4.81E+02 & 2.40E-09 & 15{,}000 \\
+ & \textit{reference: grid + SLSQP} & \textit{--} & \textit{--} & \textit{6059.7143} & \textit{--} & \textit{--} & \textit{0} & \textit{23{,}297} \\
+\midrule
+\multicolumn{9}{l}{\textit{P2 Gear train ($D{=}4$)}} \\
+ & SEHHO-COBL-R & 100\% & 37\% & 2.70E-12 & 3.26E-11 & 4.43E-11 & 0.00E+00 & 15{,}000 \\
+ & jSO & 100\% & 83\% & 2.70E-12 & \textbf{6.10E-12} & 7.72E-12 & 0.00E+00 & 15{,}000 \\
+ & L-SHADE & 100\% & 53\% & 2.70E-12 & 1.22E-11 & 1.03E-11 & 0.00E+00 & 15{,}000 \\
+ & SHADE & 100\% & 83\% & 2.70E-12 & 1.87E-11 & 5.84E-11 & 0.00E+00 & 15{,}000 \\
+ & DE & 100\% & 37\% & 2.70E-12 & 5.83E-11 & 1.62E-10 & 0.00E+00 & 15{,}000 \\
+ & SEHHO-COBL & 100\% & 37\% & 2.70E-12 & 6.24E-11 & 1.82E-10 & 0.00E+00 & 15{,}000 \\
+ & HHO & 100\% & 7\% & 2.70E-12 & 4.17E-09 & 6.18E-09 & 0.00E+00 & 15{,}000 \\
+ & \textit{reference: enumeration} & \textit{--} & \textit{--} & \textit{2.700857E-12} & \textit{--} & \textit{--} & \textit{0} & \textit{5{,}764{,}801} \\
+\midrule
+\multicolumn{9}{l}{\textit{P3 Heat-exchanger network, RC01 ($D{=}9$)}} \\
+ & SEHHO-COBL-R & 23\% & 0\% & 3.15E+02 & 4.17E+02$^{a}$ & 1.30E+02 & 8.05E+00 & 15{,}000 \\
+ & jSO & 0\% & 0\% & -- & -- & -- & 1.96E+00 & 15{,}000 \\
+ & L-SHADE & 0\% & 0\% & -- & -- & -- & 8.47E+01 & 15{,}000 \\
+ & SHADE & 0\% & 0\% & -- & -- & -- & 3.35E+03 & 15{,}000 \\
+ & DE & 0\% & 0\% & -- & -- & -- & 2.09E+02 & 15{,}000 \\
+ & SEHHO-COBL & 40\% & 0\% & 2.11E+02 & 5.40E+02$^{a}$ & 1.62E+02 & 6.37E+00 & 15{,}000 \\
+ & HHO & 0\% & 0\% & -- & -- & -- & 9.89E+05 & 15{,}000 \\
+ & \textit{reference: Eq.~(\ref{eq:rc01star_main})} & \textit{--} & \textit{--} & \textit{189.3116} & \textit{--} & \textit{--} & \textit{0} & \textit{0} \\
+\midrule
+\multicolumn{9}{l}{\textit{P4 Blending--pooling--separation, RC06 ($D{=}38$)}} \\
+ & SEHHO-COBL-R & 0\% & 0\% & -- & -- & -- & 1.90E+01 & 15{,}000 \\
+ & jSO & 0\% & 0\% & -- & -- & -- & 1.70E+01 & 15{,}000 \\
+ & L-SHADE & 0\% & 0\% & -- & -- & -- & 2.75E+01 & 15{,}000 \\
+ & SHADE & 0\% & 0\% & -- & -- & -- & 3.38E+01 & 15{,}000 \\
+ & DE & 0\% & 0\% & -- & -- & -- & 5.15E+01 & 15{,}000 \\
+ & SEHHO-COBL & 0\% & 0\% & -- & -- & -- & 1.38E+01 & 15{,}000 \\
+ & HHO & 0\% & 0\% & -- & -- & -- & 1.10E+02 & 15{,}000 \\
+ & \textit{reference: SLSQP} & \textit{--} & \textit{--} & \textit{1.863830} & \textit{--} & \textit{--} & \textit{2.13E-12} & \textit{15{,}000} \\
+\multicolumn{9}{l}{\footnotesize No metaheuristic reached the declared tolerance in any run.} \\
+\midrule
+\multicolumn{9}{l}{\textit{P5 Multi-product batch plant, RC14 ($D{=}10$)}} \\
+ & SEHHO-COBL-R & 100\% & 30\% & 5.36E+04 & 5.70E+04 & 2.42E+03 & 9.15E-09 & 15{,}000 \\
+ & jSO & 100\% & 0\% & 5.85E+04 & 5.85E+04 & 1.14E+00 & 1.07E-10 & 15{,}000 \\
+ & L-SHADE & 100\% & 0\% & 5.85E+04 & 5.85E+04 & 5.09E+00 & 0.00E+00 & 15{,}000 \\
+ & SHADE & 100\% & 0\% & 5.87E+04 & 5.89E+04 & 1.01E+02 & 0.00E+00 & 15{,}000 \\
+ & DE & 100\% & 0\% & 5.37E+04 & \textbf{5.45E+04} & 1.89E+03 & 0.00E+00 & 15{,}000 \\
+ & SEHHO-COBL & 100\% & 7\% & 5.36E+04 & 5.81E+04 & 1.51E+03 & 2.55E-09 & 15{,}000 \\
+ & HHO & 100\% & 0\% & 6.62E+04 & 7.84E+04 & 9.99E+03 & 6.66E-09 & 15{,}000 \\
+ & \textit{reference: enumeration + SLSQP} & \textit{--} & \textit{--} & \textit{53{,}638.94} & \textit{--} & \textit{--} & \textit{1.49E-13} & \textit{49{,}006} \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+Deb's feasibility rule, 30 runs, 15{,}000 evaluations per run, equality tolerance $\varepsilon=10^{-4}$; a design is feasible when its total violation $v$ (the unnormalised sum over constraints) is at most $10^{-8}$, a threshold that is not scale-aware. ``Feasible'': percentage of runs returning a feasible design; best/mean/std over feasible runs only; \textbf{bold}, the lowest mean among the algorithms feasible in every run (within a relative $10^{-6}$). $^{a}$: mean over the feasible runs only (RC01: SEHHO-COBL-R 7 of 30, SEHHO-COBL 12 of 30); a mean over a subset of runs is conditional on feasibility and is not comparable across algorithms with different numbers of feasible runs, so it carries no bold. ``Success'': feasible and within a relative $10^{-4}$ of the reference value $f^{*}$ of the italic row, $(f-f^{*})/|f^{*}|\le10^{-4}$ (the suite's own success rate uses an absolute $f-f^{*}\le10^{-8}$; \citealp{kumar2020rwco}). The italic row is a classical reference with the evaluations it used, one per distinct decision vector (methods in Table~\ref{S-tab:supp_classical_refs}); for RC01, RC06 and RC14 it equals the best-known value listed for the suite \citep{kumar2020rwco}. RC14's 53{,}638.94 needs one unit per stage; every L-SHADE and jSO run ends with two units in the first stage, near 58{,}500. Mean violation: the average $v$ of the returned design over all 30 runs; 1.00E-08 means that every run sits on the threshold, here of P1's volume constraint (terms of order $10^{6}$ in$^3$), which is worth $6.3\times10^{-5}$ in cost (6059.714272 against 6059.714335). The RC01 closed-form design is feasible under the declared rule but is not a certified optimum of the tolerance-relaxed problem (Table~\ref{tab:solverbaseline}). The best feasible RC01 design found by any metaheuristic is $11.5\%$ above the closed-form design.
+\end{flushleft}
+\end{table}

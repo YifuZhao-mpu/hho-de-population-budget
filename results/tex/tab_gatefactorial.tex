@@ -1,0 +1,28 @@
+\begin{table}[htbp]
+\centering
+\caption{Ranks of the gate $\times$ L\'evy factorial, and the tests on per-function mean errors.}
+\label{tab:gatefactorial}
+\begin{tabular}{llcccc}
+\toprule
+ & & \multicolumn{2}{c}{15{,}000 FEs} & \multicolumn{2}{c}{300{,}000 FEs} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Gate & L\'evy & Rank & $\Delta$ rank & Rank & $\Delta$ rank \\
+\midrule
+escape energy & gated (4.6\%) & 2.86 & -- & 3.09 & -- \\
+escape energy & off & 2.59 & -- & 3.02 & -- \\
+none ($q\equiv1$) & always (30\%) & 2.48 & $-0.38$ & 1.78 & $-1.31$ \\
+none ($q\equiv1$) & off & 2.07 & $-0.52$ & 2.12 & $-0.90$ \\
+\midrule
+\multicolumn{2}{l}{\emph{effect of a change}} & $p_{\text{Holm}}$ & $\delta$ & $p_{\text{Holm}}$ & $\delta$ \\
+\multicolumn{2}{l}{remove gate, L\'evy gated} & 0.790 & $-0.034$ & 0.002$^{*}$ & $-0.166$ \\
+\multicolumn{2}{l}{remove gate, L\'evy off} & 0.853 & $-0.049$ & 0.169 & $-0.143$ \\
+\multicolumn{2}{l}{remove L\'evy, gate on} & 0.853 & $-0.018$ & 0.958 & $+0.000$ \\
+\multicolumn{2}{l}{remove L\'evy, gate off} & 0.853 & $-0.038$ & 0.991 & $+0.011$ \\
+\midrule
+\multicolumn{2}{l}{\emph{gate}$\times$\emph{L\'evy interaction}} & \multicolumn{2}{c}{$+0.14$ rank} & \multicolumn{2}{c}{$-0.41$ rank} \\
+\bottomrule
+\end{tabular}
+\begin{flushleft}\footnotesize
+CEC2017 at $D=30$, 29 functions, 30 runs; suite, dimension, population size and seed protocol are identical across all cells, so budget is the only difference between the two blocks. Ranks are Friedman averages within the $2\times2$ (lower is better); $\Delta$ rank is the change from removing the gate at that L\'evy setting. $p_{\text{Holm}}$ is a two-sided signed-rank test over matched per-function mean errors, corrected across the four effects in each block; $^{*}$ marks $p<0.05$. $\delta$ is Cliff's delta of arm A against arm B (A the changed, new or first-named arm), computed per function over the 30 runs of each arm and averaged over the functions; negative values favour A. Here A is the configuration with the component removed. The interaction row is the difference between the two gate effects in rank, a point estimate only. Interval estimates for every contrast, the interactions with L\'evy and with budget, and the equivalence verdicts are in Table~\ref{M-tab:gateinference}.
+\end{flushleft}
+\end{table}

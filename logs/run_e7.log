@@ -1,0 +1,18 @@
+
+=== E7: 336 cells x 30 runs = 10080 runs ===
+   25/336 cells     0.9 min elapsed  ETA   10.9 min
+   50/336 cells     5.8 min elapsed  ETA   33.4 min
+   75/336 cells     6.7 min elapsed  ETA   23.3 min
+   100/336 cells    12.1 min elapsed  ETA   28.5 min
+   125/336 cells    25.1 min elapsed  ETA   42.3 min
+   150/336 cells    31.4 min elapsed  ETA   39.0 min
+   175/336 cells    35.2 min elapsed  ETA   32.4 min
+   200/336 cells    39.3 min elapsed  ETA   26.8 min
+   225/336 cells    43.3 min elapsed  ETA   21.4 min
+   250/336 cells    47.7 min elapsed  ETA   16.4 min
+   275/336 cells    59.4 min elapsed  ETA   13.2 min
+   300/336 cells    64.9 min elapsed  ETA    7.8 min
+   325/336 cells    78.2 min elapsed  ETA    2.6 min
+   336/336 cells    82.1 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E7_poprule_cec2022.csv  (10080 runs)
+=== E7 done in 82.1 min ===

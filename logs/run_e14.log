@@ -1,0 +1,33 @@
+
+=== E14: 708 cells x 30 runs = 21240 runs ===
+   25/708 cells     2.2 min elapsed  ETA   59.3 min
+   50/708 cells     4.1 min elapsed  ETA   54.4 min
+   75/708 cells     5.0 min elapsed  ETA   42.1 min
+   100/708 cells     5.4 min elapsed  ETA   32.6 min
+   125/708 cells     6.4 min elapsed  ETA   29.7 min
+   150/708 cells     9.6 min elapsed  ETA   35.5 min
+   175/708 cells    11.9 min elapsed  ETA   36.2 min
+   200/708 cells    14.7 min elapsed  ETA   37.3 min
+   225/708 cells    20.0 min elapsed  ETA   43.0 min
+   250/708 cells    21.1 min elapsed  ETA   38.7 min
+   275/708 cells    21.9 min elapsed  ETA   34.4 min
+   300/708 cells    23.3 min elapsed  ETA   31.6 min
+   325/708 cells    26.6 min elapsed  ETA   31.3 min
+   350/708 cells    29.0 min elapsed  ETA   29.7 min
+   375/708 cells    30.7 min elapsed  ETA   27.3 min
+   400/708 cells    37.6 min elapsed  ETA   28.9 min
+   425/708 cells    38.3 min elapsed  ETA   25.5 min
+   450/708 cells    38.6 min elapsed  ETA   22.2 min
+   475/708 cells    39.4 min elapsed  ETA   19.3 min
+   500/708 cells    40.1 min elapsed  ETA   16.7 min
+   525/708 cells    43.7 min elapsed  ETA   15.2 min
+   550/708 cells    47.2 min elapsed  ETA   13.6 min
+   575/708 cells    58.0 min elapsed  ETA   13.4 min
+   600/708 cells    59.7 min elapsed  ETA   10.7 min
+   625/708 cells    60.5 min elapsed  ETA    8.0 min
+   650/708 cells    61.3 min elapsed  ETA    5.5 min
+   675/708 cells    62.5 min elapsed  ETA    3.1 min
+   700/708 cells    89.2 min elapsed  ETA    1.0 min
+   708/708 cells   111.3 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E14_pop_isolation.csv  (21240 runs)
+=== E14 done in 111.3 min ===

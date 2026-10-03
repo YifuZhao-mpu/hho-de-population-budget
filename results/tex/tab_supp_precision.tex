@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{Precision of the primary endpoint at 30 runs per cell.}
+\label{tab:supp_precision}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+Block & per-function SE of $\delta$, median [IQR] & SD of $\delta$ over functions & SE of $\bar\delta$: functions / runs only & one-stage 95\% CI & two-stage 95\% CI \\
+\midrule
+$D=30$, 300{,}000 FEs & 0.051 [0.013, 0.090] & 0.478 & 0.087 / 0.014 & $[-0.773,\,-0.438]$ & $[-0.777,\,-0.437]$ \\
+$D=50$, 500{,}000 FEs & 0.051 [0.010, 0.104] & 0.540 & 0.099 / 0.015 & $[-0.792,\,-0.415]$ & $[-0.796,\,-0.417]$ \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+Precision of the registered primary endpoint (SEHHO-COBL-R against SEHHO-COBL on CEC2014, 30 functions, 30 runs per arm). The per-function standard error is the unbiased estimate of the sampling variance of $\delta$ of \citet{cliff1993dominance}, at 30 against 30 runs. The standard error of the mean over functions is computed twice: from the spread of $\delta$ between functions (the interval the paper reports) and from the run-level errors alone. The two-stage bootstrap resamples the functions and then, within each selected function, the runs of each arm (20{,}000 resamples, seed 20261003). Over all 720 per-function contrasts of SEHHO-COBL-R with the six competitors in the four CEC2014 blocks the median per-function standard error is 0.024 (IQR 0.000--0.109, maximum 0.185). The unit of inference is the function, and the run-level noise of 30 runs adds little to the interval.
+\end{flushleft}
+\end{table}

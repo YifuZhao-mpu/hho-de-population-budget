@@ -1,0 +1,30 @@
+{
+  "baseline": "Default",
+  "kept": [
+    "+Gate",
+    "-Archive",
+    "-SHADE"
+  ],
+  "dropped": [
+    "-COBL",
+    "-Levy",
+    "-pAnneal",
+    "Stripped"
+  ],
+  "parts_to_drop": [
+    "COBL",
+    "Levy",
+    "pAnneal"
+  ],
+  "notes": {
+    "+Gate": "KEEP  \u2014 removing it costs +0.171 [+0.046,+0.314] at D=20, 1,000,000 FEs",
+    "-COBL": "DROP  \u2014 never helps, and removing it gains +0.066 [+0.012,+0.122] at D=10, 15,000 FEs",
+    "-Levy": "DROP  \u2014 never helps, and removing it gains +0.275 [+0.096,+0.480] at D=20, 15,000 FEs",
+    "-Archive": "KEEP  \u2014 removing it costs +0.276 [+0.078,+0.493] at D=20, 15,000 FEs",
+    "-SHADE": "KEEP  \u2014 removing it costs +0.218 [+0.036,+0.430] at D=10, 15,000 FEs",
+    "-pAnneal": "DROP  \u2014 negligible in every block",
+    "Stripped": "DROP  \u2014 never helps, and removing it gains +0.243 [+0.067,+0.444] at D=20, 15,000 FEs"
+  },
+  "negligible_margin": 0.147,
+  "use_stripped": true
+}

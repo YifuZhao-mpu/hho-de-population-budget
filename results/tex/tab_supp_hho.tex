@@ -1,0 +1,35 @@
+\begin{table}[htbp]
+\centering
+\caption{SEHHO-COBL and SEHHO-COBL-R against HHO in every block of the three suites.}
+\label{tab:supp_hho}
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{llcccc}
+\toprule
+ & & \multicolumn{2}{c}{SEHHO-COBL vs HHO} & \multicolumn{2}{c}{SEHHO-COBL-R vs HHO} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Block & Budget & $\bar\delta$ [95\% CI] & W/L & $\bar\delta$ [95\% CI] & W/L \\
+\midrule
+\multicolumn{6}{l}{\emph{CEC2017, the diagnostic suite}} \\
+\quad $D=30$ & 300{,}000 & $-0.936$ $[-0.988,\,-0.863]$ & 29/0 & $-0.976$ $[-0.996,\,-0.948]$ & 29/0 \\
+\quad $D=50$ & 500{,}000 & $-0.976$ $[-0.999,\,-0.943]$ & 29/0 & $-0.986$ $[-1.000,\,-0.961]$ & 29/0 \\
+\quad $D=100$ & 1{,}000{,}000 & $-0.972$ $[-1.000,\,-0.917]$ & 29/0 & $-0.998$ $[-1.000,\,-0.993]$ & 29/0 \\
+\quad $D=30$ & 15{,}000 & $-0.981$ $[-0.997,\,-0.952]$ & 29/0 & $-0.974$ $[-0.999,\,-0.931]$ & 29/0 \\
+\quad $D=50$ & 15{,}000 & $-0.960$ $[-0.997,\,-0.907]$ & 29/0 & $-0.891$ $[-0.979,\,-0.781]$ & 28/1 \\
+\midrule
+\multicolumn{6}{l}{\emph{CEC2022, the selection suite}} \\
+\quad $D=10$ & 15{,}000 & $-0.934$ $[-0.996,\,-0.853]$ & 12/0 & $-0.958$ $[-1.000,\,-0.876]$ & 12/0 \\
+\quad $D=20$ & 15{,}000 & $-0.993$ $[-1.000,\,-0.980]$ & 12/0 & $-0.992$ $[-1.000,\,-0.978]$ & 12/0 \\
+\quad $D=10$ & 200{,}000 & $-0.929$ $[-0.996,\,-0.814]$ & 12/0 & $-0.921$ $[-1.000,\,-0.782]$ & 12/0 \\
+\quad $D=20$ & 1{,}000{,}000 & $-0.964$ $[-0.999,\,-0.920]$ & 12/0 & $-0.975$ $[-1.000,\,-0.946]$ & 12/0 \\
+\midrule
+\multicolumn{6}{l}{\emph{CEC2014, the confirmatory suite}} \\
+\quad $D=30$ & 300{,}000 & $-0.450$ $[-0.734,\,-0.142]$ & 21/9 & $-0.466$ $[-0.752,\,-0.147]$ & 22/8 \\
+\quad $D=50$ & 500{,}000 & $-0.430$ $[-0.716,\,-0.111]$ & 22/8 & $-0.448$ $[-0.735,\,-0.118]$ & 22/8 \\
+\quad $D=30$ & 15{,}000 & $-0.516$ $[-0.773,\,-0.228]$ & 24/6 & $-0.517$ $[-0.781,\,-0.217]$ & 24/6 \\
+\quad $D=50$ & 15{,}000 & $-0.465$ $[-0.749,\,-0.155]$ & 22/8 & $-0.480$ $[-0.756,\,-0.174]$ & 23/7 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}\footnotesize
+$\delta$ is Cliff's delta of arm A against arm B (A the changed, new or first-named arm), computed per function over the 30 runs of each arm and averaged over the functions; negative values favour A. Here A is the configuration named at the head of the column and B is HHO. Intervals are 95\% percentile bootstrap intervals over the functions (20{,}000 resamples; for SEHHO-COBL-R on CEC2014, the intervals of the registered analysis); W/L counts the functions on which $\delta$ is negative / positive. The SEHHO-COBL-R columns repeat the HHO rows of Tables~\ref{tab:cec2014}, \ref{tab:cec2017}, \ref{tab:cec2017_tight}, \ref{tab:cec2022_matched} and~\ref{tab:cec2022_competition}; the SEHHO-COBL columns are computed in the same way. On CEC2017 and CEC2022 $\bar\delta$ runs from $-0.929$ to $-0.993$ for SEHHO-COBL and from $-0.891$ to $-0.998$ for SEHHO-COBL-R; on CEC2014, where HHO is helped by the all-zero shift of the third component of every composition function, from $-0.430$ to $-0.516$ and from $-0.448$ to $-0.517$. Both configurations differ from HHO in several components, so these contrasts are consistent with, but do not isolate, the value of replacing HHO's siege operators.
+\end{flushleft}
+\end{table}

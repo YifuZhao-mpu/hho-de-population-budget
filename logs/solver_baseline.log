@@ -1,0 +1,16 @@
+  P3_heat_exchanger_RC01     SLSQP         30 runs in   1.3 min
+  P3_heat_exchanger_RC01     trust-constr  30 runs in   1.5 min
+  P4_blending_pooling_RC06   SLSQP         30 runs in   3.7 min
+  P4_blending_pooling_RC06   trust-constr  30 runs in  13.4 min
+
+wrote <repo>/scripts/../results/E5c_solver_baseline.csv  (121 runs)
+
+### P3_heat_exchanger_RC01
+  SLSQP                                feasible   0.0%  best           --  gap-vs-analytic       --  mean FEs 15000
+  trust-constr                         feasible  50.0%  best     189.3204  gap-vs-analytic   +0.00%  mean FEs 15000
+  Equality elimination (closed form)   feasible 100.0%  best     189.3116  gap-vs-analytic   +0.00%  mean FEs 0
+
+### P4_blending_pooling_RC06
+  SLSQP                                feasible 100.0%  best       1.8638  gap-vs-analytic       --  mean FEs 15000
+  trust-constr                         feasible   0.0%  best           --  gap-vs-analytic       --  mean FEs 15000
+

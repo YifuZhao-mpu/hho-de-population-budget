@@ -1,0 +1,51 @@
+{
+ "title": "Pre-registration of stage E16: the one-constant population control (L-SHADE 6D vs 18D) on the five engineering problems",
+ "written_at": "2026-10-03T01:33:35.859498+00:00",
+ "written_before_any_E16_run": true,
+ "status": "requested by peer review (Stage 3, roadmap item REV-09); exploratory relative to the confirmatory CEC2014 analysis; reported whatever it shows",
+ "design": {
+  "problems": [
+   "P1_pressure_vessel",
+   "P2_gear_train",
+   "P3_heat_exchanger_RC01",
+   "P4_blending_pooling_RC06",
+   "P5_batch_plant_RC14"
+  ],
+  "dimensions": {
+   "P1_pressure_vessel": 4,
+   "P2_gear_train": 4,
+   "P3_heat_exchanger_RC01": 9,
+   "P4_blending_pooling_RC06": 38,
+   "P5_batch_plant_RC14": 10
+  },
+  "arms": [
+   "LSHADE-N6",
+   "LSHADE-N18"
+  ],
+  "arm_definition": "stock L-SHADE port (published settings: H=6, archive 2.6N, p=0.11, LPSR to N_min=4) with only N_init changed: round(6D) vs round(18D)",
+  "budget": 15000,
+  "runs_per_cell": 30,
+  "constraint_handling": "Deb's feasibility rule, equality tolerance 1e-4, as in Section 7",
+  "seeds": "deterministic hash of (suite, func, dim, algorithm, tag, run) with tag E16_engpop_<problem>; independent of the E5 runs"
+ },
+ "analysis": {
+  "per_problem": [
+   "feasibility of each arm and Fisher's exact two-sided test",
+   "Cliff's delta between the arms on the Deb-rule fitness the runs minimise (negative favours 6D), 95% percentile bootstrap over runs (20,000 resamples, seed 20261002)",
+   "two-sided Mann-Whitney U test, Holm-corrected across the five problems",
+   "best and median objective among feasible runs"
+  ],
+  "verdict_rule": "6D better / 18D better when the interval excludes 0 in that direction AND p_Holm<0.05; negligible when the interval lies inside |delta|<0.147; otherwise no detectable difference"
+ },
+ "directional_expectation": "If the population result is about evaluations per variable, 6D should not be worse than 18D on the problem with the fewest evaluations per variable (RC06, D=38, ~395 per variable), and 18D should not be worse on the problems with the most (pressure vessel and gear train, D=4, 3,750 per variable). Either failure is reported as evidence against the budget-per-variable reading.",
+ "commitments": [
+  "Reported in the paper whatever it shows.",
+  "Nothing in E16 may change the frozen configuration or any earlier result."
+ ],
+ "scripts": {
+  "runner": "scripts/run_e16_engineering_population.py",
+  "runner_sha256": "06277b1c47428677405008922aa5c51cc6caa79247163550724e9ff6a32a0f86",
+  "analysis": "scripts/analyze_e16.py",
+  "analysis_sha256": "2195af9c8d754c492cf5a2513b66994ce7f6a5b792a8c383cb18501eeb8ee27a"
+ }
+}

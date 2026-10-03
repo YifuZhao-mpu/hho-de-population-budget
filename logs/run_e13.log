@@ -1,0 +1,38 @@
+
+=== E13: 840 cells x 30 runs = 25200 runs ===
+   25/840 cells     7.9 min elapsed  ETA  256.1 min
+   50/840 cells     9.6 min elapsed  ETA  151.5 min
+   75/840 cells    11.7 min elapsed  ETA  119.3 min
+   100/840 cells    13.3 min elapsed  ETA   98.4 min
+   125/840 cells    15.1 min elapsed  ETA   86.5 min
+   150/840 cells    17.1 min elapsed  ETA   78.8 min
+   175/840 cells    23.7 min elapsed  ETA   90.0 min
+   200/840 cells    25.3 min elapsed  ETA   81.1 min
+   225/840 cells    26.3 min elapsed  ETA   71.8 min
+   250/840 cells    26.8 min elapsed  ETA   63.3 min
+   275/840 cells    27.3 min elapsed  ETA   56.0 min
+   300/840 cells    27.7 min elapsed  ETA   49.9 min
+   325/840 cells    28.1 min elapsed  ETA   44.5 min
+   350/840 cells    28.4 min elapsed  ETA   39.7 min
+   375/840 cells    29.1 min elapsed  ETA   36.1 min
+   400/840 cells    30.2 min elapsed  ETA   33.2 min
+   425/840 cells    41.8 min elapsed  ETA   40.8 min
+   450/840 cells    47.6 min elapsed  ETA   41.3 min
+   475/840 cells    51.5 min elapsed  ETA   39.6 min
+   500/840 cells    56.0 min elapsed  ETA   38.1 min
+   525/840 cells    59.8 min elapsed  ETA   35.9 min
+   550/840 cells    64.4 min elapsed  ETA   34.0 min
+   575/840 cells    71.4 min elapsed  ETA   32.9 min
+   600/840 cells    80.8 min elapsed  ETA   32.3 min
+   625/840 cells    82.6 min elapsed  ETA   28.4 min
+   650/840 cells    84.4 min elapsed  ETA   24.7 min
+   675/840 cells    85.0 min elapsed  ETA   20.8 min
+   700/840 cells    86.0 min elapsed  ETA   17.2 min
+   725/840 cells    86.7 min elapsed  ETA   13.8 min
+   750/840 cells    87.4 min elapsed  ETA   10.5 min
+   775/840 cells    88.2 min elapsed  ETA    7.4 min
+   800/840 cells    89.2 min elapsed  ETA    4.5 min
+   825/840 cells   101.9 min elapsed  ETA    1.9 min
+   840/840 cells   131.4 min elapsed  ETA    0.0 min
+   wrote <repo>/scripts/../results/E13_cec2014.csv  (25200 runs)
+=== E13 done in 131.4 min ===
