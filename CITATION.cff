@@ -12,22 +12,24 @@ identifiers:
     value: 10.5281/zenodo.23190949
     description: "Concept DOI (all versions)"
 authors:
-  - family-names: Li
-    given-names: Yanxiao
-  - family-names: Wei
-    given-names: Junhao
   - family-names: Zhao
     given-names: Yifu
+    orcid: "https://orcid.org/0009-0004-2363-9269"
+  - family-names: Zou
+    given-names: Xiaofan
+    orcid: "https://orcid.org/0009-0005-5995-3150"
   - family-names: Li
-    given-names: Zikun
-  - family-names: Lu
-    given-names: Baili
+    given-names: Yanxiao
+    orcid: "https://orcid.org/0009-0008-3389-1619"
+  - family-names: Wei
+    given-names: Junhao
+    orcid: "https://orcid.org/0009-0006-0553-2032"
   - family-names: Im
     given-names: Sio-Kei
-  - family-names: Yang
-    given-names: Xu
-  - family-names: Chan
-    given-names: Ka-Hou
+    orcid: "https://orcid.org/0000-0002-5599-4300"
   - family-names: Wang
     given-names: Yapeng
     orcid: "https://orcid.org/0000-0002-1085-5091"
+  - family-names: Yang
+    given-names: Xu
+    orcid: "https://orcid.org/0000-0002-7037-3609"
