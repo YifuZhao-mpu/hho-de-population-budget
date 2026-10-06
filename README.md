@@ -7,7 +7,8 @@ seeds that produced them, and the analysis scripts. Read
 relying on any single file.
 
 Public repository: https://github.com/YifuZhao-mpu/hho-de-population-budget
-(the release cited in the manuscript is tagged `v1.1`). Code is MIT-licensed
+(the release cited in the manuscript is tagged `v1.1` and archived on Zenodo,
+https://doi.org/10.5281/zenodo.23190950). Code is MIT-licensed
 and data CC BY 4.0; third-party benchmark sources keep their authors' terms
 (see [Licences and access](#licences-and-access)).
 
