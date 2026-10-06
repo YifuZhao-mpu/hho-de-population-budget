@@ -47,7 +47,9 @@ print(f"   -> worst relative difference over all CEC2022 checks: {worst:.3e}")
 print("=" * 70)
 print("2. CEC2017 native  vs  cec2017-py (independent MIT port)")
 try:
-    sys.path.insert(0, "/tmp/cec2017ref")
+    ref = os.environ.get("CEC2017_PY_DIR")  # folder holding the cec2017-py package, if it is not installed
+    if ref:
+        sys.path.insert(0, ref)
     import warnings; warnings.filterwarnings("ignore")
     from cec2017 import functions as TF
     allf = TF.all_functions

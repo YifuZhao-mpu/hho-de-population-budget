@@ -33,6 +33,7 @@ from scipy import stats as sps
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from sehho.runfiles import read_runs  # noqa: E402  (pandas.read_csv; SEHHO_ERROR_DECIMALS, Section 2.6)
 from sehho.stats import friedman, cliffs_delta, cliffs_magnitude, holm
 
 RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
@@ -132,7 +133,7 @@ def main():
         if not os.path.exists(p):
             print(f"  [{label}] {fname} not found — skipped")
             continue
-        df = pd.read_csv(p)
+        df = read_runs(p)
         if "dim" in df.columns:
             df = df[df.dim == 30]
         r = analyse(df, label)

@@ -8,13 +8,13 @@
 Population $N$ & Generations & Friedman rank & \#1 functions & $\delta$($N$ vs $N{=}30$) [95\% CI] & $p_{\text{Holm}}$ \\
 \midrule
 30 (as in SEHHO-COBL) & 9{,}996 & 4.24 & 2 & -- & -- \\
-60 & 4{,}996 & 3.21 & 1 & $-0.438$ $[-0.535,\,-0.333]$ & $<$0.001$^{*}$ \\
-120 & 2{,}496 & \textbf{2.19} & 11 & $-0.595$ $[-0.724,\,-0.450]$ & $<$0.001$^{*}$ \\
-270 & 1{,}108 & 2.22 & 7 & $-0.498$ $[-0.651,\,-0.324]$ & $<$0.001$^{*}$ \\
-540 & 552 & 3.14 & 8 & $-0.101$ $[-0.366,\,+0.168]$ & 0.600 \\
+60 & 4{,}996 & 3.21 & 2 & $-0.438$ $[-0.535,\,-0.333]$ & $<$0.001$^{*}$ \\
+120 & 2{,}496 & \textbf{2.19} & 12 & $-0.595$ $[-0.724,\,-0.450]$ & $<$0.001$^{*}$ \\
+270 & 1{,}108 & 2.22 & 9 & $-0.498$ $[-0.651,\,-0.324]$ & $<$0.001$^{*}$ \\
+540 & 552 & 3.14 & 9 & $-0.101$ $[-0.366,\,+0.168]$ & 0.600 \\
 \bottomrule
 \end{tabular}}
 \begin{flushleft}\footnotesize
-CEC2017 at $D=30$, 29 functions, 30 runs, $3\times10^{5}$ evaluations for every row; only the population size differs. Iman--Davenport $F=11.22$, $p=1.08\times10^{-7}$. Generations are $T=\lceil(3\times10^{5}-4N)/N\rceil$, the count the algorithm computes after its $4N$-evaluation initialisation; for $N=270$ and $N=540$ the last generation is cut short by the budget. $\delta$ is Cliff's delta of arm A against arm B (A the changed, new or first-named arm), computed per function over the 30 runs of each arm and averaged over the functions; negative values favour A. Here A is the population in the row and B the $N=30$ of SEHHO-COBL, so a negative value favours the larger population. Intervals are 95\% percentile bootstrap intervals over the functions (20{,}000 resamples); $p_{\text{Holm}}$ is a two-sided signed-rank test of the per-function deltas, Holm-corrected over the four contrasts; $^{*}$ marks $p_{\text{Holm}}<0.05$. $N=120$ is the best of the five sizes on this suite, so its contrast is the largest of the four by selection.
+CEC2017 at $D=30$, 29 functions, 30 runs, $3\times10^{5}$ evaluations for every row; only the population size differs. ``\#1 functions'' counts the functions on which the row has the lowest mean error; exact ties are credited to every tied row. Iman--Davenport $F=11.22$, $p=1.08\times10^{-7}$. Generations are $T=\lceil(3\times10^{5}-4N)/N\rceil$, the count the algorithm computes after its $4N$-evaluation initialisation; for $N=270$ and $N=540$ the last generation is cut short by the budget. $\delta$ is Cliff's delta of arm A against arm B (A the changed, new or first-named arm), computed per function over the 30 runs of each arm and averaged over the functions; negative values favour A. Here A is the population in the row and B the $N=30$ of SEHHO-COBL, so a negative value favours the larger population. Intervals are 95\% percentile bootstrap intervals over the functions (20{,}000 resamples); $p_{\text{Holm}}$ is a two-sided signed-rank test of the per-function deltas, Holm-corrected over the four contrasts; $^{*}$ marks $p_{\text{Holm}}<0.05$. $N=120$ is the best of the five sizes on this suite, so its contrast is the largest of the four by selection.
 \end{flushleft}
 \end{table}

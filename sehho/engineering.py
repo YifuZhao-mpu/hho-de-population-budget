@@ -39,7 +39,8 @@ EPS_EQ = 1e-4        # CEC2020 real-world protocol equality tolerance
 FEAS_TOL = 1e-8      # total violation at or below this counts as feasible;
                      # without it, designs sitting exactly on an active
                      # inequality (e.g. the classical pressure-vessel optimum,
-                     # where g3 evaluates to 8e-11) are misreported.
+                     # where g3 leaves a rounding residual of order 1e-10, of either
+                     # sign) are misreported.
 
 
 class EngProblem:

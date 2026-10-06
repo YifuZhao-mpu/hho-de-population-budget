@@ -40,6 +40,7 @@ import pandas as pd
 from scipy import stats as sps
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from sehho.runfiles import read_runs  # noqa: E402  (pandas.read_csv; SEHHO_ERROR_DECIMALS, Section 2.6)
 from sehho.stats import cliffs_delta, holm
 
 RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
@@ -73,7 +74,7 @@ def method_runs(suite):
         p = os.path.join(RES, f)
         if not os.path.exists(p):
             continue
-        d = pd.read_csv(p)
+        d = read_runs(p)
         if "suite" in d.columns:
             d = d[d.suite == suite]
         parts.append(d[d.algo == METHOD])
@@ -84,7 +85,7 @@ def main():
     if not os.path.exists(SRC):
         print(f"{SRC} not found — run: python3 scripts/run_experiments.py E14")
         return 1
-    e14 = pd.read_csv(SRC)
+    e14 = read_runs(SRC)
     rng = np.random.default_rng(SEED)
     rows = []
 

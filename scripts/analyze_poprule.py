@@ -31,6 +31,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from sehho.runfiles import read_runs  # noqa: E402  (pandas.read_csv; SEHHO_ERROR_DECIMALS, Section 2.6)
 from sehho.stats import friedman, cliffs_delta, holm
 from scipy import stats as sps
 
@@ -55,7 +56,7 @@ def main():
     if not os.path.exists(SRC):
         print(f"{SRC} not found — run: python3 scripts/run_experiments.py E7")
         return 1
-    d = pd.read_csv(SRC)
+    d = read_runs(SRC)
     d["cand"] = d.algo.str.slice(4).str.split("@").str[0]
     d["block"] = d.algo.str.split("@").str[1]
     cands = sorted(d.cand.unique())

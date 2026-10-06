@@ -1,0 +1,629 @@
+kind,table,label,document,row,column,full,rounded
+delta or interval value,tab_ablation.tex,tab:ablation,supp,AlwaysPbest,"CEC2017 $D{=}30$, 300{,}000 FEs / $\delta$",$-0.166$,$-0.160$
+delta or interval value,tab_ablation.tex,tab:ablation,supp,DeterministicPhase,"CEC2017 $D{=}30$, 300{,}000 FEs / $\delta$",$-0.152$,$-0.150$
+delta or interval value,tab_ablation.tex,tab:ablation,supp,AlwaysPbest+FixedP,"CEC2017 $D{=}30$, 300{,}000 FEs / $\delta$",$-0.130$,$-0.123$
+delta or interval value,tab_ablation.tex,tab:ablation,supp,AlwaysPbest+NoLevy,"CEC2017 $D{=}30$, 300{,}000 FEs / $\delta$",$-0.152$,$-0.144$
+magnitude label,tab_ablation.tex,tab:ablation,supp,AlwaysPbest+NoLevy,"CEC2017 $D{=}30$, 300{,}000 FEs / Mag.",small,negligible
+delta or interval value,tab_ablation.tex,tab:ablation,supp,NoArchive,"CEC2017 $D{=}30$, 300{,}000 FEs / $\delta$",$+0.002$,$-0.009$
+delta or interval value,tab_ablation.tex,tab:ablation,supp,NoLevy,"CEC2017 $D{=}30$, 300{,}000 FEs / $\delta$",$+0.000$,$+0.001$
+delta or interval value,tab_ablation.tex,tab:ablation,supp,NoCOBL,"CEC2017 $D{=}30$, 300{,}000 FEs / $\delta$",$+0.009$,$+0.007$
+delta or interval value,tab_ablation.tex,tab:ablation,supp,NoEscapeEnergy,"CEC2017 $D{=}30$, 300{,}000 FEs / $\delta$",$+0.122$,$+0.119$
+delta or interval value,tab_ablation.tex,tab:ablation,supp,AlwaysBest,"CEC2017 $D{=}30$, 300{,}000 FEs / $\delta$",$+0.186$,$+0.181$
+rank,tab_cec2014.tex,tab:cec2014,supp,SEHHO-COBL-R,"$D=30$, 300{,}000 FEs / Rank",\textbf{3.72},\textbf{3.73}
+rank,tab_cec2014.tex,tab:cec2014,supp,SEHHO-COBL-R,"$D=50$, 500{,}000 FEs / Rank",\textbf{3.62},\textbf{3.63}
+rank,tab_cec2014.tex,tab:cec2014,supp,jSO,"$D=30$, 300{,}000 FEs / Rank",2.35,2.37
+rank,tab_cec2014.tex,tab:cec2014,supp,jSO,"$D=50$, 500{,}000 FEs / Rank",2.30,2.38
+delta or interval value,tab_cec2014.tex,tab:cec2014,supp,jSO,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.425$ $[+0.206,\,+0.630]$","$+0.398$ $[+0.175,\,+0.609]$"
+p-value,tab_cec2014.tex,tab:cec2014,supp,jSO,"$D=50$, 500{,}000 FEs / $p^{\text{SR}}_{\text{Holm}}$",0.007$^{*}$,0.013$^{*}$
+p-value,tab_cec2014.tex,tab:cec2014,supp,jSO,"$D=50$, 500{,}000 FEs / $p^{\text{F}}_{\text{Holm}}$",0.055,0.075
+rank,tab_cec2014.tex,tab:cec2014,supp,L-SHADE,"$D=30$, 300{,}000 FEs / Rank",2.38,2.40
+delta or interval value,tab_cec2014.tex,tab:cec2014,supp,L-SHADE,"$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.518$ $[+0.348,\,+0.679]$","$+0.521$ $[+0.351,\,+0.683]$"
+rank,tab_cec2014.tex,tab:cec2014,supp,L-SHADE,"$D=50$, 500{,}000 FEs / Rank",2.50,2.55
+delta or interval value,tab_cec2014.tex,tab:cec2014,supp,L-SHADE,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.419$ $[+0.231,\,+0.598]$","$+0.397$ $[+0.204,\,+0.582]$"
+p-value,tab_cec2014.tex,tab:cec2014,supp,L-SHADE,"$D=50$, 500{,}000 FEs / $p^{\text{SR}}_{\text{Holm}}$",0.002$^{*}$,0.003$^{*}$
+p-value,tab_cec2014.tex,tab:cec2014,supp,L-SHADE,"$D=50$, 500{,}000 FEs / $p^{\text{F}}_{\text{Holm}}$",0.091,0.104
+rank,tab_cec2014.tex,tab:cec2014,supp,SHADE,"$D=30$, 300{,}000 FEs / Rank",3.38,3.40
+delta or interval value,tab_cec2014.tex,tab:cec2014,supp,SHADE,"$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.064$ $[-0.104,\,+0.230]$","$+0.064$ $[-0.103,\,+0.230]$"
+rank,tab_cec2014.tex,tab:cec2014,supp,SHADE,"$D=50$, 500{,}000 FEs / Rank",3.57,3.53
+delta or interval value,tab_cec2014.tex,tab:cec2014,supp,SHADE,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.040$ $[-0.253,\,+0.175]$","$-0.031$ $[-0.242,\,+0.182]$"
+p-value,tab_cec2014.tex,tab:cec2014,supp,SHADE,"$D=50$, 500{,}000 FEs / $p^{\text{SR}}_{\text{Holm}}$",0.820,0.904
+p-value,tab_cec2014.tex,tab:cec2014,supp,SHADE,"$D=50$, 500{,}000 FEs / $p^{\text{F}}_{\text{Holm}}$",0.929,0.858
+rank,tab_cec2014.tex,tab:cec2014,supp,DE,"$D=30$, 300{,}000 FEs / Rank",5.23,5.25
+rank,tab_cec2014.tex,tab:cec2014,supp,DE,"$D=50$, 500{,}000 FEs / Rank",5.42,5.38
+delta or interval value,tab_cec2014.tex,tab:cec2014,supp,DE,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.573$ $[-0.783,\,-0.342]$","$-0.562$ $[-0.774,\,-0.329]$"
+p-value,tab_cec2014.tex,tab:cec2014,supp,DE,"$D=50$, 500{,}000 FEs / $p^{\text{F}}_{\text{Holm}}$",0.008$^{*}$,0.010$^{*}$
+rank,tab_cec2014.tex,tab:cec2014,supp,SEHHO-COBL,"$D=30$, 300{,}000 FEs / Rank",5.57,5.48
+delta or interval value,tab_cec2014.tex,tab:cec2014,supp,SEHHO-COBL,"$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.618$ $[-0.773,\,-0.438]$","$-0.595$ $[-0.754,\,-0.411]$"
+p-value,tab_cec2014.tex,tab:cec2014,supp,SEHHO-COBL,"$D=30$, 300{,}000 FEs / $p^{\text{F}}_{\text{Holm}}$",0.005$^{*}$,0.010$^{*}$
+rank,tab_cec2014.tex,tab:cec2014,supp,SEHHO-COBL,"$D=50$, 500{,}000 FEs / Rank",5.37,5.28
+delta or interval value,tab_cec2014.tex,tab:cec2014,supp,SEHHO-COBL,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.621$ $[-0.792,\,-0.415]$","$-0.588$ $[-0.763,\,-0.383]$"
+p-value,tab_cec2014.tex,tab:cec2014,supp,SEHHO-COBL,"$D=50$, 500{,}000 FEs / $p^{\text{F}}_{\text{Holm}}$",0.009$^{*}$,0.015$^{*}$
+p-value,tab_cec2014.tex,tab:cec2014,supp,HHO,"$D=30$, 300{,}000 FEs / $p^{\text{F}}_{\text{Holm}}$",0.015$^{*}$,0.017$^{*}$
+delta or interval value,tab_cec2014.tex,tab:cec2014,supp,HHO,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.448$ $[-0.735,\,-0.118]$","$-0.450$ $[-0.737,\,-0.122]$"
+p-value,tab_cec2014.tex,tab:cec2014,supp,HHO,"$D=50$, 500{,}000 FEs / $p^{\text{SR}}_{\text{Holm}}$",0.033$^{*}$,0.017$^{*}$
+p-value,tab_cec2014.tex,tab:cec2014,supp,HHO,"$D=50$, 500{,}000 FEs / $p^{\text{F}}_{\text{Holm}}$",0.015$^{*}$,0.016$^{*}$
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,registered (30 functions),"$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","\begin{tabular}[c]{@{}c@{}}\textbf{\boldmath $-0.618$}\\[-2pt]{\scriptsize $[-0.773,\,-0.438]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}\textbf{\boldmath $-0.595$}\\[-2pt]{\scriptsize $[-0.754,\,-0.411]$}\end{tabular}"
+W/L cell,tab_cec2014primary.tex,tab:cec2014primary,main,registered (30 functions),"$D=30$, 300{,}000 FEs / W/L",26/2,25/2
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,registered (30 functions),"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","\begin{tabular}[c]{@{}c@{}}\textbf{\boldmath $-0.621$}\\[-2pt]{\scriptsize $[-0.792,\,-0.415]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}\textbf{\boldmath $-0.588$}\\[-2pt]{\scriptsize $[-0.763,\,-0.383]$}\end{tabular}"
+W/L cell,tab_cec2014primary.tex,tab:cec2014primary,main,registered (30 functions),"$D=50$, 500{,}000 FEs / W/L",27/3,26/3
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,"post hoc: without F18, F22--F24 (26)","$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","\begin{tabular}[c]{@{}c@{}}$-0.566$\\[-2pt]{\scriptsize $[-0.759,\,-0.336]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$-0.565$\\[-2pt]{\scriptsize $[-0.758,\,-0.335]$}\end{tabular}"
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,"CEC2017, the same contrast (29)","$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","\begin{tabular}[c]{@{}c@{}}$-0.764$\\[-2pt]{\scriptsize $[-0.879,\,-0.632]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$-0.732$\\[-2pt]{\scriptsize $[-0.860,\,-0.583]$}\end{tabular}"
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,"CEC2017, the same contrast (29)","$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","\begin{tabular}[c]{@{}c@{}}$-0.718$\\[-2pt]{\scriptsize $[-0.870,\,-0.534]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$-0.704$\\[-2pt]{\scriptsize $[-0.865,\,-0.512]$}\end{tabular}"
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,"gap, CEC2017 minus CEC2014","$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","\begin{tabular}[c]{@{}c@{}}$-0.146$\\[-2pt]{\scriptsize $[-0.357,\,+0.055]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$-0.138$\\[-2pt]{\scriptsize $[-0.359,\,+0.080]$}\end{tabular}"
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,"gap, CEC2017 minus CEC2014","$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","\begin{tabular}[c]{@{}c@{}}$-0.097$\\[-2pt]{\scriptsize $[-0.354,\,+0.157]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$-0.116$\\[-2pt]{\scriptsize $[-0.378,\,+0.150]$}\end{tabular}"
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,jSO,column 4,"\begin{tabular}[c]{@{}c@{}}$+0.425$\\[-2pt]{\scriptsize $[+0.206,\,+0.630]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$+0.398$\\[-2pt]{\scriptsize $[+0.175,\,+0.609]$}\end{tabular}"
+other printed number,tab_cec2014primary.tex,tab:cec2014primary,main,jSO,column 5,0.007$^{*}$,0.013$^{*}$
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,L-SHADE,column 2,"\begin{tabular}[c]{@{}c@{}}$+0.518$\\[-2pt]{\scriptsize $[+0.348,\,+0.679]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$+0.521$\\[-2pt]{\scriptsize $[+0.351,\,+0.683]$}\end{tabular}"
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,L-SHADE,column 4,"\begin{tabular}[c]{@{}c@{}}$+0.419$\\[-2pt]{\scriptsize $[+0.231,\,+0.598]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$+0.397$\\[-2pt]{\scriptsize $[+0.204,\,+0.582]$}\end{tabular}"
+other printed number,tab_cec2014primary.tex,tab:cec2014primary,main,L-SHADE,column 5,0.002$^{*}$,0.003$^{*}$
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,SHADE,column 2,"\begin{tabular}[c]{@{}c@{}}$+0.064$\\[-2pt]{\scriptsize $[-0.104,\,+0.230]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$+0.064$\\[-2pt]{\scriptsize $[-0.103,\,+0.230]$}\end{tabular}"
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,SHADE,column 4,"\begin{tabular}[c]{@{}c@{}}$-0.040$\\[-2pt]{\scriptsize $[-0.253,\,+0.175]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$-0.031$\\[-2pt]{\scriptsize $[-0.242,\,+0.182]$}\end{tabular}"
+other printed number,tab_cec2014primary.tex,tab:cec2014primary,main,SHADE,column 5,0.820,0.904
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,SEHHO-COBL,column 2,"\begin{tabular}[c]{@{}c@{}}$-0.618$\\[-2pt]{\scriptsize $[-0.773,\,-0.438]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$-0.595$\\[-2pt]{\scriptsize $[-0.754,\,-0.411]$}\end{tabular}"
+delta or interval value,tab_cec2014primary.tex,tab:cec2014primary,main,SEHHO-COBL,column 4,"\begin{tabular}[c]{@{}c@{}}$-0.621$\\[-2pt]{\scriptsize $[-0.792,\,-0.415]$}\end{tabular}","\begin{tabular}[c]{@{}c@{}}$-0.588$\\[-2pt]{\scriptsize $[-0.763,\,-0.383]$}\end{tabular}"
+table note text,tab_cec2014primary.tex,tab:cec2014primary,main,and it does so also for BCa intervals ,,"($[-0.755,\,-0.402]$","($[-0.738,\,-0.383]$"
+table note text,tab_cec2014primary.tex,tab:cec2014primary,main,"does so also for BCa intervals ($[-0.755,\,-0.402]$ and ",,"$[-0.773,\,-0.378]$),","$[-0.746,\,-0.348]$),"
+table note text,tab_cec2014primary.tex,tab:cec2014primary,main,"for BCa intervals ($[-0.755,\,-0.402]$ and $[-0.773,\,-0.378]$), Student-$t$ intervals ",,"($[-0.796,\,-0.439]$,","($[-0.778,\,-0.411]$,"
+table note text,tab_cec2014primary.tex,tab:cec2014primary,main,"$[-0.755,\,-0.402]$ and $[-0.773,\,-0.378]$), Student-$t$ intervals ($[-0.796,\,-0.439]$, ",,"$[-0.822,\,-0.419]$)","$[-0.792,\,-0.383]$)"
+table note text,tab_cec2014primary.tex,tab:cec2014primary,main,"ls ($[-0.796,\,-0.439]$, $[-0.822,\,-0.419]$) and two-block Bonferroni (97.5\%) intervals ",,"($[-0.791,\,-0.408]$,","($[-0.773,\,-0.382]$,"
+table note text,tab_cec2014primary.tex,tab:cec2014primary,main,"$, $[-0.822,\,-0.419]$) and two-block Bonferroni (97.5\%) intervals ($[-0.791,\,-0.408]$, ",,"$[-0.813,\,-0.382]$).","$[-0.783,\,-0.350]$)."
+table note text,tab_cec2014primary.tex,tab:cec2014primary,main,"the Bonferroni adjustment as well (BCa $[-0.758,\,-0.362]$ and ",,"$[-0.738,\,-0.297]$).","$[-0.737,\,-0.296]$)."
+rank,tab_cec2017.tex,tab:cec2017,supp,SEHHO-COBL-R,"$D=30$, 300{,}000 FEs / Rank",\textbf{3.45},\textbf{3.40}
+#1 count,tab_cec2017.tex,tab:cec2017,supp,SEHHO-COBL-R,"$D=30$, 300{,}000 FEs / \#1",\textbf{3},\textbf{4}
+rank,tab_cec2017.tex,tab:cec2017,supp,jSO,"$D=30$, 300{,}000 FEs / Rank",1.62,1.71
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,jSO,"$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.700$ $[+0.577,\,+0.813]$","$+0.673$ $[+0.536,\,+0.799]$"
+W/T/L cell,tab_cec2017.tex,tab:cec2017,supp,jSO,"$D=30$, 300{,}000 FEs / W/T/L",0/5/24,0/7/22
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,jSO,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.781$ $[+0.658,\,+0.891]$","$+0.774$ $[+0.648,\,+0.887]$"
+W/T/L cell,tab_cec2017.tex,tab:cec2017,supp,jSO,"$D=50$, 500{,}000 FEs / W/T/L",0/5/24,0/6/23
+rank,tab_cec2017.tex,tab:cec2017,supp,L-SHADE,"$D=30$, 300{,}000 FEs / Rank",2.31,2.33
+#1 count,tab_cec2017.tex,tab:cec2017,supp,L-SHADE,"$D=30$, 300{,}000 FEs / \#1",10,11
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,L-SHADE,"$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.534$ $[+0.371,\,+0.689]$","$+0.533$ $[+0.372,\,+0.687]$"
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,L-SHADE,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.690$ $[+0.540,\,+0.821]$","$+0.685$ $[+0.535,\,+0.817]$"
+rank,tab_cec2017.tex,tab:cec2017,supp,SHADE,"$D=30$, 300{,}000 FEs / Rank",3.48,3.47
+#1 count,tab_cec2017.tex,tab:cec2017,supp,SHADE,"$D=30$, 300{,}000 FEs / \#1",4,5
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,SHADE,"$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.049$ $[-0.175,\,+0.074]$","$-0.048$ $[-0.171,\,+0.073]$"
+p-value,tab_cec2017.tex,tab:cec2017,supp,SHADE,"$D=30$, 300{,}000 FEs / $p_{\text{Holm}}$",0.565,0.578
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,SHADE,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.240$ $[-0.405,\,-0.069]$","$-0.251$ $[-0.412,\,-0.085]$"
+p-value,tab_cec2017.tex,tab:cec2017,supp,SHADE,"$D=50$, 500{,}000 FEs / $p_{\text{Holm}}$",0.017$^{*}$,0.012$^{*}$
+W/T/L cell,tab_cec2017.tex,tab:cec2017,supp,SHADE,"$D=50$, 500{,}000 FEs / W/T/L",12/15/2,12/16/1
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,SHADE,"$D=100$, 1{,}000{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.365$ $[-0.584,\,-0.136]$","$-0.365$ $[-0.584,\,-0.137]$"
+rank,tab_cec2017.tex,tab:cec2017,supp,DE,"$D=30$, 300{,}000 FEs / Rank",4.84,4.81
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,DE,"$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.565$ $[-0.762,\,-0.344]$","$-0.536$ $[-0.740,\,-0.314]$"
+W/T/L cell,tab_cec2017.tex,tab:cec2017,supp,DE,"$D=30$, 300{,}000 FEs / W/T/L",20/8/1,19/9/1
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,DE,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.560$ $[-0.785,\,-0.299]$","$-0.555$ $[-0.781,\,-0.293]$"
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,SEHHO-COBL,"$D=30$, 300{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.764$ $[-0.881,\,-0.631]$","$-0.732$ $[-0.863,\,-0.584]$"
+W/T/L cell,tab_cec2017.tex,tab:cec2017,supp,SEHHO-COBL,"$D=30$, 300{,}000 FEs / W/T/L",24/5/0,23/6/0
+delta or interval value,tab_cec2017.tex,tab:cec2017,supp,SEHHO-COBL,"$D=50$, 500{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.718$ $[-0.868,\,-0.538]$","$-0.704$ $[-0.863,\,-0.515]$"
+table note text,tab_cec2017.tex,tab:cec2017,supp,Friedman test over 29 functions ($D=30$: Iman--Davenport ,,"$F=73.13$,","$F=67.70$,"
+table note text,tab_cec2017.tex,tab:cec2017,supp,"Friedman test over 29 functions ($D=30$: Iman--Davenport $F=73.13$, ",,$p=2.72\times10^{-44}$;,$p=2.69\times10^{-42}$;
+rank,tab_cec2022_competition.tex,tab:cec2022_competition,supp,SEHHO-COBL-R,"$D=20$, 1{,}000{,}000 FEs / Rank",\textbf{3.62},\textbf{3.67}
+rank,tab_cec2022_competition.tex,tab:cec2022_competition,supp,jSO,"$D=20$, 1{,}000{,}000 FEs / Rank",2.38,2.42
+delta or interval value,tab_cec2022_competition.tex,tab:cec2022_competition,supp,jSO,"$D=20$, 1{,}000{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.437$ $[+0.220,\,+0.649]$","$+0.429$ $[+0.209,\,+0.644]$"
+printed mark or label,tab_cec2022_competition.tex,tab:cec2022_competition,supp,jSO,"$D=20$, 1{,}000{,}000 FEs / $p_{\text{Holm}}$",0.031$^{*}$,0.055
+rank,tab_cec2022_competition.tex,tab:cec2022_competition,supp,L-SHADE,"$D=20$, 1{,}000{,}000 FEs / Rank",2.54,2.58
+delta or interval value,tab_cec2022_competition.tex,tab:cec2022_competition,supp,L-SHADE,"$D=20$, 1{,}000{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.373$ $[+0.138,\,+0.614]$","$+0.400$ $[+0.182,\,+0.626]$"
+printed mark or label,tab_cec2022_competition.tex,tab:cec2022_competition,supp,L-SHADE,"$D=20$, 1{,}000{,}000 FEs / $p_{\text{Holm}}$",0.082,0.039$^{*}$
+delta or interval value,tab_cec2022_competition.tex,tab:cec2022_competition,supp,SHADE,"$D=10$, 200{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.057$ $[-0.355,\,+0.224]$","$-0.056$ $[-0.354,\,+0.224]$"
+rank,tab_cec2022_competition.tex,tab:cec2022_competition,supp,SHADE,"$D=20$, 1{,}000{,}000 FEs / Rank",3.96,4.00
+delta or interval value,tab_cec2022_competition.tex,tab:cec2022_competition,supp,SHADE,"$D=20$, 1{,}000{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.015$ $[-0.199,\,+0.129]$","$-0.002$ $[-0.183,\,+0.135]$"
+delta or interval value,tab_cec2022_competition.tex,tab:cec2022_competition,supp,DE,"$D=10$, 200{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.059$ $[-0.260,\,+0.149]$","$-0.059$ $[-0.261,\,+0.149]$"
+rank,tab_cec2022_competition.tex,tab:cec2022_competition,supp,DE,"$D=20$, 1{,}000{,}000 FEs / Rank",3.79,3.83
+delta or interval value,tab_cec2022_competition.tex,tab:cec2022_competition,supp,DE,"$D=20$, 1{,}000{,}000 FEs / $\bar\delta$ [95\% CI]","$+0.107$ $[-0.171,\,+0.378]$","$+0.108$ $[-0.172,\,+0.379]$"
+delta or interval value,tab_cec2022_competition.tex,tab:cec2022_competition,supp,SEHHO-COBL,"$D=10$, 200{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.219$ $[-0.371,\,-0.084]$","$-0.218$ $[-0.370,\,-0.084]$"
+rank,tab_cec2022_competition.tex,tab:cec2022_competition,supp,SEHHO-COBL,"$D=20$, 1{,}000{,}000 FEs / Rank",4.79,4.58
+#1 count,tab_cec2022_competition.tex,tab:cec2022_competition,supp,SEHHO-COBL,"$D=20$, 1{,}000{,}000 FEs / \#1",3,4
+delta or interval value,tab_cec2022_competition.tex,tab:cec2022_competition,supp,SEHHO-COBL,"$D=20$, 1{,}000{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.488$ $[-0.672,\,-0.300]$","$-0.360$ $[-0.584,\,-0.144]$"
+printed mark or label,tab_cec2022_competition.tex,tab:cec2022_competition,supp,SEHHO-COBL,"$D=20$, 1{,}000{,}000 FEs / $p_{\text{Holm}}$",0.010$^{*}$,0.055
+W/T/L cell,tab_cec2022_competition.tex,tab:cec2022_competition,supp,SEHHO-COBL,"$D=20$, 1{,}000{,}000 FEs / W/T/L",6/6/0,5/7/0
+table note text,tab_cec2022_competition.tex,tab:cec2022_competition,supp,"ctions ($D=10$: Iman--Davenport $F=10.71$, $p=2.76\times10^{-8}$; $D=20$: Iman--Davenport ",,"$F=11.14$,","$F=10.24$,"
+table note text,tab_cec2022_competition.tex,tab:cec2022_competition,supp,"10$: Iman--Davenport $F=10.71$, $p=2.76\times10^{-8}$; $D=20$: Iman--Davenport $F=11.14$, ",,$p=1.51\times10^{-8}$).,$p=5.46\times10^{-8}$).
+rank,tab_cec2022_matched.tex,tab:cec2022_matched,supp,SEHHO-COBL-R,"$D=10$, 15{,}000 FEs / Rank",\textbf{1.79},\textbf{1.88}
+rank,tab_cec2022_matched.tex,tab:cec2022_matched,supp,jSO,"$D=10$, 15{,}000 FEs / Rank",2.96,2.92
+#1 count,tab_cec2022_matched.tex,tab:cec2022_matched,supp,jSO,"$D=10$, 15{,}000 FEs / \#1",3,4
+delta or interval value,tab_cec2022_matched.tex,tab:cec2022_matched,supp,jSO,"$D=10$, 15{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.438$ $[-0.698,\,-0.168]$","$-0.313$ $[-0.579,\,-0.050]$"
+printed mark or label,tab_cec2022_matched.tex,tab:cec2022_matched,supp,jSO,"$D=10$, 15{,}000 FEs / $p_{\text{Holm}}$",0.041$^{*}$,0.125
+rank,tab_cec2022_matched.tex,tab:cec2022_matched,supp,L-SHADE,"$D=10$, 15{,}000 FEs / Rank",2.92,2.79
+#1 count,tab_cec2022_matched.tex,tab:cec2022_matched,supp,L-SHADE,"$D=10$, 15{,}000 FEs / \#1",1,2
+delta or interval value,tab_cec2022_matched.tex,tab:cec2022_matched,supp,L-SHADE,"$D=10$, 15{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.368$ $[-0.619,\,-0.125]$","$-0.268$ $[-0.525,\,-0.022]$"
+printed mark or label,tab_cec2022_matched.tex,tab:cec2022_matched,supp,L-SHADE,"$D=10$, 15{,}000 FEs / $p_{\text{Holm}}$",0.041$^{*}$,0.125
+W/T/L cell,tab_cec2022_matched.tex,tab:cec2022_matched,supp,L-SHADE,"$D=10$, 15{,}000 FEs / W/T/L",3/9/0,3/8/1
+rank,tab_cec2022_matched.tex,tab:cec2022_matched,supp,SEHHO-COBL,"$D=10$, 15{,}000 FEs / Rank",3.33,3.42
+delta or interval value,tab_cec2022_matched.tex,tab:cec2022_matched,supp,SEHHO-COBL,"$D=10$, 15{,}000 FEs / $\bar\delta$ [95\% CI]","$-0.265$ $[-0.432,\,-0.100]$","$-0.267$ $[-0.434,\,-0.104]$"
+table note text,tab_cec2022_matched.tex,tab:cec2022_matched,supp,Friedman test over 12 functions ($D=10$: Iman--Davenport ,,"$F=19.70$,","$F=19.43$,"
+table note text,tab_cec2022_matched.tex,tab:cec2022_matched,supp,"Friedman test over 12 functions ($D=10$: Iman--Davenport $F=19.70$, ",,$p=4.92\times10^{-13}$;,$p=6.55\times10^{-13}$;
+delta or interval value,tab_composition.tex,tab:composition,supp,re-introduce the escape-energy gate,"$D{=}10$, 15{,}000 FEs","$-0.034$ $[-0.175,\,+0.078]$","$-0.022$ $[-0.164,\,+0.087]$"
+printed mark or label,tab_composition.tex,tab:composition,supp,re-introduce the escape-energy gate,"$D{=}20$, 1{,}000{,}000 FEs","\textbf{\boldmath $+0.171$ $[+0.046,\,+0.314]$$^{\ddagger}$$^{\circ}$}","\textbf{\boldmath $+0.143$ $[+0.030,\,+0.280]$$^{\S}$}"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove chaotic opposition-based initialisation,"$D{=}10$, 15{,}000 FEs","\textbf{\boldmath $-0.066$ $[-0.122,\,-0.012]$$^{\ddagger}$$^{\circ}$}","\textbf{\boldmath $-0.068$ $[-0.125,\,-0.014]$$^{\ddagger}$$^{\circ}$}"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove chaotic opposition-based initialisation,"$D{=}10$, 200{,}000 FEs","$-0.016$ $[-0.081,\,+0.045]$","$-0.016$ $[-0.079,\,+0.046]$"
+printed mark or label,tab_composition.tex,tab:composition,supp,remove chaotic opposition-based initialisation,"$D{=}20$, 1{,}000{,}000 FEs","$-0.074$ $[-0.163,\,+0.007]$","\textbf{\boldmath $-0.080$ $[-0.166,\,-0.004]$$^{\S}$$^{\circ}$}"
+printed mark or label,tab_composition.tex,tab:composition,supp,remove the L\'evy perturbation,"$D{=}10$, 15{,}000 FEs","$-0.139$ $[-0.322,\,+0.006]$$^{\circ}$","$-0.123$ $[-0.309,\,+0.022]$"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the L\'evy perturbation,"$D{=}10$, 200{,}000 FEs","$+0.038$ $[-0.055,\,+0.131]$","$+0.039$ $[-0.054,\,+0.132]$"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the L\'evy perturbation,"$D{=}20$, 1{,}000{,}000 FEs","$-0.019$ $[-0.102,\,+0.079]$","$-0.022$ $[-0.104,\,+0.075]$"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the external archive,"$D{=}10$, 15{,}000 FEs","$+0.067$ $[-0.033,\,+0.162]$","$+0.047$ $[-0.047,\,+0.138]$"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the external archive,"$D{=}10$, 200{,}000 FEs","\textbf{\boldmath $+0.091$ $[+0.002,\,+0.192]$$^{\S}$$^{\circ}$}","\textbf{\boldmath $+0.093$ $[+0.004,\,+0.193]$$^{\S}$$^{\circ}$}"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the external archive,"$D{=}20$, 1{,}000{,}000 FEs","$+0.043$ $[-0.069,\,+0.169]$","$+0.026$ $[-0.080,\,+0.150]$"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the success-history memory,"$D{=}10$, 15{,}000 FEs","\textbf{\boldmath $+0.218$ $[+0.036,\,+0.430]$$^{\S}$}","\textbf{\boldmath $+0.218$ $[+0.036,\,+0.431]$$^{\S}$}"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the success-history memory,"$D{=}10$, 200{,}000 FEs","$+0.127$ $[-0.152,\,+0.411]$","$+0.128$ $[-0.151,\,+0.412]$"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the success-history memory,"$D{=}20$, 1{,}000{,}000 FEs","$+0.070$ $[-0.141,\,+0.286]$","$+0.067$ $[-0.145,\,+0.285]$"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the $p$ annealing,"$D{=}10$, 15{,}000 FEs","$-0.027$ $[-0.102,\,+0.052]$","$-0.031$ $[-0.106,\,+0.049]$"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the $p$ annealing,"$D{=}10$, 200{,}000 FEs","$+0.027$ $[-0.017,\,+0.084]$","$+0.028$ $[-0.017,\,+0.084]$"
+delta or interval value,tab_composition.tex,tab:composition,supp,remove the $p$ annealing,"$D{=}20$, 1{,}000{,}000 FEs","$-0.012$ $[-0.083,\,+0.049]$","$-0.027$ $[-0.091,\,+0.019]$"
+delta or interval value,tab_composition.tex,tab:composition,supp,\emph{all three dropped parts removed at once},"$D{=}10$, 15{,}000 FEs","$-0.121$ $[-0.289,\,+0.006]$$^{\circ}$","$-0.107$ $[-0.277,\,+0.021]$$^{\circ}$"
+delta or interval value,tab_composition.tex,tab:composition,supp,\emph{all three dropped parts removed at once},"$D{=}20$, 1{,}000{,}000 FEs","$+0.005$ $[-0.066,\,+0.107]$","$+0.002$ $[-0.068,\,+0.104]$"
+table note text,tab_composition.tex,tab:composition,supp,"a negligible amount (at $D{=}10$ with 15{,}000 evaluations ",,$-0.066$,$-0.068$
+table note text,tab_composition.tex,tab:composition,supp,"negligible amount (at $D{=}10$ with 15{,}000 evaluations $-0.066$ ",,"$[-0.122,\,-0.012]$,","$[-0.125,\,-0.014]$,"
+table note text,tab_composition.tex,tab:composition,supp,"inside the band; the Student-$t$ bound reaches zero, ",,"$[-0.131,\,-0.000]$).","$[-0.134,\,-0.001]$)."
+table note text,tab_composition.tex,tab:composition,supp, Bonferroni-adjusted Student-$t$ interval: removing opposition-based initialisation gives ,,"$[-0.154,\,+0.023]$","$[-0.157,\,+0.022]$"
+table note text,tab_composition.tex,tab:composition,supp,"gives $[-0.154,\,+0.023]$ there, and removing the $p$ annealing ",,"$[-0.149,\,+0.096]$","$[-0.154,\,+0.093]$"
+table note text,tab_composition.tex,tab:composition,supp,"annealing $[-0.149,\,+0.096]$ at $D{=}10$ with 15{,}000 evaluations and ",,"$[-0.146,\,+0.166]$","$[-0.146,\,+0.167]$"
+other printed number,tab_gatefactorial.tex,tab:gatefactorial,supp,"\multicolumn{2}{l}{remove gate, L\'evy gated}",column 5,$-0.166$,$-0.160$
+other printed number,tab_gatefactorial.tex,tab:gatefactorial,supp,"\multicolumn{2}{l}{remove gate, L\'evy off}",column 5,$-0.143$,$-0.136$
+other printed number,tab_gatefactorial.tex,tab:gatefactorial,supp,"\multicolumn{2}{l}{remove L\'evy, gate on}",column 5,$+0.000$,$+0.001$
+other printed number,tab_gatefactorial.tex,tab:gatefactorial,supp,"\multicolumn{2}{l}{remove L\'evy, gate off}",column 5,$+0.011$,$+0.012$
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated",$\bar\delta$,$-0.166$,$-0.160$
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated",95\% interval / percentile,"$[-0.238,\,-0.092]$","$[-0.231,\,-0.087]$"
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated",95\% interval / Student-$t$,"$[-0.243,\,-0.089]$","$[-0.236,\,-0.083]$"
+printed mark or label,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated",$p_{\text{Holm}}$ / $\delta$ scale,$<$0.001$^{*}$,0.001$^{*}$
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off",$\bar\delta$,$-0.143$,$-0.136$
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off",95\% interval / percentile,"$[-0.208,\,-0.078]$","$[-0.202,\,-0.069]$"
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off",95\% interval / Student-$t$,"$[-0.212,\,-0.074]$","$[-0.206,\,-0.065]$"
+p-value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off",$p_{\text{Holm}}$ / $\delta$ scale,0.002$^{*}$,0.004$^{*}$
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate on",$\bar\delta$,$+0.000$,$+0.001$
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate on",95\% interval / percentile,"$[-0.063,\,+0.064]$","$[-0.062,\,+0.065]$"
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate on",95\% interval / Student-$t$,"$[-0.068,\,+0.069]$","$[-0.067,\,+0.069]$"
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate off",$\bar\delta$,$+0.011$,$+0.012$
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate off",95\% interval / percentile,"$[-0.064,\,+0.082]$","$[-0.062,\,+0.083]$"
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate off",95\% interval / Student-$t$,"$[-0.067,\,+0.088]$","$[-0.066,\,+0.089]$"
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ L\'evy,$\bar\delta$,$-0.023$,$-0.024$
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ L\'evy,95\% interval / percentile,"$[-0.115,\,+0.070]$","$[-0.117,\,+0.070]$"
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ L\'evy,95\% interval / Student-$t$,"$[-0.123,\,+0.077]$","$[-0.124,\,+0.076]$"
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated",$\bar\delta$,$-0.132$,$-0.125$
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated",95\% interval / percentile,"$[-0.221,\,-0.044]$","$[-0.213,\,-0.039]$"
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated",95\% interval / Student-$t$,"$[-0.227,\,-0.037]$","$[-0.218,\,-0.033]$"
+p-value,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated",$p_{\text{Holm}}$ / $\delta$ scale,0.055,0.066
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",$\bar\delta$,$-0.094$,$-0.087$
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",95\% interval / percentile,"$[-0.184,\,-0.007]$","$[-0.173,\,-0.001]$"
+delta or interval value,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",95\% interval / Student-$t$,"$[-0.187,\,-0.000]$","$[-0.177,\,+0.004]$"
+p-value,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",$p_{\text{Holm}}$ / $\delta$ scale,0.198,0.213
+printed mark or label,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",verdict at $|\delta|<$ / 0.147,tie,incon.
+printed mark or label,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",verdict at $|\delta|<$ / 0.10,tie,incon.
+printed mark or label,tab_gateinference.tex,tab:gateinference,main,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",verdict at $|\delta|<$ / 0.05,tie,incon.
+table note text,tab_gateinference.tex,tab:gateinference,main,"the gate with L\'evy off at 300{,}000 evaluations ",,(0.002,(0.004
+table note text,tab_gateinference.tex,tab:gateinference,main,"for the unadjusted percentile, BCa and Student-$t$ intervals ",,alike.,alike except where marked.
+table note text,tab_gateinference.tex,tab:gateinference,main,for the budget interaction with L\'evy off (percentile ,,"$[-0.184,\,-0.007]$,","$[-0.173,\,-0.001]$,"
+table note text,tab_gateinference.tex,tab:gateinference,main,"budget interaction with L\'evy off (percentile $[-0.184,\,-0.007]$, Student-$t$ ",,"$[-0.187,\,-0.000]$),","$[-0.177,\,+0.004]$),"
+table note text,tab_gateinference.tex,tab:gateinference,main,"$[-0.187,\,-0.000]$), whose Bonferroni-adjusted intervals also include zero (Student-$t$ ",,"$[-0.216,\,+0.028]$,","$[-0.204,\,+0.031]$,"
+table note text,tab_gateinference.tex,tab:gateinference,main,"ferroni-adjusted intervals also include zero (Student-$t$ $[-0.216,\,+0.028]$, percentile ",,"$[-0.207,\,+0.018]$):","$[-0.195,\,+0.022]$):"
+table note text,tab_gateinference.tex,tab:gateinference,main,"and the gate $\times$ L\'evy interaction at 300{,}000 ",,"($[-0.153,\,+0.107]$);","($[-0.155,\,+0.107]$);"
+table note text,tab_gateinference.tex,tab:gateinference,main,"L\'evy perturbation with the gate off at 300{,}000 ",,"($[-0.090,\,+0.111]$).","($[-0.089,\,+0.113]$)."
+delta or interval value,tab_guide.tex,tab:guide,main,"1{,}500",$\delta$($6D$ vs $18D$) [95\% CI],"$-0.567$ $[-0.799,\,-0.325]$","$-0.445$ $[-0.680,\,-0.209]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"10{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$+0.269$ $[+0.082,\,+0.446]$","$+0.264$ $[+0.079,\,+0.438]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"10{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$+0.206$ $[-0.017,\,+0.416]$","$+0.173$ $[-0.046,\,+0.380]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"10{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$+0.465$ $[+0.341,\,+0.586]$","$+0.432$ $[+0.303,\,+0.559]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"10{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$+0.517$ $[+0.362,\,+0.659]$","$+0.504$ $[+0.349,\,+0.648]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"10{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$+0.197$ $[+0.020,\,+0.370]$","$+0.200$ $[+0.023,\,+0.374]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"10{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$-0.053$ $[-0.234,\,+0.124]$","$-0.074$ $[-0.249,\,+0.098]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"10{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$+0.259$ $[+0.161,\,+0.354]$","$+0.246$ $[+0.146,\,+0.343]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"10{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$+0.250$ $[+0.070,\,+0.426]$","$+0.235$ $[+0.055,\,+0.415]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"10{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$-0.595$ $[-0.724,\,-0.450]$","$-0.575$ $[-0.714,\,-0.418]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"20{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$-0.010$ $[-0.131,\,+0.098]$","$-0.011$ $[-0.131,\,+0.097]$"
+delta or interval value,tab_guide.tex,tab:guide,main,"50{,}000",$\delta$($6D$ vs $18D$) [95\% CI],"$+0.094$ $[-0.063,\,+0.262]$","$+0.088$ $[-0.068,\,+0.258]$"
+table note text,tab_guide.tex,tab:guide,main,better in 3 of 4 blocks ($\delta$ from ,,$+0.21$,$+0.17$
+table note text,tab_guide.tex,tab:guide,main,3 of 4 blocks ($\delta$ from $+0.21$ to ,,$+0.52$).,$+0.50$).
+delta or interval value,tab_popisolation.tex,tab:popisolation,main,\textbf{1. L-SHADE at $6D$ vs L-SHADE at $18D$},CEC2017 (diagnostic) / $D{=}30$,"\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.465$}\\{\scriptsize $[+0.341,\,+0.586]$}\end{tabular}","\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.432$}\\{\scriptsize $[+0.303,\,+0.559]$}\end{tabular}"
+delta or interval value,tab_popisolation.tex,tab:popisolation,main,\textbf{1. L-SHADE at $6D$ vs L-SHADE at $18D$},CEC2017 (diagnostic) / $D{=}50$,"\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.517$}\\{\scriptsize $[+0.362,\,+0.659]$}\end{tabular}","\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.504$}\\{\scriptsize $[+0.349,\,+0.648]$}\end{tabular}"
+delta or interval value,tab_popisolation.tex,tab:popisolation,main,\textbf{1. L-SHADE at $6D$ vs L-SHADE at $18D$},CEC2014$^{\dagger}$ (exploratory) / $D{=}30$,"\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.269$}\\{\scriptsize $[+0.082,\,+0.446]$}\end{tabular}","\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.264$}\\{\scriptsize $[+0.079,\,+0.438]$}\end{tabular}"
+delta or interval value,tab_popisolation.tex,tab:popisolation,main,\textbf{1. L-SHADE at $6D$ vs L-SHADE at $18D$},CEC2014$^{\dagger}$ (exploratory) / $D{=}50$,"\begin{tabular}[t]{@{}c@{}}$+0.206$\\{\scriptsize $[-0.017,\,+0.416]$}\end{tabular}","\begin{tabular}[t]{@{}c@{}}$+0.173$\\{\scriptsize $[-0.046,\,+0.380]$}\end{tabular}"
+other printed number,tab_popisolation.tex,tab:popisolation,main,2. SEHHO-COBL-R at $6D$ vs SEHHO-COBL-R at $18D$,CEC2017 (diagnostic) / $D{=}30$,\textbf{\boldmath $+0.259$},\textbf{\boldmath $+0.246$}
+printed mark or label,tab_popisolation.tex,tab:popisolation,main,2. SEHHO-COBL-R at $6D$ vs SEHHO-COBL-R at $18D$,CEC2017 (diagnostic) / $D{=}50$,\textbf{\boldmath $+0.250$},\textbf{\boldmath $+0.235$$^{\ddagger}$}
+other printed number,tab_popisolation.tex,tab:popisolation,main,2. SEHHO-COBL-R at $6D$ vs SEHHO-COBL-R at $18D$,CEC2014$^{\dagger}$ (exploratory) / $D{=}30$,$+0.197$$^{\circ}$$^{\ddagger}$,$+0.200$$^{\circ}$$^{\ddagger}$
+other printed number,tab_popisolation.tex,tab:popisolation,main,2. SEHHO-COBL-R at $6D$ vs SEHHO-COBL-R at $18D$,CEC2014$^{\dagger}$ (exploratory) / $D{=}50$,$-0.053$,$-0.074$
+delta or interval value,tab_popisolation.tex,tab:popisolation,main,"\textbf{3. SEHHO-COBL-R vs L-SHADE, both at $6D$}",CEC2017 (diagnostic) / $D{=}30$,"\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.272$}\\{\scriptsize $[+0.085,\,+0.459]$}\end{tabular}","\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.296$}\\{\scriptsize $[+0.114,\,+0.476]$}\end{tabular}"
+delta or interval value,tab_popisolation.tex,tab:popisolation,main,"\textbf{3. SEHHO-COBL-R vs L-SHADE, both at $6D$}",CEC2017 (diagnostic) / $D{=}50$,"\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.342$}\\{\scriptsize $[+0.155,\,+0.526]$}\end{tabular}","\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.339$}\\{\scriptsize $[+0.153,\,+0.523]$}\end{tabular}"
+delta or interval value,tab_popisolation.tex,tab:popisolation,main,"\textbf{3. SEHHO-COBL-R vs L-SHADE, both at $6D$}",CEC2014$^{\dagger}$ (exploratory) / $D{=}50$,"\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.318$}\\{\scriptsize $[+0.131,\,+0.497]$}\end{tabular}","\begin{tabular}[t]{@{}c@{}}\textbf{\boldmath $+0.328$}\\{\scriptsize $[+0.144,\,+0.503]$}\end{tabular}"
+other printed number,tab_popisolation.tex,tab:popisolation,main,4. SEHHO-COBL-R vs L-SHADE at its published $18D$,CEC2017 (diagnostic) / $D{=}30$,\textbf{\boldmath $+0.542$},\textbf{\boldmath $+0.539$}
+other printed number,tab_popisolation.tex,tab:popisolation,main,4. SEHHO-COBL-R vs L-SHADE at its published $18D$,CEC2017 (diagnostic) / $D{=}50$,\textbf{\boldmath $+0.703$},\textbf{\boldmath $+0.698$}
+other printed number,tab_popisolation.tex,tab:popisolation,main,4. SEHHO-COBL-R vs L-SHADE at its published $18D$,CEC2014$^{\dagger}$ (exploratory) / $D{=}30$,\textbf{\boldmath $+0.516$},\textbf{\boldmath $+0.517$}
+other printed number,tab_popisolation.tex,tab:popisolation,main,4. SEHHO-COBL-R vs L-SHADE at its published $18D$,CEC2014$^{\dagger}$ (exploratory) / $D{=}50$,\textbf{\boldmath $+0.420$},\textbf{\boldmath $+0.395$}
+other printed number,tab_poprule.tex,tab:poprule,supp,\textbf{LPSR-6D},"$D{=}10$, 15{,}000 FEs / $B/D=1{,}500$",\textbf{1.96 (1)},\textbf{2.08 (1)}
+other printed number,tab_poprule.tex,tab:poprule,supp,\textbf{LPSR-6D},"$D{=}20$, 1{,}000{,}000 FEs / $B/D=50{,}000$",\textbf{3.29 (3)},\textbf{3.33 (3)}
+other printed number,tab_poprule.tex,tab:poprule,supp,\textbf{LPSR-6D},mean,\textbf{2.67},\textbf{2.71}
+other printed number,tab_poprule.tex,tab:poprule,supp,LPSR-12D,"$D{=}10$, 15{,}000 FEs / $B/D=1{,}500$",2.58 (2),2.50 (2)
+other printed number,tab_poprule.tex,tab:poprule,supp,LPSR-12D,"$D{=}20$, 1{,}000{,}000 FEs / $B/D=50{,}000$",3.17 (2),3.25 (2)
+other printed number,tab_poprule.tex,tab:poprule,supp,LPSR-18D,"$D{=}10$, 15{,}000 FEs / $B/D=1{,}500$",3.50 (3),3.33 (3)
+other printed number,tab_poprule.tex,tab:poprule,supp,LPSR-18D,"$D{=}20$, 1{,}000{,}000 FEs / $B/D=50{,}000$",2.83 (1),2.92 (1)
+other printed number,tab_poprule.tex,tab:poprule,supp,LPSR-18D,mean,3.27,3.25
+other printed number,tab_poprule.tex,tab:poprule,supp,N30,"$D{=}10$, 15{,}000 FEs / $B/D=1{,}500$",3.79 (4),3.92 (4)
+other printed number,tab_poprule.tex,tab:poprule,supp,N30,"$D{=}10$, 200{,}000 FEs / $B/D=20{,}000$",5.38 (7),5.33 (7)
+other printed number,tab_poprule.tex,tab:poprule,supp,N30,"$D{=}20$, 1{,}000{,}000 FEs / $B/D=50{,}000$",5.58 (7),5.29 (7)
+other printed number,tab_poprule.tex,tab:poprule,supp,N30,mean,4.40,4.34
+other printed number,tab_poprule.tex,tab:poprule,supp,N4D,"$D{=}10$, 200{,}000 FEs / $B/D=20{,}000$",4.79 (6),4.83 (6)
+other printed number,tab_poprule.tex,tab:poprule,supp,N4D,"$D{=}20$, 1{,}000{,}000 FEs / $B/D=50{,}000$",4.71 (6),4.67 (6)
+other printed number,tab_poprule.tex,tab:poprule,supp,N120,"$D{=}20$, 1{,}000{,}000 FEs / $B/D=50{,}000$",4.38 (5),4.42 (5)
+other printed number,tab_poprule.tex,tab:poprule,supp,N120,mean,5.01,5.02
+other printed number,tab_poprule.tex,tab:poprule,supp,N120b,"$D{=}20$, 1{,}000{,}000 FEs / $B/D=50{,}000$",4.04 (4),4.12 (4)
+other printed number,tab_poprule.tex,tab:poprule,supp,N120b,mean,5.05,5.07
+table note text,tab_poprule.tex,tab:poprule,supp,match what LPSR requires. The near-identical mean ranks ,,($5.01$,($5.02$
+table note text,tab_poprule.tex,tab:poprule,supp,LPSR requires. The near-identical mean ranks ($5.01$ and ,,$5.05$),$5.07$)
+delta or interval value,tab_popsize.tex,tab:popsize,main,60,$\delta$($N$ vs $N{=}30$) [95\% CI],"$-0.438$ $[-0.535,\,-0.333]$","$-0.421$ $[-0.525,\,-0.307]$"
+delta or interval value,tab_popsize.tex,tab:popsize,main,120,$\delta$($N$ vs $N{=}30$) [95\% CI],"$-0.595$ $[-0.724,\,-0.450]$","$-0.575$ $[-0.714,\,-0.418]$"
+delta or interval value,tab_popsize.tex,tab:popsize,main,270,$\delta$($N$ vs $N{=}30$) [95\% CI],"$-0.498$ $[-0.651,\,-0.324]$","$-0.471$ $[-0.632,\,-0.290]$"
+delta or interval value,tab_popsize.tex,tab:popsize,main,540,$\delta$($N$ vs $N{=}30$) [95\% CI],"$-0.101$ $[-0.366,\,+0.168]$","$-0.089$ $[-0.352,\,+0.177]$"
+p-value,tab_popsize.tex,tab:popsize,main,540,$p_{\text{Holm}}$,0.600,0.632
+row order (rows sorted by a statistic),tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,FixedP; DeterministicPhase; NoLevy; AlwaysPbest; NoArchive; AlwaysBest,,,
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,\textbf{Full method},"CEC2022, $D=10$, 15{,}000 FEs / Rank",\textbf{6.25},\textbf{6.29}
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysPbest+NoLevy,"CEC2022, $D=10$, 15{,}000 FEs / Rank",4.75,4.79
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysPbest+NoLevy,"CEC2022, $D=10$, 15{,}000 FEs / $\delta$",$-0.102$,$-0.103$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysPbest+NoLevy,"CEC2022, $D=20$, 15{,}000 FEs / Rank",4.25,4.17
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysPbest+NoLevy,"CEC2022, $D=20$, 15{,}000 FEs / $\delta$",$+0.072$,$+0.015$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysPbest+FixedP,"CEC2022, $D=10$, 15{,}000 FEs / Rank",5.25,5.29
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysPbest+FixedP,"CEC2022, $D=10$, 15{,}000 FEs / $\delta$",$+0.035$,$+0.032$
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysPbest+FixedP,"CEC2022, $D=20$, 15{,}000 FEs / $\delta$",$+0.186$,$+0.170$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,FixedP,"CEC2022, $D=10$, 15{,}000 FEs / Rank",6.46,6.50
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,FixedP,"CEC2022, $D=20$, 15{,}000 FEs / Rank",5.75,5.92
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,FixedP,"CEC2022, $D=20$, 15{,}000 FEs / $\delta$",$+0.073$,$+0.067$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,DeterministicPhase,"CEC2022, $D=10$, 15{,}000 FEs / Rank",6.00,6.04
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,DeterministicPhase,"CEC2022, $D=10$, 15{,}000 FEs / $\delta$",$-0.011$,$-0.013$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,DeterministicPhase,"CEC2022, $D=20$, 15{,}000 FEs / Rank",5.83,5.67
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,DeterministicPhase,"CEC2022, $D=20$, 15{,}000 FEs / $\delta$",$+0.158$,$+0.093$
+magnitude label,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,DeterministicPhase,"CEC2022, $D=20$, 15{,}000 FEs / Mag.",small,negligible
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoCOBL,"CEC2022, $D=10$, 15{,}000 FEs / Rank",7.21,7.25
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoCOBL,"CEC2022, $D=20$, 15{,}000 FEs / $\delta$",$+0.040$,$+0.045$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoLevy,"CEC2022, $D=10$, 15{,}000 FEs / Rank",4.83,4.88
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoLevy,"CEC2022, $D=10$, 15{,}000 FEs / $\delta$",$-0.081$,$-0.079$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoLevy,"CEC2022, $D=20$, 15{,}000 FEs / Rank",6.33,6.58
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoLevy,"CEC2022, $D=20$, 15{,}000 FEs / $\delta$",$+0.006$,$+0.026$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysPbest,"CEC2022, $D=10$, 15{,}000 FEs / Rank",5.67,5.71
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysPbest,"CEC2022, $D=10$, 15{,}000 FEs / $\delta$",$+0.019$,$+0.010$
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysPbest,"CEC2022, $D=20$, 15{,}000 FEs / $\delta$",$+0.214$,$+0.181$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoArchive,"CEC2022, $D=10$, 15{,}000 FEs / Rank",6.92,6.96
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoArchive,"CEC2022, $D=10$, 15{,}000 FEs / $\delta$",$+0.005$,$-0.008$
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoArchive,"CEC2022, $D=20$, 15{,}000 FEs / $\delta$",$+0.253$,$+0.187$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysBest,"CEC2022, $D=10$, 15{,}000 FEs / Rank",8.08,8.12
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysBest,"CEC2022, $D=10$, 15{,}000 FEs / $\delta$",$+0.006$,$+0.008$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysBest,"CEC2022, $D=20$, 15{,}000 FEs / Rank",7.42,7.17
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,AlwaysBest,"CEC2022, $D=20$, 15{,}000 FEs / $\delta$",$+0.043$,$+0.059$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoEscapeEnergy,"CEC2022, $D=10$, 15{,}000 FEs / Rank",6.75,6.79
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoEscapeEnergy,"CEC2022, $D=10$, 15{,}000 FEs / $\delta$",$-0.011$,$-0.013$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoEscapeEnergy,"CEC2022, $D=20$, 15{,}000 FEs / Rank",7.50,7.58
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoEscapeEnergy,"CEC2022, $D=20$, 15{,}000 FEs / $\delta$",$+0.052$,$+0.053$
+rank,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoSHADE,"CEC2022, $D=10$, 15{,}000 FEs / Rank",9.83,9.38
+W/L cell,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoSHADE,"CEC2022, $D=10$, 15{,}000 FEs / W/L",2/9,2/8
+p-value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoSHADE,"CEC2022, $D=10$, 15{,}000 FEs / $p_{\text{Holm}}$",0.354,0.408
+delta or interval value,tab_supp_ablation_cec2022.tex,tab:supp_ablation_cec2022,supp,NoSHADE,"CEC2022, $D=10$, 15{,}000 FEs / $\delta$",$+0.374$,$+0.340$
+other printed number,tab_supp_cec2014_competition_D30.tex,tab:supp_cec2014_competition_D30,supp,F23 +,SEHHO-COBL-R,$\pm$5.78E-14,$\pm$0.00E+00
+other printed number,tab_supp_cec2014_competition_D30.tex,tab:supp_cec2014_competition_D30,supp,F23 +,jSO,$\pm$5.78E-14,$\pm$0.00E+00
+other printed number,tab_supp_cec2014_competition_D30.tex,tab:supp_cec2014_competition_D30,supp,F23 +,L-SHADE,$\pm$5.78E-14,$\pm$0.00E+00
+other printed number,tab_supp_cec2014_competition_D30.tex,tab:supp_cec2014_competition_D30,supp,F23 +,SHADE,$\pm$5.78E-14,$\pm$0.00E+00
+other printed number,tab_supp_cec2014_competition_D30.tex,tab:supp_cec2014_competition_D30,supp,F23 +,DE,$\pm$5.78E-14,$\pm$0.00E+00
+other printed number,tab_supp_cec2014_competition_D30.tex,tab:supp_cec2014_competition_D30,supp,F23 +,SEHHO-COBL,$\pm$4.89E-13,$\pm$0.00E+00
+other printed number,tab_supp_cec2014_competition_D30.tex,tab:supp_cec2014_competition_D30,supp,F27 +,jSO,$\pm$2.31E-13,$\pm$0.00E+00
+other printed number,tab_supp_cec2014_competition_D30.tex,tab:supp_cec2014_competition_D30,supp,F27 +,L-SHADE,$\pm$2.35E-13,$\pm$0.00E+00
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F2,SEHHO-COBL,7.35E-08,7.37E-08
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F3,SEHHO-COBL-R,2.44E-08,2.43E-08
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F3 +,SEHHO-COBL-R,$\pm$9.70E-08,$\pm$9.66E-08
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F8,jSO,2.02E-08,2.03E-08
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F8 +,jSO,$\pm$3.25E-08,$\pm$3.27E-08
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F23 +,SEHHO-COBL-R,$\pm$2.53E-13,$\pm$5.78E-14
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F23 +,jSO,$\pm$1.55E-13,$\pm$5.78E-14
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F23 +,L-SHADE,$\pm$1.73E-13,$\pm$5.78E-14
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F23 +,SHADE,$\pm$1.79E-13,$\pm$5.78E-14
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F23 +,DE,$\pm$2.02E-13,$\pm$5.78E-14
+other printed number,tab_supp_cec2014_competition_D50.tex,tab:supp_cec2014_competition_D50,supp,F23 +,SEHHO-COBL,$\pm$3.76E-12,$\pm$5.78E-14
+other printed number,tab_supp_cec2014_tight_D30.tex,tab:supp_cec2014_tight_D30,supp,F23 +,SEHHO-COBL,$\pm$3.31E-07,$\pm$3.30E-07
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F4 +,jSO,$\pm$1.49E-14,$\pm$0.00E+00
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F4 +,L-SHADE,$\pm$3.37E-14,$\pm$0.00E+00
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F4 +,DE,$\pm$3.91E-10,$\pm$0.00E+00
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F6,SEHHO-COBL-R,3.48E-07,3.49E-07
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F6,jSO,9.12E-09,9.33E-09
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F6,L-SHADE,1.25E-08,1.23E-08
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F6,SHADE,\textbf{1.14E-09},\textbf{1.00E-09}
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F6,DE,1.12E-08,1.07E-08
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F6 +,jSO,$\pm$3.47E-08,$\pm$3.55E-08
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F6 +,L-SHADE,$\pm$5.65E-08,$\pm$5.67E-08
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F6 +,SHADE,$\pm$\textbf{6.25E-09},$\pm$\textbf{5.48E-09}
+other printed number,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F6 +,DE,$\pm$2.35E-08,$\pm$2.29E-08
+printed mark or label,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F22,SEHHO-COBL-R,1.00E+02,\textbf{1.00E+02}
+printed mark or label,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F22,L-SHADE,1.00E+02,\textbf{1.00E+02}
+printed mark or label,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F22,SHADE,1.00E+02,\textbf{1.00E+02}
+printed mark or label,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F22 +,SEHHO-COBL-R,$\pm$2.21E-12,$\pm$\textbf{0.00E+00}
+printed mark or label,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F22 +,L-SHADE,$\pm$8.82E-14,$\pm$\textbf{0.00E+00}
+printed mark or label,tab_supp_cec2017_D30.tex,tab:supp_cec2017_D30,supp,F22 +,SHADE,$\pm$2.25E-13,$\pm$\textbf{0.00E+00}
+other printed number,tab_supp_cec2017_D50.tex,tab:supp_cec2017_D50,supp,F6,jSO,4.21E-07,4.22E-07
+other printed number,tab_supp_cec2017_D50.tex,tab:supp_cec2017_D50,supp,F6,L-SHADE,6.49E-08,6.50E-08
+other printed number,tab_supp_cec2017_D50.tex,tab:supp_cec2017_D50,supp,F6 +,jSO,$\pm$5.27E-07,$\pm$5.28E-07
+other printed number,tab_supp_cec2017_D50.tex,tab:supp_cec2017_D50,supp,F6 +,DE,$\pm$\textbf{9.71E-08},$\pm$\textbf{9.60E-08}
+other printed number,tab_supp_cec2022_competition_D10.tex,tab:supp_cec2022_competition_D10,supp,F9 +,SEHHO-COBL-R,$\pm$\textbf{0.00E+00},$\pm$\textbf{8.67E-14}
+other printed number,tab_supp_cec2022_competition_D10.tex,tab:supp_cec2022_competition_D10,supp,F9 +,jSO,$\pm$\textbf{0.00E+00},$\pm$\textbf{8.67E-14}
+other printed number,tab_supp_cec2022_competition_D10.tex,tab:supp_cec2022_competition_D10,supp,F9 +,L-SHADE,$\pm$\textbf{0.00E+00},$\pm$\textbf{8.67E-14}
+other printed number,tab_supp_cec2022_competition_D10.tex,tab:supp_cec2022_competition_D10,supp,F9 +,SHADE,$\pm$\textbf{0.00E+00},$\pm$\textbf{8.67E-14}
+other printed number,tab_supp_cec2022_competition_D10.tex,tab:supp_cec2022_competition_D10,supp,F9 +,DE,$\pm$\textbf{0.00E+00},$\pm$\textbf{8.67E-14}
+other printed number,tab_supp_cec2022_competition_D10.tex,tab:supp_cec2022_competition_D10,supp,F9 +,SEHHO-COBL,$\pm$\textbf{0.00E+00},$\pm$\textbf{8.67E-14}
+printed mark or label,tab_supp_cec2022_competition_D20.tex,tab:supp_cec2022_competition_D20,supp,F9,SEHHO-COBL,1.81E+02,\textbf{1.81E+02}
+other printed number,tab_supp_cec2022_competition_D20.tex,tab:supp_cec2022_competition_D20,supp,F9 +,SEHHO-COBL-R,$\pm$\textbf{1.09E-13},$\pm$\textbf{2.89E-14}
+other printed number,tab_supp_cec2022_competition_D20.tex,tab:supp_cec2022_competition_D20,supp,F9 +,jSO,$\pm$\textbf{8.67E-14},$\pm$\textbf{2.89E-14}
+other printed number,tab_supp_cec2022_competition_D20.tex,tab:supp_cec2022_competition_D20,supp,F9 +,L-SHADE,$\pm$\textbf{8.67E-14},$\pm$\textbf{2.89E-14}
+other printed number,tab_supp_cec2022_competition_D20.tex,tab:supp_cec2022_competition_D20,supp,F9 +,SHADE,$\pm$\textbf{8.67E-14},$\pm$\textbf{2.89E-14}
+other printed number,tab_supp_cec2022_competition_D20.tex,tab:supp_cec2022_competition_D20,supp,F9 +,DE,$\pm$\textbf{8.67E-14},$\pm$\textbf{2.89E-14}
+printed mark or label,tab_supp_cec2022_competition_D20.tex,tab:supp_cec2022_competition_D20,supp,F9 +,SEHHO-COBL,$\pm$1.97E-13,$\pm$\textbf{2.89E-14}
+other printed number,tab_supp_cec2022_competition_D20.tex,tab:supp_cec2022_competition_D20,supp,F11 +,L-SHADE,$\pm$\textbf{2.44E-13},$\pm$\textbf{0.00E+00}
+other printed number,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F1,jSO,2.25E-09,2.00E-09
+other printed number,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F1 +,jSO,$\pm$6.68E-09,$\pm$6.10E-09
+other printed number,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F1 +,L-SHADE,$\pm$7.73E-07,$\pm$7.72E-07
+other printed number,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F5,L-SHADE,4.97E-09,5.00E-09
+other printed number,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F5 +,L-SHADE,$\pm$1.36E-08,$\pm$1.38E-08
+printed mark or label,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F9,jSO,2.29E+02,\textbf{2.29E+02}
+printed mark or label,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F9,L-SHADE,2.29E+02,\textbf{2.29E+02}
+other printed number,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F9 +,SEHHO-COBL-R,$\pm$\textbf{0.00E+00},$\pm$\textbf{8.67E-14}
+printed mark or label,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F9 +,jSO,$\pm$7.16E-12,$\pm$\textbf{8.67E-14}
+printed mark or label,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F9 +,L-SHADE,$\pm$4.31E-11,$\pm$\textbf{8.67E-14}
+other printed number,tab_supp_cec2022_matched_D10.tex,tab:supp_cec2022_matched_D10,supp,F9 +,SEHHO-COBL,$\pm$\textbf{0.00E+00},$\pm$\textbf{8.67E-14}
+other printed number,tab_supp_cec2022_matched_D20.tex,tab:supp_cec2022_matched_D20,supp,F9 +,SEHHO-COBL,$\pm$\textbf{3.75E-12},$\pm$\textbf{2.89E-14}
+table note text,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"0.05, t adj. at 0.1, t adj. at ",,,"0.147, t at 0.05, t at 0.1, t at "
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}10$, 15{,}000",$\bar\delta$,$-0.034$,$-0.022$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}10$, 15{,}000",percentile,"$[-0.175,\,+0.078]$","$[-0.164,\,+0.087]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}10$, 15{,}000",BCa,"$[-0.217,\,+0.060]$","$[-0.217,\,+0.069]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}10$, 15{,}000",Student-$t$,"$[-0.186,\,+0.118]$","$[-0.173,\,+0.128]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}10$, 15{,}000","percentile, 98.75\%","$[-0.218,\,+0.101]$","$[-0.211,\,+0.107]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}10$, 15{,}000","Student-$t$, 98.75\%","$[-0.240,\,+0.171]$","$[-0.226,\,+0.182]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}10$, 200{,}000",BCa,"$[+0.014,\,+0.213]$","$[+0.015,\,+0.214]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}10$, 200{,}000","percentile, 98.75\%","$[-0.015,\,+0.234]$","$[-0.014,\,+0.234]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}10$, 200{,}000","Student-$t$, 98.75\%","$[-0.050,\,+0.266]$","$[-0.050,\,+0.267]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}20$, 1{,}000{,}000",$\bar\delta$,$+0.171$,$+0.143$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}20$, 1{,}000{,}000",percentile,"$[+0.046,\,+0.314]$","$[+0.030,\,+0.280]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}20$, 1{,}000{,}000",BCa,"$[+0.060,\,+0.343]$","$[+0.046,\,+0.314]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}20$, 1{,}000{,}000",Student-$t$,"$[+0.012,\,+0.331]$","$[-0.004,\,+0.290]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}20$, 1{,}000{,}000","percentile, 98.75\%","$[+0.021,\,+0.365]$","$[+0.010,\,+0.322]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{re-introduce the escape-energy gate} -- amended rule: KEEP (earns its plac / $D{=}20$, 1{,}000{,}000","Student-$t$, 98.75\%","$[-0.044,\,+0.387]$","$[-0.056,\,+0.342]$"
+table note text,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,amended rule: DROP (removal helps somewhere); differs under ,,"pct adj. at 0.05, pct adj. at 0.1, pct adj. at 0.147, ",
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 15{,}000",$\bar\delta$,$-0.066$,$-0.068$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 15{,}000",percentile,"$[-0.122,\,-0.012]$","$[-0.125,\,-0.014]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 15{,}000",BCa,"$[-0.123,\,-0.013]$","$[-0.129,\,-0.017]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 15{,}000",Student-$t$,"$[-0.131,\,-0.000]$","$[-0.134,\,-0.001]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 15{,}000","percentile, 98.75\%","$[-0.136,\,+0.001]$","$[-0.141,\,-0.002]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 15{,}000","Student-$t$, 98.75\%","$[-0.154,\,+0.023]$","$[-0.157,\,+0.022]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 200{,}000",percentile,"$[-0.081,\,+0.045]$","$[-0.079,\,+0.046]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 200{,}000",BCa,"$[-0.086,\,+0.042]$","$[-0.083,\,+0.042]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 200{,}000",Student-$t$,"$[-0.091,\,+0.058]$","$[-0.089,\,+0.058]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 200{,}000","percentile, 98.75\%","$[-0.101,\,+0.061]$","$[-0.099,\,+0.062]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}10$, 200{,}000","Student-$t$, 98.75\%","$[-0.117,\,+0.084]$","$[-0.115,\,+0.084]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000",$\bar\delta$,$-0.074$,$-0.080$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000",percentile,"$[-0.163,\,+0.007]$","$[-0.166,\,-0.004]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000",BCa,"$[-0.172,\,+0.000]$","$[-0.178,\,-0.011]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000",Student-$t$,"$[-0.174,\,+0.026]$","$[-0.175,\,+0.015]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000","percentile, 98.75\%","$[-0.187,\,+0.024]$","$[-0.190,\,+0.013]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove chaotic opposition-based initialisation} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000","Student-$t$, 98.75\%","$[-0.209,\,+0.061]$","$[-0.209,\,+0.049]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 15{,}000",$\bar\delta$,$-0.139$,$-0.123$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 15{,}000",percentile,"$[-0.322,\,+0.006]$","$[-0.309,\,+0.022]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 15{,}000",BCa,"$[-0.370,\,-0.015]$","$[-0.363,\,+0.001]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 15{,}000",Student-$t$,"$[-0.333,\,+0.054]$","$[-0.319,\,+0.072]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 15{,}000","percentile, 98.75\%","$[-0.376,\,+0.033]$","$[-0.366,\,+0.047]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 15{,}000","Student-$t$, 98.75\%","$[-0.401,\,+0.123]$","$[-0.388,\,+0.142]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 200{,}000",$\bar\delta$,$+0.038$,$+0.039$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 200{,}000",percentile,"$[-0.055,\,+0.131]$","$[-0.054,\,+0.132]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 200{,}000",Student-$t$,"$[-0.070,\,+0.146]$","$[-0.069,\,+0.147]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 200{,}000","percentile, 98.75\%","$[-0.078,\,+0.156]$","$[-0.076,\,+0.157]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}10$, 200{,}000","Student-$t$, 98.75\%","$[-0.109,\,+0.184]$","$[-0.107,\,+0.185]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}20$, 1{,}000{,}000",$\bar\delta$,$-0.019$,$-0.022$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}20$, 1{,}000{,}000",percentile,"$[-0.102,\,+0.079]$","$[-0.104,\,+0.075]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}20$, 1{,}000{,}000",BCa,"$[-0.089,\,+0.103]$","$[-0.091,\,+0.102]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}20$, 1{,}000{,}000",Student-$t$,"$[-0.124,\,+0.086]$","$[-0.127,\,+0.082]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}20$, 1{,}000{,}000","percentile, 98.75\%","$[-0.121,\,+0.113]$","$[-0.121,\,+0.110]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the L\'evy perturbation} -- amended rule: DROP (removal helps somew / $D{=}20$, 1{,}000{,}000","Student-$t$, 98.75\%","$[-0.161,\,+0.123]$","$[-0.164,\,+0.119]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 15{,}000",$\bar\delta$,$+0.067$,$+0.047$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 15{,}000",percentile,"$[-0.033,\,+0.162]$","$[-0.047,\,+0.138]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 15{,}000",BCa,"$[-0.037,\,+0.158]$","$[-0.051,\,+0.135]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 15{,}000",Student-$t$,"$[-0.049,\,+0.182]$","$[-0.063,\,+0.156]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 15{,}000","percentile, 98.75\%","$[-0.064,\,+0.184]$","$[-0.076,\,+0.160]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 15{,}000","Student-$t$, 98.75\%","$[-0.090,\,+0.223]$","$[-0.102,\,+0.195]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 200{,}000",$\bar\delta$,$+0.091$,$+0.093$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 200{,}000",percentile,"$[+0.002,\,+0.192]$","$[+0.004,\,+0.193]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 200{,}000",BCa,"$[+0.012,\,+0.207]$","$[+0.013,\,+0.208]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 200{,}000",Student-$t$,"$[-0.021,\,+0.204]$","$[-0.020,\,+0.205]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 200{,}000","percentile, 98.75\%","$[-0.017,\,+0.221]$","$[-0.016,\,+0.221]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}10$, 200{,}000","Student-$t$, 98.75\%","$[-0.061,\,+0.244]$","$[-0.060,\,+0.245]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}20$, 1{,}000{,}000",$\bar\delta$,$+0.043$,$+0.026$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}20$, 1{,}000{,}000",percentile,"$[-0.069,\,+0.169]$","$[-0.080,\,+0.150]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}20$, 1{,}000{,}000",BCa,"$[-0.058,\,+0.185]$","$[-0.066,\,+0.171]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}20$, 1{,}000{,}000",Student-$t$,"$[-0.097,\,+0.183]$","$[-0.109,\,+0.161]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}20$, 1{,}000{,}000","percentile, 98.75\%","$[-0.096,\,+0.209]$","$[-0.105,\,+0.189]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the external archive} -- amended rule: KEEP (earns its place); diff / $D{=}20$, 1{,}000{,}000","Student-$t$, 98.75\%","$[-0.147,\,+0.233]$","$[-0.156,\,+0.209]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}10$, 15{,}000",percentile,"$[+0.036,\,+0.430]$","$[+0.036,\,+0.431]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}10$, 15{,}000",BCa,"$[+0.059,\,+0.466]$","$[+0.059,\,+0.467]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}10$, 15{,}000","percentile, 98.75\%","$[-0.003,\,+0.493]$","$[-0.003,\,+0.494]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}10$, 200{,}000",$\bar\delta$,$+0.127$,$+0.128$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}10$, 200{,}000",percentile,"$[-0.152,\,+0.411]$","$[-0.151,\,+0.412]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}10$, 200{,}000",BCa,"$[-0.153,\,+0.410]$","$[-0.152,\,+0.411]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}10$, 200{,}000",Student-$t$,"$[-0.206,\,+0.461]$","$[-0.205,\,+0.461]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}10$, 200{,}000","percentile, 98.75\%","$[-0.228,\,+0.482]$","$[-0.228,\,+0.483]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}20$, 15{,}000",BCa,"$[-0.204,\,+0.421]$","$[-0.204,\,+0.422]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}20$, 1{,}000{,}000",$\bar\delta$,$+0.070$,$+0.067$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}20$, 1{,}000{,}000",percentile,"$[-0.141,\,+0.286]$","$[-0.145,\,+0.285]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}20$, 1{,}000{,}000",BCa,"$[-0.138,\,+0.289]$","$[-0.143,\,+0.287]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}20$, 1{,}000{,}000",Student-$t$,"$[-0.182,\,+0.322]$","$[-0.186,\,+0.321]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}20$, 1{,}000{,}000","percentile, 98.75\%","$[-0.194,\,+0.349]$","$[-0.199,\,+0.347]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the success-history memory} -- amended rule: KEEP (earns its place) / $D{=}20$, 1{,}000{,}000","Student-$t$, 98.75\%","$[-0.271,\,+0.411]$","$[-0.276,\,+0.411]$"
+table note text,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp," bca adj. at 0.05, bca adj. at 0.1,",,," bca adj. at 0.147,"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}10$, 15{,}000",$\bar\delta$,$-0.027$,$-0.031$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}10$, 15{,}000",percentile,"$[-0.102,\,+0.052]$","$[-0.106,\,+0.049]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}10$, 15{,}000",BCa,"$[-0.099,\,+0.056]$","$[-0.105,\,+0.051]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}10$, 15{,}000",Student-$t$,"$[-0.117,\,+0.064]$","$[-0.122,\,+0.060]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}10$, 15{,}000","percentile, 98.75\%","$[-0.120,\,+0.074]$","$[-0.126,\,+0.071]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}10$, 15{,}000","Student-$t$, 98.75\%","$[-0.149,\,+0.096]$","$[-0.154,\,+0.093]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}10$, 200{,}000",$\bar\delta$,$+0.027$,$+0.028$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}10$, 200{,}000",BCa,"$[-0.011,\,+0.097]$","$[-0.010,\,+0.098]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}20$, 15{,}000",BCa,"$[-0.091,\,+0.103]$","$[-0.092,\,+0.103]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}20$, 15{,}000","Student-$t$, 98.75\%","$[-0.146,\,+0.166]$","$[-0.146,\,+0.167]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}20$, 1{,}000{,}000",$\bar\delta$,$-0.012$,$-0.027$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}20$, 1{,}000{,}000",percentile,"$[-0.083,\,+0.049]$","$[-0.091,\,+0.019]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}20$, 1{,}000{,}000",BCa,"$[-0.093,\,+0.044]$","$[-0.113,\,+0.014]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}20$, 1{,}000{,}000",Student-$t$,"$[-0.090,\,+0.066]$","$[-0.093,\,+0.038]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}20$, 1{,}000{,}000","percentile, 98.75\%","$[-0.104,\,+0.065]$","$[-0.110,\,+0.024]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{remove the $p$ annealing} -- amended rule: DROP (negligible everywhere); d / $D{=}20$, 1{,}000{,}000","Student-$t$, 98.75\%","$[-0.117,\,+0.093]$","$[-0.116,\,+0.062]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}10$, 15{,}000",$\bar\delta$,$-0.121$,$-0.107$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}10$, 15{,}000",percentile,"$[-0.289,\,+0.006]$","$[-0.277,\,+0.021]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}10$, 15{,}000",BCa,"$[-0.351,\,-0.015]$","$[-0.348,\,-0.000]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}10$, 15{,}000",Student-$t$,"$[-0.298,\,+0.055]$","$[-0.285,\,+0.072]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}10$, 15{,}000","percentile, 98.75\%","$[-0.341,\,+0.028]$","$[-0.330,\,+0.039]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}10$, 15{,}000","Student-$t$, 98.75\%","$[-0.360,\,+0.118]$","$[-0.348,\,+0.135]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}20$, 15{,}000","Student-$t$, 98.75\%","$[-0.543,\,+0.056]$","$[-0.542,\,+0.056]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000",$\bar\delta$,$+0.005$,$+0.002$
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000",percentile,"$[-0.066,\,+0.107]$","$[-0.068,\,+0.104]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000",BCa,"$[-0.053,\,+0.155]$","$[-0.055,\,+0.156]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000",Student-$t$,"$[-0.099,\,+0.110]$","$[-0.102,\,+0.107]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000","percentile, 98.75\%","$[-0.077,\,+0.142]$","$[-0.078,\,+0.140]$"
+delta or interval value,tab_supp_composition_intervals.tex,tab:supp_composition_intervals,supp,"\emph{\emph{all three dropped parts removed at once}} -- amended rule: DROP (rem / $D{=}20$, 1{,}000{,}000","Student-$t$, 98.75\%","$[-0.137,\,+0.147]$","$[-0.139,\,+0.144]$"
+delta or interval value,tab_supp_e15.tex,tab:supp_e15,supp,original-rule configuration vs SEHHO-COBL,"$D=30$, 300{,}000 FEs","\textbf{\boldmath $-0.620$ $[-0.781,\,-0.433]$, $p_{\text{Holm}}$ $<$0.001}","\textbf{\boldmath $-0.597$ $[-0.762,\,-0.408]$, $p_{\text{Holm}}$ $<$0.001}"
+delta or interval value,tab_supp_e15.tex,tab:supp_e15,supp,original-rule configuration vs SEHHO-COBL,"$D=50$, 500{,}000 FEs","\textbf{\boldmath $-0.636$ $[-0.810,\,-0.429]$, $p_{\text{Holm}}$ $<$0.001}","\textbf{\boldmath $-0.604$ $[-0.782,\,-0.396]$, $p_{\text{Holm}}$ $<$0.001}"
+delta or interval value,tab_supp_e15.tex,tab:supp_e15,supp,SEHHO-COBL-R vs SEHHO-COBL (E13),"$D=30$, 300{,}000 FEs","$-0.618$ $[-0.773,\,-0.438]$","$-0.595$ $[-0.754,\,-0.411]$"
+delta or interval value,tab_supp_e15.tex,tab:supp_e15,supp,SEHHO-COBL-R vs SEHHO-COBL (E13),"$D=50$, 500{,}000 FEs","$-0.621$ $[-0.792,\,-0.415]$","$-0.588$ $[-0.763,\,-0.383]$"
+delta or interval value,tab_supp_e15.tex,tab:supp_e15,supp,original-rule configuration vs SEHHO-COBL-R,"$D=30$, 300{,}000 FEs","$+0.028$ $[-0.033,\,+0.086]$, $p_{\text{Holm}}$ 0.673","$+0.022$ $[-0.041,\,+0.082]$, $p_{\text{Holm}}$ 0.974"
+delta or interval value,tab_supp_e15.tex,tab:supp_e15,supp,original-rule configuration vs SEHHO-COBL-R,"$D=50$, 500{,}000 FEs","$+0.046$ $[-0.045,\,+0.132]$, $p_{\text{Holm}}$ 0.673","$+0.031$ $[-0.059,\,+0.116]$, $p_{\text{Holm}}$ 0.974"
+delta or interval value,tab_supp_e15.tex,tab:supp_e15,supp,original-rule configuration vs SEHHO-COBL-R,"$D=50$, 15{,}000 FEs","$+0.005$ $[-0.072,\,+0.082]$, $p_{\text{Holm}}$ 0.905","$+0.005$ $[-0.072,\,+0.082]$, $p_{\text{Holm}}$ 0.974"
+delta or interval value,tab_supp_e15.tex,tab:supp_e15,supp,"\quad same, Bonferroni-adjusted (98.75\%): percentile; Student-$t$","$D=30$, 300{,}000 FEs","$[-0.050,\,+0.102]$; $[-0.055,\,+0.110]$","$[-0.058,\,+0.098]$; $[-0.063,\,+0.107]$"
+delta or interval value,tab_supp_e15.tex,tab:supp_e15,supp,"\quad same, Bonferroni-adjusted (98.75\%): percentile; Student-$t$","$D=50$, 500{,}000 FEs","$[-0.072,\,+0.157]$; $[-0.076,\,+0.169]$","$[-0.085,\,+0.142]$; $[-0.090,\,+0.152]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated",$\bar\delta$,$-0.166$,$-0.160$
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated",95\% / percentile,"$[-0.238,\,-0.092]$","$[-0.231,\,-0.087]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated",95\% / BCa,"$[-0.235,\,-0.089]$","$[-0.228,\,-0.084]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated",95\% / Student-$t$,"$[-0.243,\,-0.089]$","$[-0.236,\,-0.083]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated","98.75\% (Bonferroni, $k=4$) / percentile","$[-0.257,\,-0.071]$","$[-0.250,\,-0.066]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated","98.75\% (Bonferroni, $k=4$) / Student-$t$","$[-0.267,\,-0.066]$","$[-0.259,\,-0.060]$"
+p-value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy gated",$p$,0.0002,0.0003
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off",$\bar\delta$,$-0.143$,$-0.136$
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off",95\% / percentile,"$[-0.208,\,-0.078]$","$[-0.202,\,-0.069]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off",95\% / BCa,"$[-0.209,\,-0.079]$","$[-0.203,\,-0.070]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off",95\% / Student-$t$,"$[-0.212,\,-0.074]$","$[-0.206,\,-0.065]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off","98.75\% (Bonferroni, $k=4$) / percentile","$[-0.227,\,-0.060]$","$[-0.222,\,-0.052]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off","98.75\% (Bonferroni, $k=4$) / Student-$t$","$[-0.233,\,-0.053]$","$[-0.228,\,-0.043]$"
+p-value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the gate}, at a fixed L\'evy setting} \\ / \quad with L\'evy off",$p$,0.0005,0.0012
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate on",$\bar\delta$,$+0.000$,$+0.001$
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate on",95\% / percentile,"$[-0.063,\,+0.064]$","$[-0.062,\,+0.065]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate on",95\% / BCa,"$[-0.063,\,+0.065]$","$[-0.062,\,+0.065]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate on",95\% / Student-$t$,"$[-0.068,\,+0.069]$","$[-0.067,\,+0.069]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate on","98.75\% (Bonferroni, $k=4$) / percentile","$[-0.082,\,+0.082]$","$[-0.080,\,+0.084]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate on","98.75\% (Bonferroni, $k=4$) / Student-$t$","$[-0.089,\,+0.089]$","$[-0.088,\,+0.089]$"
+p-value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate on",$p$,0.9818,0.9365
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate off",$\bar\delta$,$+0.011$,$+0.012$
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate off",95\% / percentile,"$[-0.064,\,+0.082]$","$[-0.062,\,+0.083]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate off",95\% / BCa,"$[-0.064,\,+0.081]$","$[-0.063,\,+0.083]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate off",95\% / Student-$t$,"$[-0.067,\,+0.088]$","$[-0.066,\,+0.089]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate off","98.75\% (Bonferroni, $k=4$) / percentile","$[-0.084,\,+0.101]$","$[-0.082,\,+0.102]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate off","98.75\% (Bonferroni, $k=4$) / Student-$t$","$[-0.090,\,+0.111]$","$[-0.089,\,+0.113]$"
+p-value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Removing the L\'evy perturbation}, at a fixed gate setting} \\ / \quad with the gate off",$p$,0.6004,0.5691
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ L\'evy,$\bar\delta$,$-0.023$,$-0.024$
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ L\'evy,95\% / percentile,"$[-0.115,\,+0.070]$","$[-0.117,\,+0.070]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ L\'evy,95\% / BCa,"$[-0.114,\,+0.071]$","$[-0.116,\,+0.071]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ L\'evy,95\% / Student-$t$,"$[-0.123,\,+0.077]$","$[-0.124,\,+0.076]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ L\'evy,"98.75\% (Bonferroni, $k=4$) / percentile","$[-0.140,\,+0.095]$","$[-0.142,\,+0.095]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ L\'evy,"98.75\% (Bonferroni, $k=4$) / Student-$t$","$[-0.153,\,+0.107]$","$[-0.155,\,+0.107]$"
+p-value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ L\'evy,$p$,0.7114,0.7282
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated",$\bar\delta$,$-0.132$,$-0.125$
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated",95\% / percentile,"$[-0.221,\,-0.044]$","$[-0.213,\,-0.039]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated",95\% / BCa,"$[-0.222,\,-0.046]$","$[-0.214,\,-0.040]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated",95\% / Student-$t$,"$[-0.227,\,-0.037]$","$[-0.218,\,-0.033]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated","98.75\% (Bonferroni, $k=4$) / percentile","$[-0.248,\,-0.021]$","$[-0.240,\,-0.017]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated","98.75\% (Bonferroni, $k=4$) / Student-$t$","$[-0.255,\,-0.008]$","$[-0.246,\,-0.004]$"
+p-value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy gated",$p$,0.0137,0.0164
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",$\bar\delta$,$-0.094$,$-0.087$
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",95\% / percentile,"$[-0.184,\,-0.007]$","$[-0.173,\,-0.001]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",95\% / BCa,"$[-0.185,\,-0.008]$","$[-0.173,\,-0.002]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",95\% / Student-$t$,"$[-0.187,\,-0.000]$","$[-0.177,\,+0.004]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off","98.75\% (Bonferroni, $k=4$) / percentile","$[-0.207,\,+0.018]$","$[-0.195,\,+0.022]$"
+delta or interval value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off","98.75\% (Bonferroni, $k=4$) / Student-$t$","$[-0.216,\,+0.028]$","$[-0.204,\,+0.031]$"
+p-value,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",$p$,0.0661,0.0710
+printed mark or label,tab_supp_gate_intervals.tex,tab:supp_gate_intervals,supp,"\emph{Interactions}: does one effect depend on the other factor?} \\ / \quad gate $\times$ budget, L\'evy off",verdicts at 0.147 / 0.10 / 0.05 / BCa / Student-$t$,$\neq0$/$\neq0$/$\neq0$,$\neq0$/$\neq0$/$\neq0$ ; incon./incon./incon.
+delta or interval value,tab_supp_hho.tex,tab:supp_hho,supp,"\emph{CEC2014, the confirmatory suite}} \\ / \quad $D=50$",SEHHO-COBL-R vs HHO / $\bar\delta$ [95\% CI],"$-0.448$ $[-0.735,\,-0.118]$","$-0.450$ $[-0.737,\,-0.122]$"
+table note text,tab_supp_hho.tex,tab:supp_hho,supp,"composition function, from $-0.430$ to $-0.516$ and from ",,$-0.448$,$-0.450$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",$\bar\delta$,$+0.465$,$+0.432$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",percentile,"$[+0.341,\,+0.586]$","$[+0.303,\,+0.559]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",BCa,"$[+0.339,\,+0.583]$","$[+0.301,\,+0.557]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",Student-$t$,"$[+0.336,\,+0.593]$","$[+0.296,\,+0.568]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000","Student-$t$, 98.75\%","$[+0.297,\,+0.633]$","$[+0.255,\,+0.609]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",$\bar\delta$,$+0.517$,$+0.504$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",percentile,"$[+0.362,\,+0.659]$","$[+0.349,\,+0.648]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",BCa,"$[+0.351,\,+0.649]$","$[+0.338,\,+0.639]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",Student-$t$,"$[+0.358,\,+0.676]$","$[+0.344,\,+0.664]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000","Student-$t$, 98.75\%","$[+0.309,\,+0.724]$","$[+0.295,\,+0.713]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",$\bar\delta$,$+0.269$,$+0.264$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",percentile,"$[+0.082,\,+0.446]$","$[+0.079,\,+0.438]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",BCa,"$[+0.068,\,+0.434]$","$[+0.066,\,+0.428]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",Student-$t$,"$[+0.076,\,+0.461]$","$[+0.073,\,+0.454]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000","Student-$t$, 98.75\%","$[+0.018,\,+0.520]$","$[+0.016,\,+0.512]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",$\bar\delta$,$+0.206$,$+0.173$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",percentile,"$[-0.017,\,+0.416]$","$[-0.046,\,+0.380]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",BCa,"$[-0.032,\,+0.404]$","$[-0.062,\,+0.369]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",Student-$t$,"$[-0.021,\,+0.434]$","$[-0.051,\,+0.397]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000","Student-$t$, 98.75\%","$[-0.090,\,+0.503]$","$[-0.119,\,+0.465]$"
+p-value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{L-SHADE at 6D vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",$p_{\text{Holm}}$,0.249,0.384
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",$\bar\delta$,$+0.259$,$+0.246$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",percentile,"$[+0.161,\,+0.354]$","$[+0.146,\,+0.343]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",BCa,"$[+0.159,\,+0.352]$","$[+0.145,\,+0.343]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",Student-$t$,"$[+0.156,\,+0.362]$","$[+0.140,\,+0.351]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000","Student-$t$, 98.75\%","$[+0.125,\,+0.393]$","$[+0.109,\,+0.383]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",$\bar\delta$,$+0.250$,$+0.235$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",percentile,"$[+0.070,\,+0.426]$","$[+0.055,\,+0.415]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",BCa,"$[+0.068,\,+0.424]$","$[+0.054,\,+0.414]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",Student-$t$,"$[+0.063,\,+0.438]$","$[+0.045,\,+0.425]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000","Student-$t$, 98.75\%","$[+0.006,\,+0.495]$","$[-0.013,\,+0.483]$"
+p-value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",$p_{\text{Holm}}$,0.015,0.025
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",$\bar\delta$,$+0.197$,$+0.200$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",percentile,"$[+0.020,\,+0.370]$","$[+0.023,\,+0.374]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",BCa,"$[+0.010,\,+0.362]$","$[+0.011,\,+0.365]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",Student-$t$,"$[+0.011,\,+0.384]$","$[+0.013,\,+0.387]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000","Student-$t$, 98.75\%","$[-0.045,\,+0.440]$","$[-0.044,\,+0.444]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",$\bar\delta$,$-0.053$,$-0.074$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",percentile,"$[-0.234,\,+0.124]$","$[-0.249,\,+0.098]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",BCa,"$[-0.240,\,+0.118]$","$[-0.257,\,+0.092]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",Student-$t$,"$[-0.245,\,+0.138]$","$[-0.259,\,+0.112]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000","Student-$t$, 98.75\%","$[-0.302,\,+0.195]$","$[-0.315,\,+0.168]$"
+p-value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R at 6D vs SEHHO-COBL-R at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",$p_{\text{Holm}}$,0.867,0.714
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}30$, 300{,}000",$\bar\delta$,$+0.272$,$+0.296$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}30$, 300{,}000",percentile,"$[+0.085,\,+0.459]$","$[+0.114,\,+0.476]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}30$, 300{,}000",BCa,"$[+0.085,\,+0.460]$","$[+0.114,\,+0.476]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}30$, 300{,}000",Student-$t$,"$[+0.073,\,+0.471]$","$[+0.105,\,+0.487]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}30$, 300{,}000","Student-$t$, 98.75\%","$[+0.013,\,+0.531]$","$[+0.047,\,+0.545]$"
+p-value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}30$, 300{,}000",$p_{\text{Holm}}$,0.020,0.009
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}50$, 500{,}000",$\bar\delta$,$+0.342$,$+0.339$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}50$, 500{,}000",percentile,"$[+0.155,\,+0.526]$","$[+0.153,\,+0.523]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}50$, 500{,}000",BCa,"$[+0.151,\,+0.522]$","$[+0.150,\,+0.519]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}50$, 500{,}000",Student-$t$,"$[+0.144,\,+0.539]$","$[+0.142,\,+0.536]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2017, $D{=}50$, 500{,}000","Student-$t$, 98.75\%","$[+0.084,\,+0.599]$","$[+0.082,\,+0.595]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",$\bar\delta$,$+0.318$,$+0.328$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",percentile,"$[+0.131,\,+0.497]$","$[+0.144,\,+0.503]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",BCa,"$[+0.125,\,+0.492]$","$[+0.137,\,+0.498]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",Student-$t$,"$[+0.123,\,+0.514]$","$[+0.137,\,+0.520]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000","Student-$t$, 98.75\%","$[+0.064,\,+0.573]$","$[+0.079,\,+0.577]$"
+p-value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 6D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",$p_{\text{Holm}}$,0.013,0.009
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",$\bar\delta$,$+0.542$,$+0.539$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",percentile,"$[+0.391,\,+0.689]$","$[+0.387,\,+0.687]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",BCa,"$[+0.385,\,+0.684]$","$[+0.383,\,+0.683]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000",Student-$t$,"$[+0.383,\,+0.701]$","$[+0.380,\,+0.698]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2017, $D{=}30$, 300{,}000","Student-$t$, 98.75\%","$[+0.335,\,+0.749]$","$[+0.332,\,+0.746]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",$\bar\delta$,$+0.703$,$+0.698$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",percentile,"$[+0.552,\,+0.833]$","$[+0.548,\,+0.828]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",BCa,"$[+0.527,\,+0.820]$","$[+0.522,\,+0.814]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000",Student-$t$,"$[+0.552,\,+0.853]$","$[+0.548,\,+0.847]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2017, $D{=}50$, 500{,}000","Student-$t$, 98.75\%","$[+0.507,\,+0.898]$","$[+0.503,\,+0.892]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",$\bar\delta$,$+0.516$,$+0.517$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",percentile,"$[+0.341,\,+0.675]$","$[+0.342,\,+0.677]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",BCa,"$[+0.325,\,+0.663]$","$[+0.327,\,+0.664]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000",Student-$t$,"$[+0.337,\,+0.694]$","$[+0.339,\,+0.696]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}30$, 300{,}000","Student-$t$, 98.75\%","$[+0.284,\,+0.748]$","$[+0.285,\,+0.750]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",$\bar\delta$,$+0.420$,$+0.395$
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",percentile,"$[+0.221,\,+0.608]$","$[+0.194,\,+0.589]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",BCa,"$[+0.210,\,+0.597]$","$[+0.184,\,+0.581]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",Student-$t$,"$[+0.215,\,+0.624]$","$[+0.185,\,+0.606]$"
+delta or interval value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000","Student-$t$, 98.75\%","$[+0.153,\,+0.686]$","$[+0.121,\,+0.669]$"
+p-value,tab_supp_popisolation.tex,tab:supp_popisolation,supp,"\emph{SEHHO-COBL-R vs L-SHADE at 18D}} \\ / CEC2014$^{\dagger}$, $D{=}50$, 500{,}000",$p_{\text{Holm}}$,0.004,0.006
+delta or interval value,tab_supp_precision.tex,tab:supp_precision,supp,"$D=30$, 300{,}000 FEs","per-function SE of $\delta$, median [IQR]","0.051 [0.013, 0.090]","0.047 [0.011, 0.090]"
+delta or interval value,tab_supp_precision.tex,tab:supp_precision,supp,"$D=30$, 300{,}000 FEs",SD of $\delta$ over functions,0.478,0.491
+delta or interval value,tab_supp_precision.tex,tab:supp_precision,supp,"$D=30$, 300{,}000 FEs",SE of $\bar\delta$: functions / runs only,0.087 / 0.014,0.090 / 0.014
+delta or interval value,tab_supp_precision.tex,tab:supp_precision,supp,"$D=30$, 300{,}000 FEs",one-stage 95\% CI,"$[-0.773,\,-0.438]$","$[-0.754,\,-0.411]$"
+delta or interval value,tab_supp_precision.tex,tab:supp_precision,supp,"$D=30$, 300{,}000 FEs",two-stage 95\% CI,"$[-0.777,\,-0.437]$","$[-0.759,\,-0.409]$"
+delta or interval value,tab_supp_precision.tex,tab:supp_precision,supp,"$D=50$, 500{,}000 FEs","per-function SE of $\delta$, median [IQR]","0.051 [0.010, 0.104]","0.051 [0.002, 0.104]"
+delta or interval value,tab_supp_precision.tex,tab:supp_precision,supp,"$D=50$, 500{,}000 FEs",SD of $\delta$ over functions,0.540,0.548
+delta or interval value,tab_supp_precision.tex,tab:supp_precision,supp,"$D=50$, 500{,}000 FEs",SE of $\bar\delta$: functions / runs only,0.099 / 0.015,0.100 / 0.015
+delta or interval value,tab_supp_precision.tex,tab:supp_precision,supp,"$D=50$, 500{,}000 FEs",one-stage 95\% CI,"$[-0.792,\,-0.415]$","$[-0.763,\,-0.383]$"
+delta or interval value,tab_supp_precision.tex,tab:supp_precision,supp,"$D=50$, 500{,}000 FEs",two-stage 95\% CI,"$[-0.796,\,-0.417]$","$[-0.767,\,-0.382]$"
+table note text,tab_supp_precision.tex,tab:supp_precision,supp,CEC2014 blocks the median per-function standard error is ,,0.024,0.017
+table note text,tab_supp_precision.tex,tab:supp_precision,supp,the median per-function standard error is 0.024 (IQR ,,"0.000--0.109,","0.000--0.107,"

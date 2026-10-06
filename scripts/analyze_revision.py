@@ -1,4 +1,7 @@
-"""Re-analyses requested in review (Stage 3 roadmap; revision plan, work orders W1-W11).
+"""Re-analyses requested in an internal pre-submission review of the manuscript
+(its roadmap items REV-xx and the revision plan's work orders W1-W11; neither
+refers to a journal's review -- see the README, "The word 'review' in file
+comments").
 
 Nothing here runs an optimiser: every quantity is recomputed from the per-run
 CSVs in results/ and written to results/analysis/revision_*.csv, one file per
@@ -17,7 +20,7 @@ Sections (run all, or name some:  python3 scripts/analyze_revision.py gate pop)
                          the registered primary endpoint with BCa / Student-t /
                          two-block Bonferroni intervals; the same endpoint
                          without F18, F22, F23, F24 (post hoc, requested in
-                         review); the CEC2017 counterpart and the suite gap;
+                         the internal pre-submission review); the CEC2017 counterpart and the suite gap;
                          Holm-corrected signed-rank tests on per-function delta
                          for every pairwise comparison; per-function standard
                          errors of delta at 30 runs and the two-stage bootstrap.
@@ -35,6 +38,14 @@ Sections (run all, or name some:  python3 scripts/analyze_revision.py gate pop)
                          same rule; runs that sit at the feasibility threshold.
   guide     W11, REV-08  rows of the budget-indexed guide (Table 10, Figure 3).
   hho       REV-57       SEHHO-COBL against HHO in every block.
+  e15                    E15's registered secondary comparison with BCa, Student-t and
+                         Bonferroni-adjusted intervals over its four blocks (Table S-e15).
+  contrast               the direct contrast of the population effect (E6, N=120 vs
+                         N=30) with the gate effect (E4b), main text Sections 3.2 and 5.
+  resolution             the precision convention of main text Section 2.6 (post hoc,
+                         added at a final integrity check): the headline contrasts with
+                         delta computed at full double precision and with errors rounded
+                         to 1e-8, and whether any interval's side or tie flag changes.
 
 Conventions (those of sehho/stats.py and the existing analysis scripts):
   * delta is reported for arm A against arm B, A the changed, new or
@@ -78,6 +89,7 @@ from sehho.intervals import (BOOT, boot_indices, boot_means, percentile_ci, bca_
                              adjusted_level)
 
 RES = os.path.join(HERE, "..", "results")
+ERROR_DECIMALS = int(os.environ["SEHHO_ERROR_DECIMALS"]) if os.environ.get("SEHHO_ERROR_DECIMALS") else None
 OUT = os.path.join(RES, "analysis")
 METHOD = "GF-Method"            # SEHHO-COBL-R in the paper (seeds hash this name)
 PUBLISHED = "SEHHO-COBL"
@@ -98,7 +110,13 @@ def _read(name):
     path = os.path.join(RES, name)
     if not os.path.exists(path):
         raise SystemExit(f"{path} not found")
-    return pd.read_csv(path)
+    df = pd.read_csv(path)
+    # SEHHO_ERROR_DECIMALS is set only by scripts/resolution_check.py, which re-runs this
+    # script on a copy of the package with every per-run error rounded (main text
+    # Section 2.6); when it is unset nothing changes.
+    if ERROR_DECIMALS is not None and not name.startswith("analysis/") and "error" in df.columns:
+        df["error"] = np.round(df["error"].to_numpy(dtype=float), ERROR_DECIMALS)
+    return df
 
 
 def _write(df, name):
@@ -109,8 +127,9 @@ def _write(df, name):
     return path
 
 
-def per_fn_delta(sub, a, b, funcs=None, col="algo"):
-    """delta(a, b) per function in ascending function order; negative favours a."""
+def per_fn_delta(sub, a, b, funcs=None, col="algo", decimals=None):
+    """delta(a, b) per function in ascending function order; negative favours a.
+    `decimals` rounds the errors first (used only by the `resolution` section)."""
     funcs = sorted(sub.func.unique()) if funcs is None else funcs
     out = []
     for f in funcs:
@@ -118,6 +137,8 @@ def per_fn_delta(sub, a, b, funcs=None, col="algo"):
         y = sub[(sub.func == f) & (sub[col] == b)]["error"].to_numpy()
         if not len(x) or not len(y):
             raise SystemExit(f"function {f}: no runs for {a if not len(x) else b}")
+        if decimals is not None:
+            x, y = np.round(x, decimals), np.round(y, decimals)
         out.append(cliffs_delta(x, y))
     return np.asarray(out)
 
@@ -149,6 +170,18 @@ def _verdicts(r, prefix=""):
     out[f"{prefix}tie_002"] = any(near_zero_bound(r[f"{k}_lo"], r[f"{k}_hi"])
                                   for k in ("pct", "bca", "t"))
     return out
+
+
+def excludes_zero_tie(r, kinds=("pct", "bca", "t"), tol=0.02):
+    """The tie rule of Section 2.6: some unadjusted interval (percentile, BCa or Student-t)
+    excludes zero with its bound nearest zero within `tol` of it.  (`tie_002` in the
+    output files is broader: it also flags an interval that spans zero with a bound
+    within `tol` of zero.)"""
+    for k in kinds:
+        lo, hi = r[f"{k}_lo"], r[f"{k}_hi"]
+        if (0 < lo < tol) or (-tol < hi < 0):
+            return True
+    return False
 
 
 def _fmt(r, kind="pct"):
@@ -477,7 +510,7 @@ def cec2014():
     for r in prim.to_dict("records"):
         _line(f"D={r['dim']}, {r['max_fes']:,} FEs, 30 functions", r,
               f"  p={r['p']:.2e} pHolm={r['p_holm']:.2e} W/L {r['wins']}/{r['losses']}")
-    print("  REV-38 (post hoc, requested in review): without F18, F22, F23, F24")
+    print("  REV-38 (post hoc, requested in the internal pre-submission review): without F18, F22, F23, F24")
     for r in ex.to_dict("records"):
         _line(f"D={r['dim']}, {r['max_fes']:,} FEs, 26 functions", r,
               f"  p={r['p']:.2e} pHolm={r['p_holm']:.2e} W/L {r['wins']}/{r['losses']}"
@@ -875,7 +908,9 @@ def guide():
                          delta=r["mean"], ci_lo=r["pct_lo"], ci_hi=r["pct_hi"],
                          t_lo=r["t_lo"], t_hi=r["t_hi"], status=status,
                          source="results/analysis/pop_isolation.csv (E14; " + r["contrast"] + ")",
-                         sign_reversed=False, unit="functions"))
+                         sign_reversed=False, unit="functions",
+                         # tie rule of Section 2.6 on the percentile, BCa and t intervals
+                         tie=excludes_zero_tie(r)))
     pr = _read("analysis/poprule.csv")
     for r in pr[pr.candidate == "LPSR-18D"].to_dict("records"):
         rows.append(dict(evals_per_variable=r["max_fes"] / r["dim"], dim=r["dim"],
@@ -894,7 +929,14 @@ def guide():
                          source="results/analysis/e16_engineering_population.csv (E16)",
                          sign_reversed=False, unit="runs"))
     out = pd.DataFrame(rows)
+    # rows without BCa / t intervals (E7, E16): the rule on the percentile interval
+    miss = out.tie.isna()
+    out.loc[miss, "tie"] = [excludes_zero_tie(dict(pct_lo=lo, pct_hi=hi), kinds=("pct",))
+                            for lo, hi in zip(out.loc[miss, "ci_lo"], out.loc[miss, "ci_hi"])]
+    out["tie"] = out.tie.astype(bool)
     out["favours"] = np.where(out.ci_hi < 0, "6D", np.where(out.ci_lo > 0, "18D", "neither"))
+    # an interval that excludes zero with a bound within 0.02 of it is a tie (Section 2.6)
+    out.loc[(out.favours != "neither") & out.tie, "favours"] = "tie"
     out["inside_0.147"] = (out.ci_lo > -0.147) & (out.ci_hi < 0.147)
     out = out.sort_values(["evals_per_variable", "engine", "problems"]).reset_index(drop=True)
     for r in out.to_dict("records"):
@@ -948,8 +990,161 @@ def hho():
     return out
 
 
+# ================================================================== E15 (secondary family)
+def e15():
+    """Table S-e15: the registered secondary comparison of E15 (original-rule configuration
+    vs the repaired configuration, four blocks) with BCa, Student-t and Bonferroni-adjusted
+    intervals over its family of four blocks.  Replicates analyze_e15.py's draws, so the
+    percentile intervals are the registered ones; the adjusted intervals are added here
+    (they are not part of the registration, whose rule uses the 95% percentile interval)."""
+    print("\n" + "=" * 100)
+    print("E15 SECONDARY COMPARISON: original-rule configuration vs SEHHO-COBL-R (Table S-e15)")
+    print("negative favours the original-rule configuration; Bonferroni family: the four blocks")
+    print("=" * 100)
+    df = pd.concat([_read("E15_original_rule_cec2014.csv"), _read("E13_cec2014.csv")],
+                   ignore_index=True)
+    orig = "GF:OriginalRule"
+    funcs = sorted(df[df.algo == orig].func.unique())
+    rng = np.random.default_rng(SEED_CEC2014)          # analyze_e15.py's generator
+    rows = []
+    for d in (30, 50):
+        for fes in (10_000 * d, 15_000):
+            sub = df[(df.dim == d) & (df.max_fes == fes)]
+            for a, b in ((orig, PUBLISHED), (METHOD, PUBLISHED), (orig, METHOD)):
+                v = per_fn_delta(sub, a, b, funcs)
+                idx = boot_indices(rng, len(v))       # consumed for every contrast, in order
+                if (a, b) != (orig, METHOD):
+                    continue
+                r = all_intervals(v, idx, k=4)
+                r.update(dim=d, max_fes=fes, budget="competition" if fes > 15_000 else "tight",
+                         a=a, b=b, p=signed_rank(v))
+                rows.append(r)
+    out = pd.DataFrame(rows)
+    out["p_holm"] = holm(out.p.to_numpy())
+    out = pd.concat([out, pd.DataFrame([_verdicts(r) for r in out.to_dict("records")])], axis=1)
+    for kind in ("pct", "bca", "t"):
+        out[f"verdict_{kind}_adj_0.147"] = [margin_verdict(r[f"{kind}_adj_lo"], r[f"{kind}_adj_hi"],
+                                                           0.147) for r in out.to_dict("records")]
+    st = _read("analysis/e15_original_rule.csv")
+    st = st[st.family == "secondary"].sort_values(["dim", "max_fes"], ascending=[True, False])
+    _check("e15: percentile intervals and p_Holm reproduce e15_original_rule.csv (secondary)",
+           out[["mean", "pct_lo", "pct_hi", "p_holm"]].to_numpy(),
+           st[["mean_delta", "ci_lo", "ci_hi", "p_holm"]].to_numpy())
+    for r in out.to_dict("records"):
+        _line(f"D={r['dim']} {r['budget']}", r,
+              f"  0.147 unadjusted {r['verdict_pct_0.147']}; adjusted pct "
+              f"{r['verdict_pct_adj_0.147']}, t {r['verdict_t_adj_0.147']}")
+    _write(out, "revision_e15.csv")
+    return out
+
+
+# ================================================================== direct contrast (Sec. 2.6)
+def contrast():
+    """The difference of effects that the abstract and Sections 3.2 and 5 state: the
+    population effect (N=120 vs N=30, E6) against the gate effect (gate removed vs kept,
+    E4b), both at 300,000 evaluations on CEC2017 at D=30, as a direct per-function contrast
+    over the 29 functions the two experiments share (Gelman & Stern, 2006).  Seed 20261003."""
+    print("\n" + "=" * 100)
+    print("DIRECT CONTRAST: population effect minus gate effect, CEC2017 D=30, 300,000 FEs")
+    print("negative: raising N from 30 to 120 helps more than removing the gate")
+    print("=" * 100)
+    e6 = _read("E6_popsize_cec2017_30D.csv")
+    e6 = e6[(e6.dim == 30) & (e6.max_fes == 300_000)]
+    e4b = _read("E4b_ablation_cec2017_30D.csv")
+    funcs = sorted(set(e6.func) & set(e4b.func))
+    pop_eff = per_fn_delta(e6, "E6_popsize_N120", "E6_popsize_N30", funcs, col="tag")
+    rng = np.random.default_rng(SEED_REVISION)
+    rows = []
+    for lab, a, b in (("gate removed, Levy off (AlwaysPbest+NoLevy vs NoLevy)",
+                       "SEHHO:AlwaysPbest+NoLevy", "SEHHO:NoLevy"),
+                      ("gate removed, Levy gated (AlwaysPbest vs Full)",
+                       "SEHHO:AlwaysPbest", "SEHHO:Full")):
+        gate_eff = per_fn_delta(e4b, a, b, funcs)
+        v = pop_eff - gate_eff
+        r = all_intervals(v, boot_indices(rng, len(v)), k=2)
+        r.update(contrast="delta(N=120 vs N=30) - delta(" + lab + ")", n_functions=len(funcs),
+                 population_effect=float(pop_eff.mean()), gate_effect=float(gate_eff.mean()),
+                 p=signed_rank(v))
+        rows.append(r)
+        _line(lab, r, f"  population {pop_eff.mean():+.3f}, gate {gate_eff.mean():+.3f}")
+    out = pd.DataFrame(rows)
+    out["p_holm"] = holm(out.p.to_numpy())
+    _write(out, "revision_effect_contrast.csv")
+    return out
+
+
+def resolution():
+    """Precision convention (main text Section 2.6; post hoc, added at a final integrity
+    check).  Cliff's delta compares the recorded errors at full double precision, errors
+    below 1e-8 being recorded as 0, so on plateau functions runs that agree to about twelve
+    significant digits are still ordered.  Each headline contrast is computed both ways --
+    as reported, and with every error rounded to 1e-8 first -- from the same resamples
+    (seed 20261003, one index matrix per contrast), with the percentile, BCa and Student-t
+    intervals and the tie rule of Section 2.6.  The family sizes are those of the reported
+    analyses (two blocks for the primary endpoint, four for each row of Table 5)."""
+    print("\n" + "=" * 100)
+    print("PRECISION CONVENTION: delta at full precision (as reported) and at a 1e-8 resolution")
+    print("=" * 100)
+    rng = np.random.default_rng(SEED_REVISION)
+    cases = []
+    e13 = _read("E13_cec2014.csv")
+    for dim in (30, 50):
+        sub = e13[(e13.tag == "E13_cec2014_competition") & (e13.dim == dim)]
+        cases.append((f"primary endpoint, CEC2014 D={dim}", sub, METHOD, PUBLISHED, "algo", 2))
+    e14 = _read("E14_pop_isolation.csv")
+    for suite in ("cec2017", "cec2014"):
+        s0 = e14[e14.suite == suite]
+        mine = _method_runs(suite)
+        for dim in sorted(s0.dim.unique()):
+            for fes in sorted(s0[s0.dim == dim].max_fes.unique()):
+                sub = s0[(s0.dim == dim) & (s0.max_fes == fes)]
+                merged = pd.concat([sub, mine[(mine.dim == dim) & (mine.max_fes == fes)]], ignore_index=True)
+                block = f"{suite} D={dim} {'tight' if fes == 15_000 else 'competition'}"
+                for label, frame, a, b in (("L-SHADE 6D vs 18D", sub, "LSHADE-N6", "LSHADE-N18"),
+                                           ("ours 6D vs ours 18D", merged, METHOD, "GF@18D"),
+                                           ("ours vs L-SHADE at 6D", merged, METHOD, "LSHADE-N6"),
+                                           ("ours vs L-SHADE default", merged, METHOD, "LSHADE-N18")):
+                    cases.append((f"Table 5: {label}, {block}", frame, a, b, "algo", 4))
+    e6 = _read("E6_popsize_cec2017_30D.csv")
+    e6 = e6[(e6.dim == 30) & (e6.max_fes == 300_000)]
+    cases.append(("E6: N=120 vs N=30, CEC2017 D=30, 300,000", e6, "E6_popsize_N120", "E6_popsize_N30", "tag", 1))
+    e4b = _read("E4b_ablation_cec2017_30D.csv")
+    cases.append(("E4b: gate removed, Levy off, 300,000", e4b, "SEHHO:AlwaysPbest+NoLevy", "SEHHO:NoLevy", "algo", 1))
+    cases.append(("E4b: gate removed, Levy gated, 300,000", e4b, "SEHHO:AlwaysPbest", "SEHHO:Full", "algo", 1))
+    rows = []
+    for label, frame, a, b, col, k in cases:
+        funcs = sorted(frame.func.unique())
+        full = per_fn_delta(frame, a, b, funcs, col=col)
+        rnd = per_fn_delta(frame, a, b, funcs, col=col, decimals=8)
+        idx = boot_indices(rng, len(full))
+        rf, rr = all_intervals(full, idx, k=k), all_intervals(rnd, idx, k=k)
+        row = dict(contrast=label, arm_a=a, arm_b=b, n_functions=len(funcs),
+                   functions_changed=int(np.sum(np.abs(full - rnd) > 0)))
+        for tag, r in (("full", rf), ("1e8", rr)):
+            row.update({f"{tag}_mean": r["mean"], f"{tag}_pct_lo": r["pct_lo"], f"{tag}_pct_hi": r["pct_hi"],
+                        f"{tag}_bca_lo": r["bca_lo"], f"{tag}_bca_hi": r["bca_hi"],
+                        f"{tag}_t_lo": r["t_lo"], f"{tag}_t_hi": r["t_hi"],
+                        f"{tag}_t_adj_lo": r["t_adj_lo"], f"{tag}_t_adj_hi": r["t_adj_hi"],
+                        f"{tag}_sides": "/".join(side(r[f"{q}_lo"], r[f"{q}_hi"]) for q in ("pct", "bca", "t")),
+                        f"{tag}_side_adj_t": side(r["t_adj_lo"], r["t_adj_hi"]),
+                        f"{tag}_tie": excludes_zero_tie(r)})
+        row["mean_shift"] = row["1e8_mean"] - row["full_mean"]
+        row["classification_changed"] = (row["full_sides"] != row["1e8_sides"] or row["full_tie"] != row["1e8_tie"]
+                                         or row["full_side_adj_t"] != row["1e8_side_adj_t"])
+        rows.append(row)
+        print(f"    {label:<58s} {row['full_mean']:+.3f} -> {row['1e8_mean']:+.3f} "
+              f"[{row['1e8_pct_lo']:+.3f}, {row['1e8_pct_hi']:+.3f}]  sides {row['full_sides']} -> {row['1e8_sides']}"
+              f"  tie {row['full_tie']} -> {row['1e8_tie']}{'  CHANGED' if row['classification_changed'] else ''}")
+    out = pd.DataFrame(rows)
+    print(f"  largest |shift| {out.mean_shift.abs().max():.3f}; classifications changed: "
+          f"{int(out.classification_changed.sum())} of {len(out)}")
+    _write(out, "revision_resolution.csv")
+    return out
+
+
 SECTIONS = dict(gate=gate, pop=pop, cec2014=cec2014, suites=suites, comp=comp, poprule=poprule,
-                popsize=popsize, e16=e16, eng=eng, guide=guide, hho=hho)
+                popsize=popsize, e16=e16, eng=eng, guide=guide, hho=hho, e15=e15,
+                contrast=contrast, resolution=resolution)
 
 
 def main(argv=None):

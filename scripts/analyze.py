@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from sehho.runfiles import read_runs  # noqa: E402  (pandas.read_csv; SEHHO_ERROR_DECIMALS, Section 2.6)
 from sehho.stats import (friedman, friedman_holm_vs_control, ranksum_family,
                          summarise_outcomes, cliffs_delta, cliffs_magnitude,
                          vargha_delaney_a12, holm)
@@ -171,7 +172,7 @@ def main():
         path = os.path.join(RES, fname)
         if not os.path.exists(path):
             continue
-        df = pd.read_csv(path)
+        df = read_runs(path)
         report.append(f"\n## {title}\n")
         for d in sorted(df["dim"].unique()):
             sub = df[df.dim == d]
@@ -186,7 +187,7 @@ def main():
         path = os.path.join(RES, fname)
         if not os.path.exists(path):
             continue
-        df = pd.read_csv(path)
+        df = read_runs(path)
         report.append(f"\n## {title}\n")
         allout = []
         for d in sorted(df["dim"].unique()):
@@ -205,7 +206,7 @@ def main():
     # -------- E5 : engineering --------
     path = os.path.join(RES, "E5_engineering.csv")
     if os.path.exists(path):
-        df = pd.read_csv(path)
+        df = read_runs(path)
         report.append("\n## Constrained engineering problems (feasibility rule)\n")
         recs = []
         for prob in sorted(df["problem"].unique()):

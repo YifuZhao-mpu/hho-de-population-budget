@@ -3,7 +3,8 @@
 Nothing is transcribed by hand: every table in the paper and its supplement is
 \\input{} from a file written here, so the text cannot drift from the data.
 
-Revision conventions (Stage 4 revision plan):
+Revision conventions (revision plan after an internal pre-submission review;
+REV-xx are its items, see the README, "The word 'review' in file comments"):
 
 * Display name.  The configuration obtained by dismantling SEHHO-COBL is
   "GF-Method" in every raw CSV, because the seed of every run is a hash that
@@ -40,6 +41,7 @@ import pandas as pd
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from analyze import compare_block, paired_vs_full  # noqa: E402
+from sehho.runfiles import read_runs  # noqa: E402  (pandas.read_csv; SEHHO_ERROR_DECIMALS, Section 2.6)
 from sehho.stats import friedman, cliffs_delta  # noqa: E402
 from sehho.intervals import margin_verdict  # noqa: E402
 
@@ -93,9 +95,9 @@ def load_comparison(main_csv, extra_csv, tag):
     """Baselines from the original stage, plus SEHHO-COBL-R's runs from E9/E12."""
     frames = []
     if os.path.exists(main_csv):
-        frames.append(pd.read_csv(main_csv))
+        frames.append(read_runs(main_csv))
     if os.path.exists(extra_csv):
-        e = pd.read_csv(extra_csv)
+        e = read_runs(extra_csv)
         frames.append(e[e.tag == tag] if "tag" in e.columns else e)
     if not frames:
         return None
@@ -109,7 +111,7 @@ def _ana(name):
     if not os.path.exists(p):
         raise SystemExit(f"{p} not found: run scripts/analyze_revision.py (and "
                          f"classical_references.py, check_cec_data.py) first")
-    return pd.read_csv(p)
+    return read_runs(p)
 
 
 def sci(v, prec=2):
@@ -203,6 +205,40 @@ def robust_mark(r, kind="all"):
     return ""
 
 
+def excludes_zero_tie(r, kinds=("pct", "bca", "t"), tol=0.02):
+    """Tie rule of main text Section 2.6: some unadjusted interval (percentile, BCa or
+    Student-t) excludes zero with its bound nearest zero within `tol` of it.  The
+    `tie_002` column of the analysis files is broader (it also flags an interval that
+    spans zero with a bound near zero); only intervals that exclude zero are ties."""
+    for k in kinds:
+        lo, hi = r[f"{k}_lo"], r[f"{k}_hi"]
+        if (0 < lo < tol) or (-tol < hi < 0):
+            return True
+    return False
+
+
+def tied_best(means):
+    """Indices of every algorithm whose mean equals the lowest mean of the row exactly.
+
+    Exact ties for the lowest mean (all 0, or the same plateau value) are credited to
+    every tied algorithm, in the "#1" counts and in the bold marks alike."""
+    m = np.asarray(means, dtype=float)
+    return set(np.flatnonzero(m == m.min()).tolist())
+
+
+def tied_best_counts(summary, algos):
+    """"#1" counts from compare_block's per-function means, ties credited to all tied."""
+    M = summary[[f"{a}_mean" for a in algos]].to_numpy(float)
+    best = M == M.min(axis=1, keepdims=True)
+    return {a: int(best[:, j].sum()) for j, a in enumerate(algos)}
+
+
+TIE_NOTE = (r" Exact ties for the lowest mean are credited to every tied algorithm, so a column "
+            r"can sum to more than the number of functions.")
+WTL_NOTE = (r" A function on which the two samples agree run by run to within a relative "
+            r"$10^{-5}$ (\texttt{numpy.allclose}) is counted as not different without a test.")
+
+
 def verdict_code(v):
     return {"negligible": "negl.", "inconclusive": "incon.", "nonzero": r"$\neq0$",
             "tie": "tie"}[v]
@@ -219,6 +255,8 @@ def table_ranks(df, label, caption, fname, table_key, home="supp", dims=None):
     blocks = {d: compare_block(df[df.dim == d], control=CONTROL, label=f"{label} D={d}")
               for d in dims}
     algos = [a for a in ORDER if a in set(df.algo)]
+    n1 = {d: tied_best_counts(blocks[d]["summary"], list(blocks[d]["ranks"].algorithm))
+          for d in dims}
     lines = [r"\begin{table}[htbp]", r"\centering", f"\\caption{{{caption}}}",
              f"\\label{{tab:{label}}}", r"\resizebox{\textwidth}{!}{%",
              r"\begin{tabular}{l" + "ccccc" * len(dims) + "}", r"\toprule"]
@@ -235,7 +273,7 @@ def table_ranks(df, label, caption, fname, table_key, home="supp", dims=None):
             res = blocks[d]
             r = res["ranks"][res["ranks"].algorithm == a].iloc[0]
             if a == CONTROL:
-                cells += [f"\\textbf{{{r.avg_rank:.2f}}}", f"\\textbf{{{int(r.rank1_count)}}}",
+                cells += [f"\\textbf{{{r.avg_rank:.2f}}}", f"\\textbf{{{n1[d][a]}}}",
                           "--", "--", "--"]
                 continue
             ph = res["posthoc"][res["posthoc"].algorithm == a].iloc[0]
@@ -244,7 +282,7 @@ def table_ranks(df, label, caption, fname, table_key, home="supp", dims=None):
             star = "$^{*}$" if q.p_holm < 0.05 else ""
             dv = led(fname, a, f"D={d}", q["mean"], METHOD, a,
                      "results/analysis/revision_suite_pairwise.csv")
-            cells += [f"{r.avg_rank:.2f}", f"{int(r.rank1_count)}",
+            cells += [f"{r.avg_rank:.2f}", f"{n1[d][a]}",
                       f"${dv}$ ${cfmt(q.pct_lo, q.pct_hi)}$", ptex(q.p_holm) + star,
                       ph.win_tie_loss]
         lines.append(f"{esc(a)} & " + " & ".join(cells) + r" \\")
@@ -255,8 +293,8 @@ def table_ranks(df, label, caption, fname, table_key, home="supp", dims=None):
               f"Friedman test over {blocks[dims[0]]['meta']['n_problems']} functions "
               f"({stats}). ``Rank'' is the Friedman average rank (lower is better) and "
               r"``\#1'' the number of functions on which the algorithm has the lowest mean "
-              r"error; the bold row is the reference, " + METHOD + r", not the best "
-              r"algorithm. " + CONV_FN + r" Here A is " + METHOD + r" and B the competitor "
+              r"error." + TIE_NOTE + r" The bold row is the reference, " + METHOD + r", not the "
+              r"best algorithm. " + CONV_FN + r" Here A is " + METHOD + r" and B the competitor "
               r"in the row. The interval is a 95\% percentile bootstrap interval over the "
               r"functions (20{,}000 resamples), and $p_{\text{Holm}}$ is a two-sided "
               r"signed-rank test of the per-function deltas against zero, Holm-corrected "
@@ -267,7 +305,7 @@ def table_ranks(df, label, caption, fname, table_key, home="supp", dims=None):
               r"W/T/L counts functions on which " + METHOD + r" is significantly better / "
               r"not significantly different / significantly worse under two-sided "
               r"rank-sum tests on the runs, Holm-corrected across all functions $\times$ "
-              r"competitors.",
+              r"competitors." + WTL_NOTE,
               r"\end{flushleft}", r"\end{table}", ""]
     write(fname, "\n".join(lines), f"tab:{label}", home)
     return blocks
@@ -342,7 +380,7 @@ def table_gate_factorial(caption, fname, home="supp"):
     spec.loader.exec_module(gf)
     blocks = []
     for label, fn in gf.BLOCKS:
-        d = pd.read_csv(os.path.join(RES, fn))
+        d = read_runs(os.path.join(RES, fn))
         d = d[d.dim == 30]
         with contextlib.redirect_stdout(io.StringIO()):
             rows = gf.analyse(d, label)
@@ -668,7 +706,7 @@ def table_popsize(df, caption, fname, home="main"):
         if (300000 - 4 * N) % N:
             partial.append(N)
         r = fr["avg_ranks"][i]
-        n1 = int(sum(np.argmin(M[k]) == i for k in range(len(funcs))))
+        n1 = int(sum(i in tied_best(M[k]) for k in range(len(funcs))))
         cell = f"\\textbf{{{r:.2f}}}" if i == best else f"{r:.2f}"
         if N == 30:
             dcell, pcell, name = "--", "--", r"30 (as in SEHHO-COBL)"
@@ -686,7 +724,9 @@ def table_popsize(df, caption, fname, home="main"):
                    + " the last generation is cut short by the budget." if partial else "."))
     lines += [r"\bottomrule", r"\end{tabular}}", r"\begin{flushleft}\footnotesize",
               r"CEC2017 at $D=30$, 29 functions, 30 runs, $3\times10^{5}$ evaluations for "
-              r"every row; only the population size differs. Iman--Davenport "
+              r"every row; only the population size differs. ``\#1 functions'' counts the "
+              r"functions on which the row has the lowest mean error; exact ties are credited "
+              r"to every tied row. Iman--Davenport "
               f"$F={fr['iman_davenport_F']:.2f}$, $p={texp(fr['p'])}$." + gen_note + " "
               + CONV_FN + r" Here A is the population in the row and B the $N=30$ of "
               r"SEHHO-COBL, so a negative value favours the larger population. Intervals are "
@@ -727,7 +767,7 @@ def _rerun_gap(d, blocks):
                                             "E12_cec2017_tight.csv", "E13_cec2014.csv")]
     if not all(os.path.exists(p) for p in paths):
         return None
-    e3, e9, e12, e13 = (pd.read_csv(p) for p in paths)
+    e3, e9, e12, e13 = (read_runs(p) for p in paths)
     main_runs = {("cec2017", "competition"): pd.concat([e3, e9[e9.tag == "E3_cec2017"]], ignore_index=True),
                  ("cec2017", "tight"): e12,
                  ("cec2014", "competition"): e13[e13.max_fes > 15_000],
@@ -805,10 +845,14 @@ def table_pop_isolation(caption, fname, home="main"):
                 dv = led(fname, c, f"{su} D={dm} {bu}", r["mean"], a, b,
                          "results/analysis/revision_pop_isolation.csv (E14)")
                 mk = robust_mark(r)
+                excl = r.pct_lo > 0 or r.pct_hi < 0
+                if excl and excludes_zero_tie(r):
+                    # a bound within 0.02 of zero: a tie by the rule of Section 2.6, not bold
+                    mk = r"$^{\circ}$" + mk
                 if mk:
                     marks.add(mk)
                 txt = f"${dv}${mk}"
-                if r.pct_lo > 0 or r.pct_hi < 0:
+                if excl and not excludes_zero_tie(r):
                     txt = r"\textbf{\boldmath " + txt + "}"
                 if c in ("L-SHADE 6D vs 18D", "ours vs L-SHADE at 6D"):
                     # the interval under its estimate, on the second line of the row label
@@ -818,18 +862,22 @@ def table_pop_isolation(caption, fname, home="main"):
             lines.append(f"{pretty[c]} & " + " & ".join(cells) + r" \\")
     rerun = f" (at most ${gap:.3f}$ in $\\delta$)" if gap is not None else ""
     mark_txt = ""
-    if r"$^{\ddagger}$" in marks:
+    if any(m.startswith(r"$^{\circ}$") for m in marks):
+        mark_txt += (r" $^{\circ}$: the 95\% interval excludes zero, but a bound of the "
+                     r"percentile, BCa or Student-$t$ interval lies within 0.02 of zero, a tie by "
+                     r"the rule of Section~" + ref("subsec:stats", home) + r" (not bold).")
+    if any(r"$^{\ddagger}$" in m for m in marks):
         mark_txt += (r" $^{\ddagger}$: the 95\% interval excludes zero but the Bonferroni-"
                      r"adjusted interval over the four blocks of the row and budget (98.75\%) "
                      r"does not.")
-    if r"$^{\S}$" in marks:
+    if any(r"$^{\S}$" in m for m in marks):
         mark_txt += r" $^{\S}$: the BCa or Student-$t$ interval includes zero (and so does its adjusted version)."
     lines += [r"\bottomrule", r"\end{tabular}", r"\begin{flushleft}\footnotesize",
               r"Mean per-function Cliff's $\delta$ with 30 runs per cell; " + CONV + r" Here "
               r"A is the first-named arm of the row. \textbf{Bold} values mark a contrast "
               r"whose 95\% percentile bootstrap interval over the functions (shown under "
               r"rows 1 and 3; all rows with BCa and Student-$t$ intervals in Table~"
-              + ref("tab:supp_popisolation", home) + r") excludes zero." + mark_txt +
+              + ref("tab:supp_popisolation", home) + r") excludes zero and is not a tie." + mark_txt +
               r" CEC2017 is the diagnostic suite. The CEC2014$^{\dagger}$ columns are "
               r"\emph{exploratory}: these comparisons are not among those the pre-registration "
               r"lists, they were run after the confirmatory analysis, and the pre-registration "
@@ -987,8 +1035,9 @@ def table_cec2014_primary(caption, fname, home="main"):
     lines += [r"\bottomrule", r"\end{tabular}}", r"\begin{flushleft}\footnotesize",
               r"CEC2014, 30 functions, 30 runs per cell. No component was chosen, no constant "
               r"fitted and no diagnosis performed on these functions before these runs. The "
-              r"configuration, the comparisons, the test statistic and the success criterion "
-              r"were fixed in an internal pre-registration written before the first CEC2014 "
+              r"configuration, the primary endpoint and its test, three secondary predictions "
+              r"stated in words and the success criterion were fixed in an internal "
+              r"pre-registration written before the first CEC2014 "
               r"run (not an external registry entry; Supplementary Section~"
               + ref("sec:S2_prereg", home) + r"). " + CONV_FN +
               r" Here A is " + METHOD + r". Each cell gives $\bar\delta$ and, below it, a 95\% "
@@ -1002,12 +1051,15 @@ def table_cec2014_primary(caption, fname, home="main"):
               r"result whatever it shows; its intervals " + ("exclude zero under every interval "
               r"type and the Bonferroni adjustment as well" + rob_ex if ex_side else
               r"do not all exclude zero") + r". The third row is the same contrast on CEC2017, "
-              r"the suite on which the changes were diagnosed; the gap (CEC2017 minus CEC2014, "
-              r"the two suites resampled independently) " + gap_txt + r". \textbf{Panel B}: "
+              r"the suite on which the changes were diagnosed (its intervals come from the "
+              r"bootstrap of the gap and differ in the third decimal from those of Table~"
+              + ref("tab:cec2017", home) + r", an independent bootstrap stream); the gap "
+              r"(CEC2017 minus CEC2014, the two suites resampled independently) " + gap_txt +
+              r". \textbf{Panel B}: "
               r"$p_{\text{Holm}}$ is a two-sided signed-rank test of the per-function deltas, "
               r"Holm-corrected over the six competitors of a block; DE and HHO, and the "
-              r"Friedman post-hoc tests the pre-registration named for these secondary "
-              r"comparisons, are in Table~" + ref("tab:cec2014", home) + r". $^{*}$ marks "
+              r"Friedman post-hoc tests of the analysis script, which the pre-registration "
+              r"does not name, are in Table~" + ref("tab:cec2014", home) + r". $^{*}$ marks "
               r"$p_{\text{Holm}}<0.05$. For SEHHO-COBL at the competition budget the interval is "
               r"the registered one of Panel A.",
               r"\end{flushleft}", r"\end{table}", ""]
@@ -1017,7 +1069,7 @@ def table_cec2014_primary(caption, fname, home="main"):
 def table_cec2014(caption, fname, home="supp"):
     """S5.1: the full CEC2014 ranking, with both the registered and the REV-29 tests."""
     _LABELS[fname] = "tab:cec2014"
-    d = pd.read_csv(os.path.join(RES, "E13_cec2014.csv"))
+    d = read_runs(os.path.join(RES, "E13_cec2014.csv"))
     d["algo"] = d.algo.replace(DISPLAY)
     pw = _ana("revision_cec2014_pairwise.csv")
     prim = _ana("revision_cec2014_primary.csv")
@@ -1068,15 +1120,18 @@ def table_cec2014(caption, fname, home="supp"):
               r"Friedman average rank (lower is better); bold marks the reference row, " +
               METHOD + r", not the best algorithm. " + CONV_FN + r" Here A is " + METHOD +
               r" and B the competitor in the row; the interval is a 95\% percentile bootstrap "
-              r"interval over the functions, from the registered analysis "
-              r"(\texttt{analyze\_cec2014.py}); for SEHHO-COBL at the competition budget it is "
+              r"interval over the functions, from the analysis script committed in the "
+              r"pre-registration (\texttt{analyze\_cec2014.py}); for SEHHO-COBL at the "
+              r"competition budget it is "
               r"the registered primary-endpoint interval. $p^{\text{SR}}_{\text{Holm}}$: "
               r"two-sided signed-rank test of the per-function deltas, Holm-corrected over the "
               r"six competitors of a block. "
               r"$p^{\text{F}}_{\text{Holm}}$: the Friedman post-hoc test against " + METHOD +
-              r" that the pre-registration named for these secondary comparisons, Holm-"
-              r"corrected in the same family; it depends on which other algorithms are in the "
-              r"set and on CEC2014 absorbs HHO's zero-shift artefact (HHO reaches the error of "
+              r" implemented in \texttt{analyze\_cec2014.py}, which was written after the "
+              r"pre-registration (Section~" + ref("sec:S2_prereg", home) + r"); the "
+              r"pre-registration names no test for these secondary comparisons. It is "
+              r"Holm-corrected in the same family; it depends on which other algorithms are in "
+              r"the set and on CEC2014 absorbs HHO's zero-shift artefact (HHO reaches the error of "
               r"the origin on F23--F30, which the all-zero shift of the third component makes "
               r"reachable). "
               r"$^{*}$ marks $p<0.05$.",
@@ -1321,7 +1376,9 @@ def table_composition(caption, fname, home="supp"):
             dv = led(fname, c, f"D={dim} {fes}", r["mean"], "changed (" + c + ")", "default",
                      "results/analysis/revision_composition.csv")
             mk = robust_mark(r)
-            tie = r"$^{\circ}$" if bool(r.tie_002) and r.side_pct != "spans" else ""
+            # the tie rule of main text Section 2.6: any unadjusted interval (percentile,
+            # BCa or Student-t) that excludes zero with a bound within 0.02 of it
+            tie = r"$^{\circ}$" if excludes_zero_tie(r) else ""
             marks |= {mk, tie} - {""}
             txt = f"${dv}$ ${cfmt(r.pct_lo, r.pct_hi)}${mk}{tie}"
             if r.pct_lo > 0 or r.pct_hi < 0:
@@ -1337,7 +1394,8 @@ def table_composition(caption, fname, home="supp"):
         mark_txt += (r" $^{\ddagger}$: the Bonferroni-adjusted interval over the four blocks "
                      r"of the row (98.75\%) includes zero.")
     if r"$^{\circ}$" in marks:
-        mark_txt += r" $^{\circ}$: the bound nearest zero lies within 0.02 of it (a tie)."
+        mark_txt += (r" $^{\circ}$: the percentile, BCa or Student-$t$ interval excludes zero "
+                     r"with its bound nearest zero within 0.02 of it (a tie).")
     cobl = d[(d.change == "-COBL") & (d.dim == 10) & (d.max_fes == 15000)].iloc[0]
     # REV-26: the two verdicts of negligibility the decisions rest on, under the
     # Bonferroni-adjusted Student-t interval, and what the rule would then decide
@@ -1476,6 +1534,24 @@ def table_supp_e15(caption, fname, home="supp"):
                 txt = r"\textbf{\boldmath " + txt + "}"
             cells.append(txt)
         lines.append(f"{name} & " + " & ".join(cells) + r" \\")
+    # the last row's family-adjusted intervals (not part of the registration; Section 2.6)
+    adj = _ana("revision_e15.csv")
+    cells, flips = [], []
+    for dm, fes in blocks:
+        q = adj[(adj.dim == dm) & (adj.max_fes == fes)].iloc[0]
+        cells.append(f"${cfmt(q.pct_adj_lo, q.pct_adj_hi)}$; ${cfmt(q.t_adj_lo, q.t_adj_hi)}$")
+        if q["verdict_pct_0.147"] == "negligible" and (q["verdict_t_adj_0.147"] != "negligible"
+                                                       or q["verdict_pct_adj_0.147"] != "negligible"):
+            flips.append(f"$D={dm}$ with {fnum(fes)} evaluations")
+    lines.append(r"\quad same, Bonferroni-adjusted (98.75\%): percentile; Student-$t$ & "
+                 + " & ".join(cells) + r" \\")
+    flip_txt = (r" The last row adjusts the third row's intervals for its family of four blocks "
+                r"(Bonferroni, 98.75\%; not part of the registration, whose rule uses the "
+                r"unadjusted 95\% interval)" +
+                (r"; under the adjustment the interval at " + " and ".join(flips) +
+                 r" reaches beyond the 0.147 margin, so that verdict of negligibility is "
+                 r"directional (main text, Section~" + ref("subsec:stats", home) + r")."
+                 if flips else r" and changes no verdict."))
     lines += [r"\bottomrule", r"\end{tabular}}", r"\begin{flushleft}\footnotesize",
               r"Stage E15 (exploratory): the configuration the original composition rule would "
               r"have produced (gate-free, LPSR from $N_{\text{init}}=6D$, only the $p$ annealing "
@@ -1490,7 +1566,7 @@ def table_supp_e15(caption, fname, home="supp"):
               r"the middle row uses the registered E13 intervals. The registered sensitivity "
               r"criterion (bold) was that the first row exclude zero in both competition-budget "
               r"blocks; $p_{\text{Holm}}$ as registered (two-block family for the first row at "
-              r"the competition budget, four-block family for the last row).",
+              r"the competition budget, four-block family for the third row)." + flip_txt,
               r"\end{flushleft}", r"\end{table}", ""]
     write(fname, "\n".join(lines), "tab:supp_e15", home)
 
@@ -1622,7 +1698,9 @@ def table_engineering(df, caption, fname, home="main"):
               + ref("tab:supp_classical_refs", home) + r"); for RC01, RC06 and RC14 it equals "
               r"the best-known value listed for the suite \citep{kumar2020rwco}. RC14's "
               f"{_fullnum(rc14.objective)} needs one unit per stage; every L-SHADE and jSO run "
-              r"ends with two units in the first stage, near 58{,}500. Mean violation: the "
+              r"ends near 58{,}500, the cost of the configuration with two units in the first "
+              r"stage (inferred from the objective; the runs do not store designs). Mean "
+              r"violation: the "
               r"average $v$ of the returned design over all 30 runs; 1.00E-08 means that every "
               r"run sits on the threshold, here of P1's volume constraint (terms of order "
               r"$10^{6}$ in$^3$), which is worth "
@@ -1660,8 +1738,8 @@ def table_supp_classical_refs(caption, fname, home="supp"):
               r"costs about $D+1$; for E5c rows, per run. $v$ is the total violation of the "
               r"design. P1's thicknesses are on the 0.0625-in grid and P2's tooth counts and "
               r"RC14's unit counts are integers, as in the experiments. The RC14 entry also "
-              r"lists the best designs with two units in the first stage, where the SHADE-family "
-              r"runs end.",
+              r"lists the best designs with two units in the first stage, whose costs match the "
+              r"objectives at which the SHADE-family runs end (the runs do not store designs).",
               r"\end{flushleft}", r"\end{table}", ""]
     write(fname, "\n".join(lines), "tab:supp_classical_refs", home)
 
@@ -2039,7 +2117,7 @@ def table_supp_validation(caption, fname, home="supp"):
     for f in ("validation_jso.csv", "validation_lshade_shade.csv"):
         p = os.path.join(ANA, f)
         if os.path.exists(p):
-            parts.append(pd.read_csv(p))
+            parts.append(read_runs(p))
     if not parts:
         print("[S2.3] no validation summaries found: run validate_jso.py and "
               "validate_lshade_shade.py with --summary-csv (see the README)")
@@ -2137,15 +2215,16 @@ def table_per_function(df, dim, caption, fname, label, fes_note="", home="supp")
     for f in funcs:
         means = {a: sub[(sub.func == f) & (sub.algo == a)]["error"].mean() for a in algos}
         stds = {a: sub[(sub.func == f) & (sub.algo == a)]["error"].std(ddof=1) for a in algos}
-        best = min(algos, key=lambda a: means[a])
+        best = {algos[i] for i in tied_best([means[a] for a in algos])}
         lines.append(f"F{f} & Mean & " + " & ".join(
-            (f"\\textbf{{{sci(means[a])}}}" if a == best else sci(means[a])) for a in algos) + r" \\")
+            (f"\\textbf{{{sci(means[a])}}}" if a in best else sci(means[a])) for a in algos) + r" \\")
         lines.append(" & Std & " + " & ".join(
-            (f"$\\pm$\\textbf{{{sci(stds[a])}}}" if a == best else f"$\\pm${sci(stds[a])}")
+            (f"$\\pm$\\textbf{{{sci(stds[a])}}}" if a in best else f"$\\pm${sci(stds[a])}")
             for a in algos) + r" \\")
     lines += [r"\bottomrule", r"\end{tabular}}", r"\begin{flushleft}\footnotesize",
               f"Error values $f(\\mathbf{{x}})-f^{{*}}$ over 30 independent runs; errors below "
-              f"$10^{{-8}}$ are recorded as 0. {fes_note} Best mean per function in bold.",
+              f"$10^{{-8}}$ are recorded as 0. {fes_note} Best mean per function in bold; "
+              f"when several algorithms share the lowest mean exactly, every one of them is bold.",
               r"\end{flushleft}", r"\end{table}", ""]
     write(fname, "\n".join(lines), f"tab:{label}", home)
 
@@ -2164,22 +2243,22 @@ def main():
     table_gate_inference("The gate $\\times$ L\\'evy factorial on CEC2017 at $D=30$: interval "
                          "estimates, tests on both scales and equivalence verdicts at three "
                          "margins.", "tab_gateinference.tex")
-    table_popsize(pd.read_csv(os.path.join(RES, "E6_popsize_cec2017_30D.csv")),
+    table_popsize(read_runs(os.path.join(RES, "E6_popsize_cec2017_30D.csv")),
                   "The population sweep in SEHHO-COBL on CEC2017 at $D=30$ with "
                   "$3\\times10^{5}$ evaluations.", "tab_popsize.tex")
     table_pop_isolation("The one-constant population control: rows 1 and 2 change only "
                         "$N_{\\text{init}}$ inside one algorithm.", "tab_popisolation.tex")
     table_cec2014_primary("Pre-registered evaluation on CEC2014.", "tab_cec2014primary.tex")
-    eng = pd.concat([pd.read_csv(files["E5"]), pd.read_csv(e10)], ignore_index=True)
+    eng = pd.concat([read_runs(files["E5"]), read_runs(e10)], ignore_index=True)
     eng["algo"] = eng.algo.replace(DISPLAY)
     table_engineering(eng, "Seven algorithms on five constrained design problems under Deb's "
                       "feasibility rule, with a classical reference for each problem.",
                       "tab_engineering.tex")
     table_e16("The one-constant population control on the five design problems: L-SHADE "
               "with $N_{\\text{init}}=6D$ against $18D$.", "tab_e16.tex")
-    e5b = pd.read_csv(os.path.join(RES, "E5b_engineering_budget.csv"))
+    e5b = read_runs(os.path.join(RES, "E5b_engineering_budget.csv"))
     e5b["algo"] = e5b.algo.replace(DISPLAY)
-    table_rc01rc06(e5b, pd.read_csv(os.path.join(RES, "E5c_solver_baseline.csv")), eng,
+    table_rc01rc06(e5b, read_runs(os.path.join(RES, "E5c_solver_baseline.csv")), eng,
                    "RC01 and RC06: more evaluations, and methods designed for explicit "
                    "constraints.", "tab_engbudget.tex")
     table_guide("A budget-indexed guide to the initial population: $\\delta$($6D$ vs $18D$) "
@@ -2195,8 +2274,8 @@ def main():
     table_supp_precision("Precision of the primary endpoint at 30 runs per cell.",
                          "tab_supp_precision.tex")
     p4c = os.path.join(RES, "E4c_ablation_cec2017_30D_15k.csv")
-    blocks = [("CEC2017 $D{=}30$, 15{,}000 FEs", pd.read_csv(p4c)),
-              ("CEC2017 $D{=}30$, 300{,}000 FEs", pd.read_csv(files["E4b"]))]
+    blocks = [("CEC2017 $D{=}30$, 15{,}000 FEs", read_runs(p4c)),
+              ("CEC2017 $D{=}30$, 300{,}000 FEs", read_runs(files["E4b"]))]
     table_ablation(pd.concat([b for _, b in blocks]), "SEHHO:Full",
                    "Ablation of SEHHO-COBL at two evaluation budgets on CEC2017 at $D=30$: "
                    "phase-gate replacements, the fixed-$p$ variant and single-module removals, "
@@ -2207,7 +2286,7 @@ def main():
                               "factorial: percentile, BCa and Student-$t$, plain and "
                               "Bonferroni-adjusted, with the margin verdicts.",
                               "tab_supp_gate_intervals.tex")
-    d4 = pd.read_csv(files["E4"])
+    d4 = read_runs(files["E4"])
     # the note this table needs (REV-33): non-separation, and the sign of the gate
     # variants at D = 20, read from the analysis rather than asserted
     gate_vars = ["SEHHO:AlwaysPbest", "SEHHO:AlwaysPbest+NoLevy", "SEHHO:AlwaysPbest+FixedP",
@@ -2246,7 +2325,7 @@ def main():
                 "change the gate and the population rule were taken on it, so this comparison "
                 "is an optimistic estimate on the suite that motivated the changes.",
                 "tab_cec2017.tex", "cec2017_competition")
-    d12 = pd.read_csv(e12)
+    d12 = read_runs(e12)
     d12["algo"] = d12.algo.replace(DISPLAY)
     table_ranks(d12, "cec2017_tight", "CEC2017 at $D=30$ and 50 under the tight budget of "
                 "15{,}000 evaluations (30 runs). Diagnostic suite.", "tab_cec2017_tight.tex",
@@ -2284,7 +2363,7 @@ def main():
         table_per_function(d12, dim, f"Per-function results, CEC2017 at $D={dim}$, 15{{,}}000 "
                            f"evaluations (tight budget).", f"tab_supp_cec2017_tight_D{dim}.tex",
                            f"supp_cec2017_tight_D{dim}", "Diagnostic suite, tight budget.")
-    d13 = pd.read_csv(os.path.join(RES, "E13_cec2014.csv"))
+    d13 = read_runs(os.path.join(RES, "E13_cec2014.csv"))
     d13["algo"] = d13.algo.replace(DISPLAY)
     for dim in sorted(d13.dim.unique()):
         for fes, tag, word in ((10_000 * dim, "competition", "competition budget"),

@@ -462,13 +462,36 @@ def de_rand1bin(budget: Budget, rng, N: int = 100, F: float = 0.5, CR: float = 0
 
 
 def _shade_family(budget, rng, *, N_init, H, arc_rate, p_rate, memory_f0, memory_cr0,
-                  lpsr, jso_mode, cr_lehmer=True, p_random=False) -> float:
+                  lpsr, jso_mode, cr_lehmer=True, p_random=False,
+                  terminal="absorbing", archive_trial=False) -> float:
     """Shared engine for SHADE / L-SHADE / jSO.
 
     Structure, bound handling ("medium with parent"), archive policy, memory
     update and LPSR follow the reference C++ implementations released by the
-    algorithms' own authors.
+    algorithms' own authors, except in the two rules below.
+
+    Two switches exist only for the validation of the ports against their
+    authors' released code (scripts/validate_engine_variants.py).  Every
+    experiment of the paper uses the defaults, and neither switch changes any
+    random draw, so a run with the defaults is the released engine bit for bit:
+
+    terminal       "absorbing" (default): a CR memory slot whose successful CR
+                   values are all 0 becomes the terminal value (-1) and stays
+                   there, as the L-SHADE paper specifies (its Algorithm 1).
+                   "reaccumulate": the slot is re-accumulated at every update,
+                   so the terminal value is set only by a generation whose
+                   successful CRs are all 0, as in Tanabe's lshade.cc 1.0.0 and
+                   1.0.1 and SHADE 1.1's shade.cc.
+                   "none": no terminal value; the weighted mean is used as it
+                   is, as in SHADE 1.0's own code.
+    archive_trial  False (default): the archive receives the parent that a
+                   trial vector replaced, as in the L-SHADE paper and
+                   lshade.cc 1.0.1.  True: it receives the successful trial
+                   vector, as in lshade.cc 1.0.0 (the CEC2014 competition code).
     """
+    if terminal not in ("absorbing", "reaccumulate", "none"):
+        raise ValueError(f"terminal must be 'absorbing', 'reaccumulate' or 'none', "
+                         f"not {terminal!r}")
     lb, ub, d = budget.lb, budget.ub, budget.dim
     max_fes = budget.max_fes
     N = N_init
@@ -573,7 +596,7 @@ def _shade_family(budget, rng, *, N_init, H, arc_rate, p_rate, memory_f0, memory
         better = fu < f[:m]
         equal = fu == f[:m]
         if better.any():
-            parents = X[:m][better]
+            parents = U[:m][better] if archive_trial else X[:m][better]
             if arc_cap > 1:
                 room = arc_cap - archive.shape[0]
                 if room > 0:
@@ -589,7 +612,11 @@ def _shade_family(budget, rng, *, N_init, H, arc_rate, p_rate, memory_f0, memory
             old_f, old_cr = M_F[midx], M_CR[midx]
             new_f = np.sum(w * S_F * S_F) / max(np.sum(w * S_F), 1e-300)
             denom_cr = np.sum(w * S_CR)
-            if denom_cr == 0 or old_cr == -1:
+            if terminal == "none":
+                # SHADE 1.0's code (validation only): no terminal value
+                new_cr = (np.sum(w * S_CR * S_CR) / denom_cr if (cr_lehmer and denom_cr > 0)
+                          else denom_cr)
+            elif denom_cr == 0 or (terminal == "absorbing" and old_cr == -1):
                 # every successful CR was 0: the slot becomes terminal
                 new_cr = -1.0
             elif cr_lehmer:                      # L-SHADE / jSO: weighted Lehmer

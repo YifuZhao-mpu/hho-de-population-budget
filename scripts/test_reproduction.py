@@ -9,7 +9,9 @@ individual is selected and therefore the whole run.
 
 This test re-runs a sample of cells and compares against the stored CSVs.  The
 tolerance is 1e-12 relative, which admits the ~1e-16 noise of writing a float
-to text and reading it back, and nothing else.
+to text and reading it back, and nothing else.  Besides the SEHHO-COBL cells it
+re-executes SHADE, L-SHADE and jSO cells, which run the shared engine
+``algorithms._shade_family`` with its validation switches at their defaults.
 
 Run:  python3 scripts/test_reproduction.py
 """
@@ -28,7 +30,7 @@ TOL = 1e-12
 RUNS = 3
 
 CASES = [
-    # (stored csv, tag, suite, dim, max_fes, {variant: cfg}, functions)
+    # (stored csv, tag, suite, dim, max_fes, {variant: cfg}, functions[, algorithm prefix])
     ("E4b_ablation_cec2017_30D.csv", "E4b_ablation_cec2017_30D", "cec2017", 30, 300_000,
      {"Full": dict(),
       "AlwaysPbest": dict(phase_mode="always_pbest"),
@@ -41,12 +43,19 @@ CASES = [
     ("E4c_ablation_cec2017_30D_15k.csv", "E4c_ablation_cec2017_30D_15k", "cec2017", 30, 15_000,
      {"Full": dict(), "AlwaysPbest": dict(phase_mode="always_pbest")},
      (3, 17)),
+    # the SHADE-family baselines (shared engine, default switches)
+    ("E12_cec2017_tight.csv", "E12_cec2017_tight", "cec2017", 30, 15_000,
+     {"jSO": dict(), "LSHADE": dict(), "SHADE": dict()}, (1, 10), ""),
+    ("E13_cec2014.csv", "E13_cec2014_competition", "cec2014", 30, 300_000,
+     {"LSHADE": dict()}, (10,), ""),
 ]
 
 
 def main():
     worst, checked, failures = 0.0, 0, []
-    for fname, tag, suite, dim, fes, variants, funcs in CASES:
+    for case in CASES:
+        fname, tag, suite, dim, fes, variants, funcs = case[:7]
+        prefix = case[7] if len(case) > 7 else "SEHHO:"
         path = os.path.join(RES, fname)
         if not os.path.exists(path):
             print(f"  [skip] {fname} not present")
@@ -54,11 +63,11 @@ def main():
         stored = pd.read_csv(path)
         for name, cfg in variants.items():
             for fn in funcs:
-                cell = Cell(suite, fn, dim, f"SEHHO:{name}", fes, RUNS,
+                cell = Cell(suite, fn, dim, f"{prefix}{name}", fes, RUNS,
                             cfg=dict(cfg), tag=tag)
                 got = pd.DataFrame(run_cell(cell)).set_index("run").sort_index()
-                ref = (stored[(stored.algo == f"SEHHO:{name}") & (stored.func == fn)
-                              & (stored.dim == dim)]
+                ref = (stored[(stored.algo == f"{prefix}{name}") & (stored.func == fn)
+                              & (stored.dim == dim) & (stored.tag == tag)]
                        .set_index("run").sort_index().loc[list(range(RUNS))])
                 if not np.array_equal(got["seed"].to_numpy(), ref["seed"].to_numpy()):
                     failures.append(f"{name} F{fn}: seeds differ")

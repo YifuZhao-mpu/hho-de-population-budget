@@ -2,7 +2,9 @@
 #
 # Python 3.13.12 (Anaconda build, CPython, Linux x86-64).  With these versions
 # scripts/test_reproduction.py re-runs stored cells bit for bit (worst relative
-# difference 5.7e-15) and every analysis script reproduces its stored output.
+# difference 5.7e-15) and every analysis script reproduces its stored output
+# (results/analysis/selected_config.json is rewritten with one renamed key,
+# "held_out" -> "diagnostic_suite"; see the README).
 #
 # The CEC benchmark libraries (cec_native/libcec14.so, libcec17.so, libcec22.so)
 # are built by cec_native/build.sh with
@@ -12,7 +14,8 @@
 #
 # Install:  python3 -m pip install -r requirements.txt
 #
-# Direct dependencies (the only third-party modules imported by sehho/ and scripts/):
+# Direct dependencies (the only third-party modules imported by sehho/ and scripts/,
+# apart from the optional ones at the end):
 numpy==2.4.4
 scipy==1.17.1
 pandas==3.0.2
@@ -30,3 +33,7 @@ pillow==12.2.0
 pyparsing==3.3.2
 # Optional, used only by scripts/validate_benchmarks.py as an independent CEC2017
 # cross-check (it skips that section if absent): cec2017-py (Duncan Tilley, MIT).
+# Optional, used only by scripts/cec2020_entries.py to read one figure from the
+# CEC2020 organisers' ranking workbook (.xlsx):
+openpyxl==3.1.5
+et-xmlfile==2.0.0

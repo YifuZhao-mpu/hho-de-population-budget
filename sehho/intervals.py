@@ -6,8 +6,8 @@ over the functions of a suite.  The unit of inference is therefore the
 function, and inference is conditional on the suite's functions treated as
 exchangeable instances of the problem class the suite stands for.
 
-This module adds to the percentile bootstrap used so far (reviewer item
-REV-26, work order W1, and REV-27, work order W3):
+This module adds to the percentile bootstrap used so far (items REV-26 and
+REV-27 of an internal pre-submission review, work orders W1 and W3):
 
 * the BCa (bias-corrected and accelerated) bootstrap interval (Efron, 1987),
   computed from the *same* resamples as the percentile interval;

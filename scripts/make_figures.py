@@ -32,6 +32,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import Patch  # noqa: E402
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from sehho.runfiles import read_runs  # noqa: E402  (pandas.read_csv; SEHHO_ERROR_DECIMALS, Section 2.6)
 from sehho.stats import friedman  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -143,7 +144,7 @@ def fig_ablation_ranks():
              ("E4b_ablation_cec2017_30D.csv", "300,000 evaluations")]
     panels = []
     for fname, title in specs:
-        df = pd.read_csv(os.path.join(RES, fname))
+        df = read_runs(os.path.join(RES, fname))
         df = df[df.dim == 30]
         algos = sorted(df.algo.unique())
         funcs = sorted(df.func.unique())
@@ -201,7 +202,7 @@ def _source_key(r):
 
 def fig_budget_guide():
     """delta(6D vs 18D) against evaluations per variable, from revision_budget_guide.csv."""
-    g = pd.read_csv(os.path.join(ANA, "revision_budget_guide.csv"))
+    g = read_runs(os.path.join(ANA, "revision_budget_guide.csv"))
     g["key"] = [_source_key(r) for r in g.to_dict("records")]
     # spread points that share an abscissa, on the log scale
     order = list(SOURCE_STYLE)
@@ -258,7 +259,8 @@ def fig_budget_guide():
 
 
 # ---------------------------------------------------------------- convergence (withdrawn)
-# The convergence figures of the reviewed version were withdrawn in the revision (REV-18):
+# The convergence figures of the version that went through the internal pre-submission review
+# were withdrawn in the revision (its item REV-18):
 # results/traces.csv holds only the per-checkpoint mean and median of 30 runs, so no
 # dispersion band can be drawn from it, and the traces were recorded before the repaired
 # configuration existed.  The per-function tables carry the final-error distributions.
@@ -266,10 +268,10 @@ def fig_budget_guide():
 
 # ---------------------------------------------------------------- S5.4
 def fig_scalability():
-    e9 = pd.read_csv(os.path.join(RES, "E9_newmethod_vs_baselines.csv"))
+    e9 = read_runs(os.path.join(RES, "E9_newmethod_vs_baselines.csv"))
     frames = []
     for fname in ("E1_cec2022_paper_budget.csv", "E3_cec2017.csv"):
-        d = pd.read_csv(os.path.join(RES, fname))
+        d = read_runs(os.path.join(RES, fname))
         d = pd.concat([d, e9[e9.tag == fname[:-4]]], ignore_index=True)
         d["suite_label"] = "CEC2022, 15,000 evaluations" if "2022" in fname else \
             "CEC2017, $10{,}000\\times D$ evaluations"
@@ -325,8 +327,8 @@ def fig_scalability():
 
 # ---------------------------------------------------------------- S6.10
 def fig_feasibility():
-    frames = [pd.read_csv(os.path.join(RES, "E5_engineering.csv")),
-              pd.read_csv(os.path.join(RES, "E10_newmethod_engineering.csv"))]
+    frames = [read_runs(os.path.join(RES, "E5_engineering.csv")),
+              read_runs(os.path.join(RES, "E10_newmethod_engineering.csv"))]
     df = pd.concat(frames, ignore_index=True)
     df["algo"] = df.algo.replace(DISPLAY)
     probs = sorted(df["problem"].unique())

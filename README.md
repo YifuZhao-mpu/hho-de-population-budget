@@ -7,7 +7,7 @@ seeds that produced them, and the analysis scripts. Read
 relying on any single file.
 
 Public repository: https://github.com/YifuZhao-mpu/hho-de-population-budget
-(the release cited in the manuscript is tagged `v1.0`). Code is MIT-licensed
+(the release cited in the manuscript is tagged `v1.1`). Code is MIT-licensed
 and data CC BY 4.0; third-party benchmark sources keep their authors' terms
 (see [Licences and access](#licences-and-access)).
 
@@ -25,6 +25,27 @@ python3 scripts/validate_lshade_shade.py --lshade-dir <L-SHADE> --shade-dir <SHA
         --summary-csv results/analysis/validation_lshade_shade.csv
                                             # stored L-SHADE/SHADE runs (E13) vs Tanabe & Fukunaga's published runs
                                             # (--summary-csv: statistics for the supplementary validation table)
+python3 scripts/validate_engine_variants.py run          # the engine with its two switches set to the
+                                            # C++ codes' behaviour, E13's seeds -> results/validation_engine_variants_cec2014.csv
+python3 scripts/validate_engine_variants.py check-defaults
+                                            # the switches at their defaults replay stored E13 runs bit for bit
+python3 scripts/shade101_cpp/run_shade101.py --shade-zip <SHADE1.0.1_CEC2013.zip> --lshade-zip <LSHADE1.0.0_CEC2014.zip>
+                                            # Tanabe's SHADE 1.0.1 C++ code on our CEC2014 data (code not redistributed)
+                                            # -> results/validation_shade101_cpp_cec2014.csv (add --check to compare)
+python3 scripts/validate_engine_variants.py analyze --lshade-dir <L-SHADE> \
+        --summary-csv results/analysis/validation_engine_variants.csv
+                                            # every validation statistic of Supplementary Section S2.3
+python3 scripts/cec2020_entries.py <2020-RW-Constrained-Optimisation folder>
+                                            # checkpoint figures of the CEC2020 competition entries quoted in main text
+                                            # Section 4.3 and Supplementary S6.1/S6.8, from the organisers' per-run files
+                                            # (sha256 checked; not redistributed; needs openpyxl, see requirements.txt)
+                                            # -> results/analysis/cec2020_entries.csv
+python3 scripts/resolution_check.py          # the precision check of main text Section 2.6: every analysis
+                                            # that reads per-run errors, and every table, re-run on errors
+                                            # rounded to 1e-8 (post hoc; a few minutes; the figure and
+                                            # validation scripts are not re-run)
+                                            # -> results/analysis/resolution_changes.csv,
+                                            #    results/analysis/resolution_table_cells.csv
 python3 scripts/run_experiments.py          # E1-E6: the re-evaluation of SEHHO-COBL
 python3 scripts/run_experiments.py E4c      # the same ablation at 15,000 evaluations
 python3 scripts/run_eng_budget.py           # E5b: feasibility vs budget on RC01/RC06
@@ -57,7 +78,7 @@ python3 scripts/classical_references.py     # classical reference designs of the
                                             # with evaluation counts -> results/analysis/revision_classical_refs.csv
 python3 scripts/check_cec_data.py           # singular values of the CEC matrices; CEC2022 input data
                                             # shared with CEC2017/CEC2014 -> results/analysis/revision_*.csv
-python3 scripts/analyze_revision.py         # re-analyses requested in review (see "Revision analyses")
+python3 scripts/analyze_revision.py         # re-analyses requested in an internal pre-submission review (see "Revision analyses")
                                             # -> results/analysis/revision_*.csv
 python3 scripts/make_tables.py              # LaTeX tables -> results/tex/
 python3 scripts/make_figures.py             # figures -> results/figures/
@@ -130,8 +151,9 @@ element `H` of `constraints`.
   results. Its data are not wholly separate from the selection suite: CEC2022
   F6, F8, F9 and F10 reuse the D=10 and D=20 rotation matrices of CEC2014 F18,
   F22, F23 and F24 (`scripts/check_cec_data.py`), which was not considered when
-  the roles were assigned and was identified in review. The
-  configuration, comparisons, test statistic and success criterion were fixed in
+  the roles were assigned and was identified in pre-submission checking. The
+  configuration, the primary endpoint and its test, three secondary predictions
+  stated in words and the success criterion were fixed in
   `results/analysis/PREREGISTRATION_cec2014.json`, an internal pre-registration
   timestamped inside the file (2026-09-15T08:30:15Z), **before** the stage was
   run; the hash it records covers the frozen configuration only (see
@@ -155,7 +177,11 @@ figures; it is `GF-Method` in this code and in every raw CSV. It is not renamed
 in the data because `make_seed()` hashes the algorithm name, so renaming would
 make the released seeds irreproducible; `make_tables.py` and `make_figures.py`
 map the name at display time. L-SHADE is `LSHADE` in the data for the same
-reason and is mapped the same way.
+reason and is mapped the same way. Comments, docstrings and printed labels of
+analysis scripts written before the renaming call the repaired configuration
+"R-SHADE", the name used in an earlier draft; it is not Tanabe & Fukunaga's
+restart SHADE. Scripts whose
+sha256 is recorded in a pre-registration are left exactly as registered.
 
 ### The two gate-ablation analyses, and why there are two
 
@@ -207,8 +233,13 @@ sehho/
                 of per-function deltas, margin verdicts, two-stage bootstrap
   runner.py     deterministic seeding and parallel execution
 scripts/        experiment drivers, validation, analysis, tables, figures
-results/        per-run raw CSVs, analysis tables, LaTeX tables, figures
+results/        per-run raw CSVs, analysis tables, LaTeX tables, figures; the
+                validation re-runs of Supplementary Section S2.3 are
+                results/validation_engine_variants_cec2014.csv (our engine with its
+                two switches) and results/validation_shade101_cpp_cec2014.csv (our
+                runs of Tanabe's SHADE 1.0.1 C++ code, which is not redistributed)
 results/legacy/ superseded raw files kept for transparency; no script reads them
+scripts/shade101_cpp/  harness and build script for the SHADE 1.0.1 code-to-code check
 requirements.txt exact package versions of the verified environment (and the compiler)
 ```
 
@@ -245,7 +276,8 @@ visible by diffing `patched_*.cpp` against the originals:
 5. **C linkage** for the test function, so that `ctypes` can find it.
 
 The CEC2022 source carries edits 1-3 and 5; it already reads its data with
-`%lf`. `cec_native/build.sh` only compiles the three patched sources.
+`%lf`. The `patched_*.cpp` build copies also normalise CRLF line endings to LF,
+which changes no code. `cec_native/build.sh` only compiles the three patched sources.
 
 No objective or constraint expression was modified.
 
@@ -261,6 +293,8 @@ No objective or constraint expression was modified.
   competition source: `cec2017-py` multiplies the Bent Cigar tail by `10e6`
   (= 1e7) instead of the `pow(10.0, 6.0)` of the C code, which accounts for the
   large disagreements on F1 and every hybrid/composition that uses Bent Cigar.
+  The check needs `cec2017-py` installed, or its folder named in the environment
+  variable `CEC2017_PY_DIR`; without it the script skips this check.
 * **Optimum recovery**: `f(o) − f*` is 0 for all CEC2022 functions. On CEC2017
   the residuals are the documented artefacts of the original C code (the
   truncated Schwefel constant, ~1e-4, and the Levy offset, ~0.096·D).
@@ -333,18 +367,40 @@ are 0) and F10 at both dimensions (0.34 and 0.38, ours lower). The rank-sum
 differences come from the two code-level differences listed under [Known
 deviations and disclosures](#known-deviations-and-disclosures): the absorbing
 terminal CR value (F10) and the parent archive (F18 and F30 at D=30, F6 and F18
-at D=50). During the revision the engine was re-run, with E13's seeds, with
-both set to the competition code's behaviour (a modified copy of
-`_shade_family`, not shipped): no function then differs from the published
-runs, at D=30 or at D=50.
+at D=50). The engine was re-run, with E13's seeds, with both set to the
+competition code's behaviour: no function then differs from the published runs,
+at D=30 or at D=50. The two rules are keyword switches of `_shade_family`
+(`terminal`, `archive_trial`) whose defaults are the behaviour of every
+experiment, and no random draw depends on them, so a variant run is paired with
+the E13 run of the same seed. `scripts/validate_engine_variants.py run` makes
+the runs (L-SHADE with each switch and both, SHADE with SHADE 1.0's own memory
+update; D=30 and 50, all 30 functions, 30 runs: 7,200 runs, in
+`results/validation_engine_variants_cec2014.csv`), `check-defaults` replays
+stored E13 L-SHADE, SHADE and jSO runs through the same entry points with the
+switches at their defaults (bit for bit), and `analyze` prints every statistic
+quoted in Supplementary Section S2.3 and main text Section 2.4
+(`results/analysis/validation_engine_variants.csv`; the comparisons with the
+published runs need `--lshade-dir`, the folder described above).
 
-We found no published SHADE 1.0 results on CEC2014. In their place the
-authors' own SHADE 1.0.1 C++ code (`SHADE1.0.1_CEC2013.zip` from Tanabe's
-software page, Internet Archive copy; evaluation call and optimum switched to
-CEC2014) was run on this package's CEC2014 build, 51 runs per function at D=30
-and 50 — again a revision check, not shipped. Our SHADE differs from it on F5
-and F12 at D=30 and on F5, F11, F12 and F16 at D=50, always lower; without the
-terminal value, which SHADE 1.0 does not have, no function differs.
+We found no published SHADE 1.0 results on CEC2014 (sources checked in October
+2026: the CEC2014 competition results, Tanabe's archived software and data
+pages, and the SHADE and L-SHADE papers). In their place Tanabe and Fukunaga's
+own SHADE 1.0.1 C++ code was run on this package's CEC2014 data, 51 runs per
+function at D=30 and 50. The code is not redistributed; our runs are
+(`results/validation_shade101_cpp_cec2014.csv`), and
+`scripts/shade101_cpp/run_shade101.py` rebuilds and re-runs them from the
+official files, which it checks by sha256 before use:
+
+| item | value |
+|---|---|
+| SHADE 1.0.1 for CEC2013 (Tanabe) | original address `https://sites.google.com/site/tanaberyoji/software/SHADE1.0.1_CEC2013.zip` (no longer resolves); Internet Archive copy http://web.archive.org/web/20201016162057id_/https://sites.google.com/site/tanaberyoji/software/SHADE1.0.1_CEC2013.zip?attredirects=0 ; `SHADE1.0.1_CEC2013.zip`, 1,774,242 bytes, sha256 `92fafa12f90149f5df00402770b9ddb3961a922bfcef3fd7579e2d7440737d86` |
+| CEC2014 test function used with it | Tanabe's `cec14_test_func.cc`, sha256 `eb7da784d9e027c02c333fb0ca4000be829287a45e781714f71fd567c5584be6`, folder `LSHADE_CEC14/` of `LSHADE1.0.0_CEC2014.zip` (Internet Archive http://web.archive.org/web/20201016162105id_/https://sites.google.com/site/tanaberyoji/software/LSHADE1.0.0_CEC2014.zip?attredirects=0 , sha256 `233bb102ca165329099a2fa0721ceae82ae1ebfb4755e24848e54df1868739d9`); the same file is in `Top-Methods-Part-A.rar` of the official CEC2014 repository |
+| edits | the evaluation call (`test_func` becomes `cec14_test_func`) and the optimum (F_i* = 100 i); nothing else |
+| driver | `scripts/shade101_cpp/harness_main.cc` (this package): N = 100, H = 100, \|A\| = N, 10,000·D evaluations; run r of function f at dimension D is seeded with `srand(100000*D + 1000*f + r + 1)` |
+
+Our SHADE differs from it on F5 and F12 at D=30 and on F5, F11, F12 and F16 at
+D=50, always lower; without the terminal value, which SHADE 1.0 does not have,
+no function differs (`validate_engine_variants.py analyze`).
 
 ## Function-evaluation accounting
 
@@ -369,7 +425,7 @@ overrun. Consequences worth stating explicitly:
 | L-SHADE | Tanabe & Fukunaga's own `lshade.cc` (version 1.0.0, the CEC2014 competition code): N=18D, H=6, \|A\|=2.6N, p=0.11, LPSR, parent-midpoint bound handling; the archive stores the replaced parent, as in their corrected 1.0.1 |
 | jSO | Brest et al.'s own `lshade.cc` (jSO CEC2017 archive): N=25·√D·ln D, H=5, terminal memory slot fixed at 0.9, staged F/CR clamps, weighted F, p annealing |
 | HHO | Heidari et al. (2019), all four siege branches |
-| DE | DE/rand/1/bin, F=0.5, CR=0.9, N=100 |
+| DE | DE/rand/1/bin, F=0.5 and CR=0.9 (first choices Storn & Price suggest), N fixed at 100 rather than their rule of thumb of 5D to 10D |
 
 The three SHADE-family baselines share one engine (`algorithms._shade_family`);
 its terminal-CR rule differs from the reference codes, and L-SHADE's archive
@@ -402,8 +458,9 @@ with two additions:
 
 ## Revision analyses
 
-Everything the review asked to be recomputed is recomputed from the stored
-per-run CSVs; no optimiser is run.
+Everything an internal pre-submission review of the manuscript asked to be
+recomputed is recomputed from the stored per-run CSVs; no optimiser is run (see
+[The word "review" in file comments](#the-word-review-in-file-comments)).
 
 **Sign convention.** Every table reports Cliff's delta for arm A against arm B,
 A being the changed, new or first-named arm; negative values favour A
@@ -421,7 +478,7 @@ label and whether it belongs to the main text or the supplement.
 |---|---|---|
 | `analyze_revision.py gate` | `revision_gate_inference.csv` | gate x Levy factorial (E4b, E4c): percentile, BCa and Student-t intervals, Bonferroni (98.75%) versions within each Holm family of four, p_Holm on the delta and the mean-error scales, verdicts at \|delta\| < 0.147 / 0.10 / 0.05 |
 | `analyze_revision.py pop` | `revision_pop_isolation.csv` | the one-constant population control (E14), every row with every interval |
-| `analyze_revision.py cec2014` | `revision_cec2014_primary.csv`, `revision_cec2014_suitegap.csv`, `revision_cec2014_excluded_functions.csv`, `revision_cec2014_pairwise.csv`, `revision_precision.csv` | the registered endpoint with BCa / Student-t / two-block Bonferroni intervals; the same endpoint without F18, F22, F23, F24 (post hoc); the CEC2017 counterpart and the suite gap; signed-rank tests on per-function delta, Holm over the six competitors of a block, beside the registered Friedman post-hoc p-values; per-function standard errors of delta at 30 runs and the two-stage bootstrap |
+| `analyze_revision.py cec2014` | `revision_cec2014_primary.csv`, `revision_cec2014_suitegap.csv`, `revision_cec2014_excluded_functions.csv`, `revision_cec2014_pairwise.csv`, `revision_precision.csv` | the registered endpoint with BCa / Student-t / two-block Bonferroni intervals; the same endpoint without F18, F22, F23, F24 (post hoc); the CEC2017 counterpart and the suite gap; signed-rank tests on per-function delta, Holm over the six competitors of a block, beside the Friedman post-hoc p-values of the committed analysis script `analyze_cec2014.py` (the pre-registration names no test for these secondary comparisons); per-function standard errors of delta at 30 runs and the two-stage bootstrap |
 | `analyze_revision.py suites` | `revision_suite_pairwise.csv` | the same pairwise statistics for CEC2017 (E3+E9, E12) and CEC2022 (E1+E9, E2+E9) |
 | `analyze_revision.py comp` | `revision_composition.csv`, `revision_composition_decisions.csv` | composition of the repaired configuration (E8, E11): every interval, and the decision the amended rule gives under each interval type and margin |
 | `analyze_revision.py poprule` | `revision_poprule.csv`, `revision_poprule_ranks.csv` | the population-rule search (E7): intervals against the selected rule; ranks and positions per block |
@@ -431,7 +488,10 @@ label and whether it belongs to the main text or the supplement.
 | `analyze_revision.py guide` | `revision_budget_guide.csv` | delta(6D vs 18D) against evaluations per variable, from E14, E7 and E16 (Table 10, Figure 3) |
 | `classical_references.py` | `revision_classical_refs.csv` | a classical reference design per problem with its evaluation count |
 | `check_cec_data.py` | `revision_singular_values.csv`, `revision_cec2022_lineage.csv` | singular values of every transformation matrix; CEC2022 data identical to CEC2017 or CEC2014 data |
+| `analyze_revision.py e15` | `revision_e15.csv` | E15's registered secondary comparison (original-rule configuration vs SEHHO-COBL-R) with BCa, Student-t and Bonferroni-adjusted (98.75%) intervals over its four blocks (Table S-e15; the adjustment is not part of the registration) |
+| `analyze_revision.py contrast` | `revision_effect_contrast.csv` | the direct per-function contrast of the population effect (N=120 vs N=30, E6) with the gate effect (E4b), both at 300,000 evaluations on CEC2017 D=30, as main text Section 2.6 requires for a difference of effects |
 | `validate_jso.py`, `validate_lshade_shade.py` with `--summary-csv` | `validation_jso.csv`, `validation_lshade_shade.csv` | the port-validation statistics behind the supplementary validation table (statistics only; the reference files are not redistributed) |
+| `validate_engine_variants.py analyze` with `--summary-csv` | `validation_engine_variants.csv` | the engine-variant and SHADE 1.0.1 code-to-code statistics of Supplementary Section S2.3 (statistics only) |
 
 `analyze_revision.py` draws, for every contrast an earlier script already
 analysed, from a generator seeded and consumed exactly as in that script
@@ -446,9 +506,22 @@ exchangeable instances of the problem class the suite represents.
 
 Equivalence verdicts at a margin m: *negligible* when the whole interval lies
 inside (-m, m); *nonzero* when it excludes zero; *inconclusive* otherwise. An
-interval that excludes zero with its bound nearest zero within 0.02 of it
-(`tie_002`) is reported as a *tie* (main text, Section 2.6); in Table 3 this
-applies to the gate x budget interaction with the Levy perturbation off.
+unadjusted interval (percentile, BCa or Student-t) that excludes zero with its
+bound nearest zero within 0.02 of it is reported as a *tie* (main text, Section
+2.6); family-adjusted intervals decide only whether a verdict is directional.
+The column `tie_002` of the analysis files is broader: it also flags an
+interval that spans zero with a bound within 0.02 of zero, and the tables use
+it only where the interval excludes zero (`excludes_zero_tie` in
+`make_tables.py` and `analyze_revision.py`). Ties are reported for the gate x
+budget interaction with the Levy perturbation off (Table 3), for the CEC2014
+D=30 competition block of the population control inside SEHHO-COBL-R (Table 5,
+`°`, and Table 10, "tie"), and for four composition decisions (Table S-composition).
+
+Where a table counts or bolds the lowest mean error ("#1" columns, the bold
+marks of the per-function tables), exact ties for the lowest mean are credited
+to every tied algorithm. In the W/T/L columns, a function whose two samples
+agree run by run to within a relative 1e-5 (`numpy.allclose` in
+`stats.ranksum_family`) is counted as not different without a rank-sum test.
 
 In the engineering table (Table 7), bold marks the lowest mean among the
 algorithms that are feasible in every run; a mean over only some of the runs is
@@ -468,10 +541,15 @@ gate factorial (Table 3) and the composition step, `make_tables.py` also reads
 the verdict of the Bonferroni-adjusted Student-t interval and marks, or lists
 in the table note, every verdict it overturns.
 
-Code changes in this revision: no executable line of the optimisers changed.
-`sehho/intervals.py` is new (analysis only), and the `jso()` docstring in
-`sehho/algorithms.py`, which called jSO the CEC2017 winner, now says that it
-ranked second, behind EBOwithCMAR.
+Code changes in this revision: `sehho/intervals.py` is new (analysis only), and
+the `jso()` docstring in `sehho/algorithms.py`, which called jSO the CEC2017
+winner, now says that it ranked second, behind EBOwithCMAR. In release v1.1
+`algorithms._shade_family` gained the two validation switches `terminal` and
+`archive_trial`; their defaults are the behaviour of every experiment, and
+`scripts/test_reproduction.py` (which now also re-executes SHADE, L-SHADE and
+jSO cells) and `validate_engine_variants.py check-defaults` confirm that the
+stored runs still reproduce. No other executable line of the optimisers
+changed.
 
 Not done, and why: the convergence traces were not re-run with per-run
 logging. `traces.csv` holds only the per-checkpoint mean and median of 30 runs
@@ -494,9 +572,14 @@ the script.
 **Access.** The package is openly available, without registration or request,
 from the public repository
 https://github.com/YifuZhao-mpu/hho-de-population-budget; the release cited in
-the manuscript is tagged `v1.0`. It contains the code, the per-run results of
-every experiment (with seeds), the pre-registration files and the analysis,
-table and figure scripts.
+the manuscript is tagged `v1.1`. It contains the code, the per-run results of
+every experiment (with seeds), including the validation re-runs of
+Supplementary Section S2.3, the pre-registration files and the analysis,
+table and figure scripts. Release v1.1 adds those validation re-runs and their
+scripts to v1.0 and corrects tables and text: no per-run result or statistic of v1.0
+changed, while one classification of the budget guide (`revision_budget_guide.csv`,
+one row now a tie) and the '#1' counts of the tables (exact ties now credited to every
+tied algorithm) were corrected.
 
 **The authors' code** — everything under `sehho/` and `scripts/`, and
 `cec_native/build.sh` and `cec_native/patch_cec14.py` — is original to this work
@@ -519,13 +602,15 @@ documented mechanical edits of [Benchmark provenance](#benchmark-provenance)
 changes `%Lf` to `%lf` in the CEC2014 and CEC2017 data readers.
 `cec2017-py`, used only as an independent cross-check during validation, is
 MIT-licensed (© 2022 Duncan Tilley). The published reference results used to
-validate the jSO, L-SHADE and SHADE ports are not redistributed (their sources
-and checksums are listed above).
+validate the jSO, L-SHADE and SHADE ports, and Tanabe's SHADE 1.0.1 C++ code run
+for the SHADE check, are not redistributed (their sources and checksums are
+listed above); `results/validation_shade101_cpp_cec2014.csv` holds only our runs
+of that code.
 
 ## Known deviations and disclosures
 
-**SEHHO-COBL is a re-implementation.** SEHHO-COBL, the authors' earlier,
-unrefereed design (preprint), was originally implemented in MATLAB; that code is
+**SEHHO-COBL is a re-implementation.** SEHHO-COBL, the authors' earlier
+design, described in an unrefereed preprint, was originally implemented in MATLAB; that code is
 not available, and `sehho/algorithms.py` re-implements it in Python from the
 preprint's specification. Every result in this package labelled SEHHO-COBL concerns this
 re-implementation. `scripts/validate_sehhocobl.py` (it only reads
@@ -562,13 +647,14 @@ averages it with the slot's previous value instead of keeping it. SHADE 1.0
 (2013) has no ⊥ at all, yet the shared engine applies it to SHADE too. SHADE is
 implemented from the 2013 paper rather than ported from its authors' code.
 
-The rule fires often: in a probe of 5 runs per function at D=30, ⊥ is set on 15
-of the 30 CEC2014 functions for L-SHADE and 17 for SHADE, by 35 % and 36 % of all
-memory updates. Absorption itself matters far less, because once every slot is
-⊥ every successful CR is 0 and the re-accumulating rule sets ⊥ again: only 0.5 %
-(L-SHADE) and 2.2 % (SHADE) of updates keep ⊥ solely because it is absorbing.
-The effect on results was measured during the revision with a modified copy of
-the engine (not shipped): all 30 functions re-run with E13's seeds, 30 runs.
+The two rules agree more often than the description suggests, because once
+every slot is ⊥ every successful CR is 0 and the re-accumulating rule sets ⊥
+again; they diverge only while the memory is mixed. (A probe of how often ⊥ is
+set, made with an instrumented copy of the engine during the revision, is not
+part of the package and no number from it is used.) The effect on results was
+measured with the engine's `terminal` switch (`scripts/validate_engine_variants.py`;
+runs in `results/validation_engine_variants_cec2014.csv`): all 30 functions
+re-run with E13's seeds, 30 runs.
 For L-SHADE with a re-accumulating slot, final errors are identical in 562 of
 900 paired runs at D=30 and 534 of 900 at D=50; mean errors move by more than
 10 % on 3 of 24 comparable functions at D=30 (F10 −70 %, F12 +10 %, F22 +15 %
@@ -616,8 +702,8 @@ an interval below zero somewhere. The two rules differ only on COBL and the
 Levy perturbation (original: keep; amended: drop). The amended rule's decision
 is the one in `results/analysis/composition_decision.json` and behind the
 configuration frozen for CEC2014; running the current script reproduces that
-file byte for byte. The script's earlier comment calling the rule "stated in
-advance" was wrong and has been removed.
+file byte for byte. An earlier comment in the script, which described the rule as
+fixed before the data existed, was wrong and has been removed.
 
 **E15: a sensitivity check of that amendment.** Stage E15
 (`scripts/run_e15_original_rule.py`, analysed by `scripts/analyze_e15.py`)
@@ -656,9 +742,12 @@ no third-party timestamp exists. In `results/analysis/cec2014_verdict.json`
 the field `preregistration_sha256` holds that same configuration hash; the file
 is a timestamped artefact and is not regenerated, so the field keeps its name.
 According to the authors' working log, `analyze_cec2014.py` was written at
-08:32Z while E13 was running and was edited once after the data existed
-(10:44Z), to fix a crash in its secondary section; the primary output was the
-same before and after. The script now checks, before computing anything, that
+08:32Z while E13 was running and was edited after the data existed (10:44Z),
+to fix a crash in its secondary section; the primary output was the same
+before and after. The pre-registration names no test for the secondary
+comparisons; the Friedman post-hoc tests reported for them are this script's.
+In the revision (2026-10-02) the script was edited again: it now checks, before
+computing anything, that
 the recorded hash matches the stored configuration and that this configuration
 equals the one E13 runs with (`run_experiments._final_cfg()`), and refuses to
 run otherwise; with those checks in place it reproduces the stored
@@ -675,9 +764,9 @@ information under `"diagnostic_suite"`.
 the escape-energy gate back into the gate-free method, which uses population
 reduction. `sehhocobl` evaluates the gate on t/T with T computed from the
 *initial* population, while under LPSR the run lasts about three to four times
-T generations, so the gate closes after about 40% of the budget instead of 50%
-(40.0–40.5% in instrumented runs at D=10 and 20) and explores on about 12–13%
-of updates instead of 15.3%. The "+Gate" row of the composition table therefore
+T generations, so the gate closes after about 40% of the budget instead of 50% and explores
+on about 12–13% of updates instead of 15.3% (approximate values that follow
+from the LPSR schedule; the package holds no instrumented runs of this). The "+Gate" row of the composition table therefore
 measures a somewhat greedier gate than the published one; the main gate
 ablation (E4/E4b/E4c, fixed population, exact T) is unaffected.
 
@@ -697,6 +786,21 @@ and they are **not** the paper's tables, which `make_tables.py` computes
 directly from the raw runs with SEHHO-COBL-R as the control. Twelve stray copies of
 the `E3_cec2017_*` files (`tmp3_*`) have been removed.
 
+<a id="the-word-review-in-file-comments"></a>
+## The word "review" in file comments
+
+Before submission the manuscript went through an internal pre-submission
+review. Where code comments, docstrings, printed labels or the registration
+files mention "review", "peer review", "adversarial review", "Stage 3",
+roadmap items `REV-xx` or work orders `W1`–`W11`, they refer to that internal
+pre-submission review of the manuscript, not to a journal's review. In
+particular, the field `"status"` of
+`results/analysis/PREREGISTRATION_E16_engineering_population.json` ("requested
+by peer review (Stage 3, roadmap item REV-09)") and the "adversarial review"
+in the rationale of `results/analysis/PREREGISTRATION_cec2014.json` refer to
+that internal review. The registration files are hash-registered provenance and
+are left exactly as written.
+
 ## Verification scripts
 
 | Script | What it checks |
@@ -704,12 +808,16 @@ the `E3_cec2017_*` files (`tmp3_*`) have been removed.
 | `scripts/validate_benchmarks.py` | compiled suites against independent references; optimum recovery; throughput |
 | `scripts/validate_jso.py` | our jSO against the jSO authors' published result files (`--compare-only` uses the stored runs) |
 | `scripts/validate_lshade_shade.py` | our L-SHADE and SHADE (E13, CEC2014) against Tanabe & Fukunaga's published per-run results (reference folders passed in; nothing is optimised) |
+| `scripts/validate_engine_variants.py` | the engine with its two switches set to the C++ codes' behaviour (`run`), the switches' defaults against stored E13 runs (`check-defaults`), and every statistic of the engine-variant and SHADE 1.0.1 checks (`analyze`) |
+| `scripts/shade101_cpp/run_shade101.py` | builds Tanabe's SHADE 1.0.1 code from the official archive (sha256 checked) with the two documented edits, runs it on our CEC2014 data, and `--check` compares with the released runs |
 | `scripts/validate_sehhocobl.py` | our SEHHO-COBL re-implementation against the means published in the earlier, MATLAB-based version of the manuscript |
 | `scripts/test_stats.py` | Holm, Friedman, Cliff's delta, A12 against hand-computed values and scipy; the revision's BCa and Student-t intervals against scipy, margin verdicts, run-level variance of delta |
 | `scripts/analyze_revision.py` | before computing anything new, recomputes every stored percentile interval it extends (gate inference, population control, CEC2014 endpoint and secondary comparisons, composition, population rule, suite gap, E6 contrast) and reports any mismatch |
 | `scripts/check_cec_data.py` | largest singular values of every CEC transformation matrix; CEC2022 shift vectors, matrices and shuffles that are identical to CEC2017 or CEC2014 data |
-| `scripts/check_integrity.py` | run counts, budget consumption, seed uniqueness and reproducibility |
+| `scripts/check_integrity.py` | run counts, budget consumption, seed uniqueness and reproducibility (for the validation files, E13's reused seeds and the C++ code's srand rule) |
 | `scripts/rc01_analytic.py` | derives and numerically verifies RC01's closed-form feasible reference design |
+| `scripts/resolution_check.py` | re-runs every analysis script that reads per-run errors (the registered analyses, `analyze.py`, the gate analyses, `analyze_extras.py`, `analyze_revision.py`) and `make_tables.py` on two temporary copies, one with the recorded errors and one with every per-run error rounded to 1e-8, and compares them (post hoc; main text Section 2.6, Supplementary S2.6 and Table S-resolution). `make_figures.py`, the `validate_*.py` scripts, `check_integrity.py` and `test_reproduction.py` also read per-run errors and are not re-run. The full-precision run reproduces every released file except `selected_config.json`, whose released copy keeps the historical key `held_out` (see the note on `held_out` above). `results/analysis/resolution_changes.csv` lists every changed interval side, margin verdict (0.147, 0.10, 0.05; unadjusted and adjusted), tie flag, Holm or unadjusted test decision, label, decision, count and rank (two decimals) of the 64 analysis files, and every estimate that moves by more than 0.02, with both values; `results/analysis/resolution_table_cells.csv` lists every printed table cell or note that changes, with its table and document. The rounding reaches the readers through `sehho/runfiles.py` (`SEHHO_ERROR_DECIMALS`, unset by default, when nothing changes) and, for the pre-registered analysis scripts, which are left as registered, through rounded copies of the per-run files. `analyze_revision.py resolution` gives the earlier check of the 37 headline contrasts with all their intervals |
+| `scripts/cec2020_entries.py` | recomputes the CEC2020 competition entries' feasibility counts and costs on RC01, RC06 and RC14 that the paper quotes, from the organisers' per-run files (https://github.com/P-N-Suganthan/2020-RW-Constrained-Optimisation; each archive checked by sha256) |
 
 ## A note on CEC2020 RC01
 
@@ -717,9 +825,10 @@ RC01 (heat-exchanger network design) is ranked by the suite's authors among
 the hardest problems of its group, and its closed-form value below equals the
 best-known objective they list for it. It is not hard. `scripts/rc01_analytic.py`
 shows that constraints `h3` and `h5` make the logarithmic term of `h7` cancel
-identically, forcing `x3 = 0`; the feasible set then collapses to the family
+identically, forcing `x3 = 0`; the feasible set then collapses to the two-parameter family
 `x2*x6 = 1e4` (with `x1*x4 = 0`) with every other coordinate fixed, and the
-objective is minimised over that family in closed form at
+objective is minimised over that family in closed form (not uniquely: `x4` is
+free once `x1 = 0`) at
 
     x* = (0, 50/3, 0, 0, 2e6, 600, 100, 600, 700),   f(x*) = 35*(50/3)^0.6 = 189.3116
 
@@ -731,9 +840,13 @@ along the one direction examined; its exact value is not determined. Every gap
 quoted against x* is therefore a lower bound on the true excess. None of the
 seven metaheuristics came within 11.5 % of it at 15,000 evaluations (for the
 three re-run at budgets up to 1e6, see `E5b_engineering_budget.csv`), while
-SciPy `trust-constr` reaches 189.3204 at 15,000. Anyone reporting RC01 results
-should report the gap against this reference design.
+SciPy `trust-constr` reaches 189.3204 at 15,000. Among the CEC2020 competition
+entries, EnMODE (Deb's rule with the same tolerance, constraints activated in
+stages), SASS and sCMAgES (repair with analytic constraint Jacobians) return
+189.3116 in all 25 of their released runs at 1e5 evaluations; EnMODE has no
+feasible run before 8e4 (`scripts/cec2020_entries.py`).
+Anyone reporting RC01 results should report the gap against this reference design.
 
 ## Note on this public copy
 
-In `logs/`, absolute local paths were replaced by `<repo>`, `<project>` and `<python-lib>`; the logs are otherwise verbatim. Compiled CEC libraries (`*.so`) are not included: build them with `cec_native/build.sh`. Code: MIT (`LICENSE`); data: CC BY 4.0 (`LICENSE-DATA.md`); `cec_native/` is third-party material under its authors' terms.
+In `logs/`, absolute local paths were replaced by `<repo>`, `<project>`, `<python-lib>` and `<scratch>`; the logs are otherwise verbatim. Compiled CEC libraries (`*.so`) are not included: build them with `cec_native/build.sh`. Code: MIT (`LICENSE`); data: CC BY 4.0 (`LICENSE-DATA.md`); `cec_native/` is third-party material under its authors' terms.

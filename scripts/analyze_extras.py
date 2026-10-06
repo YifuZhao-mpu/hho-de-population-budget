@@ -77,6 +77,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."
 from sehho.stats import cliffs_delta
 
 RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
+ERROR_DECIMALS = int(os.environ["SEHHO_ERROR_DECIMALS"]) if os.environ.get("SEHHO_ERROR_DECIMALS") else None
 METHOD = "GF-Method"          # R-SHADE in the paper
 PUBLISHED = "SEHHO-COBL"
 BOOT = 20000
@@ -97,7 +98,13 @@ def _read(name):
     path = os.path.join(RES, name)
     if not os.path.exists(path):
         raise SystemExit(f"{path} not found")
-    return pd.read_csv(path)
+    df = pd.read_csv(path)
+    # SEHHO_ERROR_DECIMALS is set only by scripts/resolution_check.py, which re-runs this
+    # script on a copy of the package with every per-run error rounded (main text
+    # Section 2.6); when it is unset nothing changes.
+    if ERROR_DECIMALS is not None and not name.startswith("analysis") and "error" in df.columns:
+        df["error"] = np.round(df["error"].to_numpy(dtype=float), ERROR_DECIMALS)
+    return df
 
 
 def per_fn_delta(sub, a, b, col="algo"):

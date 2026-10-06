@@ -44,6 +44,7 @@ import pandas as pd
 from scipy import stats as sps
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from sehho.runfiles import read_runs  # noqa: E402  (pandas.read_csv; SEHHO_ERROR_DECIMALS, Section 2.6)
 from sehho.stats import cliffs_delta, holm
 
 RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results")
@@ -60,7 +61,7 @@ BLOCKS = [("15,000 FEs", "E4c_ablation_cec2017_30D_15k.csv"),
 
 
 def load(fname):
-    df = pd.read_csv(os.path.join(RES, fname))
+    df = read_runs(os.path.join(RES, fname))
     if "dim" in df.columns:
         df = df[df.dim == 30]
     return df

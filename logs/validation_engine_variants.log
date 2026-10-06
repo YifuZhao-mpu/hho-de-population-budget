@@ -1,0 +1,29 @@
+# python3 scripts/validate_engine_variants.py run --dims 30 50 --workers 42 --out <scratch>/validation_engine_variants_cec2014.csv
+# (2026-10-03; the output was then copied to results/validation_engine_variants_cec2014.csv; the absolute
+#  scratch path is redacted to <scratch>; the 7,200 runs are bit-identical to the runs behind Supplementary Section S2.3)
+  D=30: 300/3600 runs, 0.9 min
+  D=30: 600/3600 runs, 4.8 min
+  D=30: 900/3600 runs, 5.5 min
+  D=30: 1200/3600 runs, 5.8 min
+  D=30: 1500/3600 runs, 6.5 min
+  D=30: 1800/3600 runs, 6.7 min
+  D=30: 2100/3600 runs, 7.0 min
+  D=30: 2400/3600 runs, 7.9 min
+  D=30: 2700/3600 runs, 8.1 min
+  D=30: 3000/3600 runs, 9.8 min
+  D=30: 3300/3600 runs, 10.4 min
+  D=30: 3600/3600 runs, 10.6 min
+  wrote <scratch>/validation_engine_variants_cec2014.csv (3600 runs)
+  D=50: 300/3600 runs, 2.5 min
+  D=50: 600/3600 runs, 13.4 min
+  D=50: 900/3600 runs, 15.2 min
+  D=50: 1200/3600 runs, 16.0 min
+  D=50: 1500/3600 runs, 17.6 min
+  D=50: 1800/3600 runs, 18.2 min
+  D=50: 2100/3600 runs, 18.7 min
+  D=50: 2400/3600 runs, 20.8 min
+  D=50: 2700/3600 runs, 21.3 min
+  D=50: 3000/3600 runs, 25.7 min
+  D=50: 3300/3600 runs, 27.2 min
+  D=50: 3600/3600 runs, 27.7 min
+  wrote <scratch>/validation_engine_variants_cec2014.csv (7200 runs)
